@@ -1,0 +1,45 @@
+{
+  "id": "01-sum-to-n",
+  "title": "Sum of 1 to N",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `sum_to(n)` that returns 1 + 2 + ... + n using a loop.\n\nExample: `sum_to(5)` returns `15`.",
+  "starter_code": "def sum_to(n):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "for-loop",
+    "accumulator"
+  ],
+  "visible_tests": [
+    {
+      "input": 5,
+      "expected": "15"
+    },
+    {
+      "input": 10,
+      "expected": "55"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": 1,
+      "expected": "1"
+    },
+    {
+      "input": 100,
+      "expected": "5050"
+    },
+    {
+      "input": 0,
+      "expected": "0"
+    },
+    {
+      "input": 50,
+      "expected": "1275"
+    }
+  ],
+  "hints": [
+    "Start `total = 0` before the loop.",
+    "Use `range(1, n + 1)` so that n is included."
+  ],
+  "solution_code": "def sum_to(n):\n    total = 0\n    for i in range(1, n + 1):\n        total += i\n    return total\n"
+}

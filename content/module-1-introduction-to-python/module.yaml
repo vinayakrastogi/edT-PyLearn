@@ -1,0 +1,5 @@
+id: module-1-introduction-to-python
+title: "Module 1 - Introduction to Python"
+description: "Learn the fundamentals of Python programming including syntax, variables, data types, and basic input/output operations."
+order: 1
+icon: "terminal"

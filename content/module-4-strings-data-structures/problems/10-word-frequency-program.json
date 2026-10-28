@@ -1,0 +1,35 @@
+{
+  "id": "10-word-frequency-program",
+  "title": "Word Frequency",
+  "type": "program",
+  "difficulty": "medium",
+  "description": "Read one line of text. Print each different word (lower-cased) with its count, one per line as `word count`, sorted alphabetically.\n\nFor `to be or not to be` print:\n```\nbe 2\nnot 1\nor 1\nto 2\n```",
+  "starter_code": "text = input()\n# Count the words and print them alphabetically\n",
+  "concepts": [
+    "dictionaries",
+    "counting",
+    "split-join"
+  ],
+  "visible_tests": [
+    {
+      "stdin": "to be or not to be\n",
+      "expected": "be 2\nnot 1\nor 1\nto 2"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "stdin": "Hello hello HELLO\n",
+      "expected": "hello 3"
+    },
+    {
+      "stdin": "a\n",
+      "expected": "a 1"
+    },
+    {
+      "stdin": "the cat and the hat\n",
+      "expected": "and 1\ncat 1\nhat 1\nthe 2"
+    }
+  ],
+  "hints": [],
+  "solution_code": "text = input().lower()\ncounts = {}\nfor w in text.split():\n    counts[w] = counts.get(w, 0) + 1\nfor w in sorted(counts):\n    print(w, counts[w])\n"
+}

@@ -1,0 +1,61 @@
+{
+  "id": "04-safe-dict-access",
+  "title": "Safe Dictionary Lookup",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `lookup(data, key)` that returns `data[key]`, or the text `'Unknown'` if the key is missing. Use `try/except KeyError`.",
+  "starter_code": "def lookup(data, key):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "try-except",
+    "exception-types"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        {
+          "a": 1
+        },
+        "a"
+      ],
+      "expected": "1"
+    },
+    {
+      "input": [
+        {
+          "a": 1
+        },
+        "b"
+      ],
+      "expected": "Unknown"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        {},
+        "x"
+      ],
+      "expected": "Unknown"
+    },
+    {
+      "input": [
+        {
+          "k": "v"
+        },
+        "k"
+      ],
+      "expected": "v"
+    },
+    {
+      "input": [
+        {
+          "1": "one"
+        },
+        2
+      ],
+      "expected": "Unknown"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def lookup(data, key):\n    try:\n        return data[key]\n    except KeyError:\n        return 'Unknown'\n"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "01-next-task-id",
+  "title": "Next Task ID",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Tasks are dictionaries with an `'id'`. Write `next_id(tasks)` returning one more than the largest id, or `1` for an empty list. (Do not use the length of the list!)",
+  "starter_code": "def next_id(tasks):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "project-todo"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        []
+      ],
+      "expected": "1"
+    },
+    {
+      "input": [
+        [
+          {
+            "id": 1
+          },
+          {
+            "id": 5
+          }
+        ]
+      ],
+      "expected": "6"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        [
+          {
+            "id": 3
+          }
+        ]
+      ],
+      "expected": "4"
+    },
+    {
+      "input": [
+        [
+          {
+            "id": 2
+          },
+          {
+            "id": 4
+          },
+          {
+            "id": 3
+          }
+        ]
+      ],
+      "expected": "5"
+    },
+    {
+      "input": [
+        [
+          {
+            "id": 10
+          },
+          {
+            "id": 1
+          }
+        ]
+      ],
+      "expected": "11"
+    }
+  ],
+  "hints": [
+    "`max(..., default=0)` handles the empty list."
+  ],
+  "solution_code": "def next_id(tasks):\n    return max((t['id'] for t in tasks), default=0) + 1\n"
+}

@@ -1,0 +1,48 @@
+{
+  "id": "04-swap",
+  "title": "Swap Two Values",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `swap(a, b)` that returns the two values in swapped order, as `(b, a)`.\n\nExample: `swap(1, 2)` returns `(2, 1)`.",
+  "starter_code": "def swap(a, b):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "variables",
+    "assignment"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        1,
+        2
+      ],
+      "expected": "(2, 1)"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        "x",
+        "y"
+      ],
+      "expected": "('y', 'x')"
+    },
+    {
+      "input": [
+        0,
+        0
+      ],
+      "expected": "(0, 0)"
+    },
+    {
+      "input": [
+        3.5,
+        -1
+      ],
+      "expected": "(-1, 3.5)"
+    }
+  ],
+  "hints": [
+    "Python lets you write `return b, a`."
+  ],
+  "solution_code": "def swap(a, b):\n    return b, a\n"
+}

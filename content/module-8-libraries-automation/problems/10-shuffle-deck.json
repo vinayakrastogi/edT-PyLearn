@@ -1,0 +1,33 @@
+{
+  "id": "10-shuffle-deck",
+  "title": "Shuffled Deck",
+  "type": "driver",
+  "difficulty": "medium",
+  "description": "Write `new_deck()` that returns a **shuffled list of the 52 cards**. Each card is text such as `'A of Hearts'`, `'10 of Spades'`, `'K of Clubs'`. Ranks: `A 2 3 4 5 6 7 8 9 10 J Q K`; suits: `Hearts Diamonds Clubs Spades`.",
+  "starter_code": "import random\n\ndef new_deck():\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "random-module"
+  ],
+  "visible_tests": [
+    {
+      "driver": "d = new_deck()\nprint(len(d), len(set(d)))",
+      "expected": "52 52"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "d = new_deck()\nprint('A of Hearts' in d and 'K of Spades' in d)",
+      "expected": "True"
+    },
+    {
+      "driver": "print(new_deck() != new_deck())",
+      "expected": "True"
+    },
+    {
+      "driver": "d = new_deck()\nprint(sorted(x.split(' of ')[1] for x in d).count('Clubs'))",
+      "expected": "13"
+    }
+  ],
+  "hints": [],
+  "solution_code": "import random\n\ndef new_deck():\n    ranks = ['A'] + [str(n) for n in range(2, 11)] + ['J', 'Q', 'K']\n    suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']\n    deck = [f'{r} of {s}' for s in suits for r in ranks]\n    random.shuffle(deck)\n    return deck\n"
+}

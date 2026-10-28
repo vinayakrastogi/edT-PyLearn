@@ -1,0 +1,38 @@
+{
+  "id": "02-weekday-name",
+  "title": "Weekday Name",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `weekday_name(text)` for a date such as `'2025-03-14'` (YYYY-MM-DD). Return the full weekday name, e.g. `'Friday'`.",
+  "starter_code": "from datetime import datetime\n\ndef weekday_name(text):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "datetime-module",
+    "date-formatting"
+  ],
+  "visible_tests": [
+    {
+      "input": "2025-03-14",
+      "expected": "Friday"
+    },
+    {
+      "input": "2000-01-01",
+      "expected": "Saturday"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": "2024-02-29",
+      "expected": "Thursday"
+    },
+    {
+      "input": "2025-12-25",
+      "expected": "Thursday"
+    },
+    {
+      "input": "1999-12-31",
+      "expected": "Friday"
+    }
+  ],
+  "hints": [],
+  "solution_code": "from datetime import datetime\n\ndef weekday_name(text):\n    return datetime.strptime(text, '%Y-%m-%d').strftime('%A')\n"
+}

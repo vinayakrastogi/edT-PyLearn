@@ -1,0 +1,79 @@
+{
+  "id": "03-safe-list-access",
+  "title": "Safe List Access",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `get_item(items, index, default=None)` returning `items[index]`, or `default` if the index is out of range.",
+  "starter_code": "def get_item(items, index, default=None):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "try-except",
+    "exception-types"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        [
+          10,
+          20,
+          30
+        ],
+        1
+      ],
+      "expected": "20"
+    },
+    {
+      "input": [
+        [
+          10,
+          20,
+          30
+        ],
+        5,
+        "none"
+      ],
+      "expected": "none"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        [],
+        0
+      ],
+      "expected": "None"
+    },
+    {
+      "input": [
+        [
+          1
+        ],
+        -1
+      ],
+      "expected": "1"
+    },
+    {
+      "input": [
+        [
+          1,
+          2
+        ],
+        2,
+        "x"
+      ],
+      "expected": "x"
+    },
+    {
+      "input": [
+        [
+          "a",
+          "b"
+        ],
+        -3,
+        "z"
+      ],
+      "expected": "z"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def get_item(items, index, default=None):\n    try:\n        return items[index]\n    except IndexError:\n        return default\n"
+}

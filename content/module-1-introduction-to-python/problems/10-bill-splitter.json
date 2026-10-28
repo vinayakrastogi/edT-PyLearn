@@ -1,0 +1,38 @@
+{
+  "id": "10-bill-splitter",
+  "title": "Bill Splitter",
+  "type": "program",
+  "difficulty": "medium",
+  "description": "Read a bill amount (may have decimals) on the first line and the number of people on the second line. Print what each person pays with **exactly 2 decimal places**.\n\nExample: inputs `1200` and `4` print `300.00`.",
+  "starter_code": "bill = input()\npeople = input()\n# Print each person's share with 2 decimals\n",
+  "concepts": [
+    "input",
+    "type-conversion",
+    "output-formatting"
+  ],
+  "visible_tests": [
+    {
+      "stdin": "1200\n4\n",
+      "expected": "300.00"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "stdin": "100\n3\n",
+      "expected": "33.33"
+    },
+    {
+      "stdin": "99.5\n2\n",
+      "expected": "49.75"
+    },
+    {
+      "stdin": "0\n5\n",
+      "expected": "0.00"
+    }
+  ],
+  "hints": [
+    "Use `float()` for the bill and `int()` for the people.",
+    "Format with `{value:.2f}` inside an f-string."
+  ],
+  "solution_code": "bill = float(input())\npeople = int(input())\nprint(f'{bill / people:.2f}')\n"
+}

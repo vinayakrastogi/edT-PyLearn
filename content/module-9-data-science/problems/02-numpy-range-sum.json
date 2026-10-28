@@ -1,0 +1,42 @@
+{
+  "id": "02-numpy-range-sum",
+  "title": "Sum of Even Squares",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `even_square_sum(n)` that uses `np.arange(1, n + 1)` and a boolean mask to return the sum of the squares of the **even** numbers from 1 to `n` (as a Python `int`).\n\nExample: `even_square_sum(6)` returns `56` (4 + 16 + 36).",
+  "starter_code": "import numpy as np\n\ndef even_square_sum(n):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "numpy-arrays",
+    "array-indexing"
+  ],
+  "visible_tests": [
+    {
+      "input": 6,
+      "expected": "56"
+    },
+    {
+      "input": 3,
+      "expected": "4"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": 1,
+      "expected": "0"
+    },
+    {
+      "input": 10,
+      "expected": "220"
+    },
+    {
+      "input": 20,
+      "expected": "1540"
+    },
+    {
+      "input": 0,
+      "expected": "0"
+    }
+  ],
+  "hints": [],
+  "solution_code": "import numpy as np\n\ndef even_square_sum(n):\n    nums = np.arange(1, n + 1)\n    evens = nums[nums % 2 == 0]\n    return int((evens ** 2).sum())\n"
+}

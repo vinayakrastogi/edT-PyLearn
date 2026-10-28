@@ -1,0 +1,35 @@
+{
+  "id": "10-shapes-polymorphism",
+  "title": "Shapes and Polymorphism",
+  "type": "driver",
+  "difficulty": "hard",
+  "description": "Create classes `Rectangle(w, h)`, `Square(side)` and `Circle(r)` that each have `area()`. Use `3.14` as pi, so `Circle(2).area()` is `12.56`. Also write `total_area(shapes)` returning the sum of areas.",
+  "starter_code": "# Write Rectangle, Square, Circle and total_area\n",
+  "concepts": [
+    "polymorphism",
+    "method-overriding",
+    "abstract-classes"
+  ],
+  "visible_tests": [
+    {
+      "driver": "print(Rectangle(3, 4).area(), Square(5).area(), Circle(2).area())",
+      "expected": "12 25 12.56"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "print(total_area([Rectangle(1, 2), Square(3)]))",
+      "expected": "11"
+    },
+    {
+      "driver": "print(total_area([]))",
+      "expected": "0"
+    },
+    {
+      "driver": "print(round(total_area([Circle(1), Circle(1)]), 2))",
+      "expected": "6.28"
+    }
+  ],
+  "hints": [],
+  "solution_code": "class Rectangle:\n    def __init__(self, w, h):\n        self.w = w\n        self.h = h\n\n    def area(self):\n        return self.w * self.h\n\nclass Square(Rectangle):\n    def __init__(self, side):\n        super().__init__(side, side)\n\nclass Circle:\n    def __init__(self, r):\n        self.r = r\n\n    def area(self):\n        return 3.14 * self.r ** 2\n\ndef total_area(shapes):\n    return sum(s.area() for s in shapes)\n"
+}

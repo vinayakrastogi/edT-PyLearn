@@ -1,0 +1,45 @@
+{
+  "id": "03-count-vowels",
+  "title": "Count Vowels",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `count_vowels(text)` that returns how many vowels (`a e i o u`, any case) the text contains.\n\nExample: `count_vowels('Education')` returns `5`.",
+  "starter_code": "def count_vowels(text):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "for-loop",
+    "loop-recipes",
+    "membership-operators"
+  ],
+  "visible_tests": [
+    {
+      "input": "Education",
+      "expected": "5"
+    },
+    {
+      "input": "rhythm",
+      "expected": "0"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": "",
+      "expected": "0"
+    },
+    {
+      "input": "AEIOU",
+      "expected": "5"
+    },
+    {
+      "input": "Python Programming",
+      "expected": "4"
+    },
+    {
+      "input": "xyz",
+      "expected": "0"
+    }
+  ],
+  "hints": [
+    "Lowercase the text first so you only need to check five letters."
+  ],
+  "solution_code": "def count_vowels(text):\n    count = 0\n    for ch in text.lower():\n        if ch in 'aeiou':\n            count += 1\n    return count\n"
+}

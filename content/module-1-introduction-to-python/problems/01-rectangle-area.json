@@ -1,0 +1,56 @@
+{
+  "id": "01-rectangle-area",
+  "title": "Rectangle Area",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write a function `area(width, height)` that returns the area of a rectangle.\n\nExample: `area(3, 4)` returns `12`.",
+  "starter_code": "def area(width, height):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "operators",
+    "arithmetic"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        3,
+        4
+      ],
+      "expected": "12"
+    },
+    {
+      "input": [
+        5,
+        5
+      ],
+      "expected": "25"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        10,
+        2
+      ],
+      "expected": "20"
+    },
+    {
+      "input": [
+        0,
+        7
+      ],
+      "expected": "0"
+    },
+    {
+      "input": [
+        2.5,
+        4
+      ],
+      "expected": "10.0"
+    }
+  ],
+  "hints": [
+    "Area of a rectangle is width times height.",
+    "Use `return width * height`."
+  ],
+  "solution_code": "def area(width, height):\n    return width * height\n"
+}

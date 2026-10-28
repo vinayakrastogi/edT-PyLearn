@@ -1,0 +1,62 @@
+{
+  "id": "04-is-prime",
+  "title": "Prime Check",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `is_prime(n)` returning `True` if `n` is prime and `False` otherwise. Remember that 0 and 1 are not prime.",
+  "starter_code": "def is_prime(n):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "while-loop",
+    "break",
+    "loop-programs"
+  ],
+  "visible_tests": [
+    {
+      "input": 7,
+      "expected": "True"
+    },
+    {
+      "input": 10,
+      "expected": "False"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": 0,
+      "expected": "False"
+    },
+    {
+      "input": 1,
+      "expected": "False"
+    },
+    {
+      "input": 2,
+      "expected": "True"
+    },
+    {
+      "input": 3,
+      "expected": "True"
+    },
+    {
+      "input": 29,
+      "expected": "True"
+    },
+    {
+      "input": 91,
+      "expected": "False"
+    },
+    {
+      "input": 97,
+      "expected": "True"
+    },
+    {
+      "input": 100,
+      "expected": "False"
+    }
+  ],
+  "hints": [
+    "Try dividing by every number from 2 while i * i <= n.",
+    "As soon as one divides evenly, the answer is False."
+  ],
+  "solution_code": "def is_prime(n):\n    if n < 2:\n        return False\n    i = 2\n    while i * i <= n:\n        if n % i == 0:\n            return False\n        i += 1\n    return True\n"
+}

@@ -1,0 +1,74 @@
+{
+  "id": "05-calculator",
+  "title": "Calculator Function",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `calculate(a, b, op)` where `op` is `'+'`, `'-'`, `'*'` or `'/'`. Return the result. For `'/'` with `b == 0` return the text `'Error'`. For an unknown operator return `'Invalid'`.",
+  "starter_code": "def calculate(a, b, op):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "functions",
+    "return-statement"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        10,
+        5,
+        "+"
+      ],
+      "expected": "15"
+    },
+    {
+      "input": [
+        10,
+        4,
+        "/"
+      ],
+      "expected": "2.5"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        10,
+        5,
+        "-"
+      ],
+      "expected": "5"
+    },
+    {
+      "input": [
+        10,
+        5,
+        "*"
+      ],
+      "expected": "50"
+    },
+    {
+      "input": [
+        1,
+        0,
+        "/"
+      ],
+      "expected": "Error"
+    },
+    {
+      "input": [
+        2,
+        3,
+        "%"
+      ],
+      "expected": "Invalid"
+    },
+    {
+      "input": [
+        7,
+        2,
+        "/"
+      ],
+      "expected": "3.5"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def calculate(a, b, op):\n    if op == '+':\n        return a + b\n    elif op == '-':\n        return a - b\n    elif op == '*':\n        return a * b\n    elif op == '/':\n        if b == 0:\n            return 'Error'\n        return a / b\n    return 'Invalid'\n"
+}

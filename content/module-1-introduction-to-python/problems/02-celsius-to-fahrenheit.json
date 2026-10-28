@@ -1,0 +1,40 @@
+{
+  "id": "02-celsius-to-fahrenheit",
+  "title": "Celsius to Fahrenheit",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `to_fahrenheit(celsius)` that converts a temperature using `F = C * 9 / 5 + 32`.\n\nExample: `to_fahrenheit(100)` returns `212.0`.",
+  "starter_code": "def to_fahrenheit(celsius):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "operators",
+    "arithmetic"
+  ],
+  "visible_tests": [
+    {
+      "input": 0,
+      "expected": "32.0"
+    },
+    {
+      "input": 100,
+      "expected": "212.0"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": 37,
+      "expected": "98.6"
+    },
+    {
+      "input": -40,
+      "expected": "-40.0"
+    },
+    {
+      "input": 25,
+      "expected": "77.0"
+    }
+  ],
+  "hints": [
+    "Follow the formula exactly: multiply first, then divide, then add 32."
+  ],
+  "solution_code": "def to_fahrenheit(celsius):\n    return celsius * 9 / 5 + 32\n"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "08-append-log",
+  "title": "Append to a Log",
+  "type": "driver",
+  "difficulty": "easy",
+  "description": "Write `log(message)` that appends `message` as a new line to `app.log` (create the file if needed). Repeated calls must keep earlier lines.",
+  "starter_code": "def log(message):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "appending-files",
+    "writing-files"
+  ],
+  "visible_tests": [
+    {
+      "driver": "log('start')\nlog('stop')\nprint(open('app.log').read().split())",
+      "expected": "['start', 'stop']"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "log('one')\nprint(open('app.log').read().splitlines())",
+      "expected": "['one']"
+    },
+    {
+      "driver": "log('a')\nlog('b')\nlog('c')\nprint(len(open('app.log').readlines()))",
+      "expected": "3"
+    },
+    {
+      "driver": "open('app.log', 'w').write('old\\n')\nlog('new')\nprint(open('app.log').read().splitlines())",
+      "expected": "['old', 'new']"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def log(message):\n    with open('app.log', 'a') as f:\n        f.write(message + '\\n')\n"
+}

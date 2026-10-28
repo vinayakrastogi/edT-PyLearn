@@ -1,0 +1,65 @@
+{
+  "id": "03-min-max",
+  "title": "Smallest and Largest",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `min_max(numbers)` returning a tuple `(smallest, largest)`.\n\nExample: `min_max([4, 9, 1, 7])` returns `(1, 9)`.",
+  "starter_code": "def min_max(numbers):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "multiple-return"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        [
+          4,
+          9,
+          1,
+          7
+        ]
+      ],
+      "expected": "(1, 9)"
+    },
+    {
+      "input": [
+        [
+          5
+        ]
+      ],
+      "expected": "(5, 5)"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        [
+          3,
+          3,
+          3
+        ]
+      ],
+      "expected": "(3, 3)"
+    },
+    {
+      "input": [
+        [
+          -1,
+          -9,
+          0
+        ]
+      ],
+      "expected": "(-9, 0)"
+    },
+    {
+      "input": [
+        [
+          100,
+          50
+        ]
+      ],
+      "expected": "(50, 100)"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def min_max(numbers):\n    return min(numbers), max(numbers)\n"
+}

@@ -1,0 +1,69 @@
+{
+  "id": "04-above-average",
+  "title": "Above Average",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `above_average(values)` that returns a **list** of the values that are strictly greater than the average of all the values (keep the original order). Use NumPy.",
+  "starter_code": "import numpy as np\n\ndef above_average(values):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "array-indexing",
+    "array-statistics"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "expected": "[4, 5]"
+    },
+    {
+      "input": [
+        [
+          10,
+          10,
+          10
+        ]
+      ],
+      "expected": "[]"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        [
+          5,
+          1,
+          9,
+          2
+        ]
+      ],
+      "expected": "[5, 9]"
+    },
+    {
+      "input": [
+        [
+          -3,
+          -1,
+          -2
+        ]
+      ],
+      "expected": "[-1]"
+    },
+    {
+      "input": [
+        [
+          100
+        ]
+      ],
+      "expected": "[]"
+    }
+  ],
+  "hints": [],
+  "solution_code": "import numpy as np\n\ndef above_average(values):\n    arr = np.array(values)\n    return arr[arr > arr.mean()].tolist()\n"
+}

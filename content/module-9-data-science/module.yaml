@@ -1,0 +1,5 @@
+id: module-9-data-science
+title: "Module 9 - Introduction to Data Science"
+description: "Learn data manipulation, analysis, and visualization with NumPy, Pandas, and Matplotlib."
+order: 9
+icon: "chart-column"

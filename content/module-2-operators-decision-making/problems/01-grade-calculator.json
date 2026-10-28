@@ -1,0 +1,61 @@
+{
+  "id": "01-grade-calculator",
+  "title": "Grade Calculator",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `grade(marks)` that returns a letter: `'A'` for 90 or more, `'B'` for 80-89, `'C'` for 70-79, `'D'` for 60-69 and `'F'` below 60.\n\nExample: `grade(83)` returns `B`.",
+  "starter_code": "def grade(marks):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "elif",
+    "multi-way-decisions"
+  ],
+  "visible_tests": [
+    {
+      "input": 95,
+      "expected": "A"
+    },
+    {
+      "input": 83,
+      "expected": "B"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": 90,
+      "expected": "A"
+    },
+    {
+      "input": 89,
+      "expected": "B"
+    },
+    {
+      "input": 70,
+      "expected": "C"
+    },
+    {
+      "input": 69,
+      "expected": "D"
+    },
+    {
+      "input": 60,
+      "expected": "D"
+    },
+    {
+      "input": 59,
+      "expected": "F"
+    },
+    {
+      "input": 0,
+      "expected": "F"
+    },
+    {
+      "input": 100,
+      "expected": "A"
+    }
+  ],
+  "hints": [
+    "Check the highest grade first.",
+    "Use `elif` for each lower boundary."
+  ],
+  "solution_code": "def grade(marks):\n    if marks >= 90:\n        return 'A'\n    elif marks >= 80:\n        return 'B'\n    elif marks >= 70:\n        return 'C'\n    elif marks >= 60:\n        return 'D'\n    else:\n        return 'F'\n"
+}

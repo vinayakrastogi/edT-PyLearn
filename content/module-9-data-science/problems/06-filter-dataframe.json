@@ -1,0 +1,82 @@
+{
+  "id": "06-filter-dataframe",
+  "title": "Filter Students",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `top_students(rows, cutoff)` where `rows` is a list of dictionaries like `{'name': 'Asha', 'marks': 88}`. Return a list of the names whose marks are **at least** `cutoff`, sorted alphabetically. Use a DataFrame.",
+  "starter_code": "import pandas as pd\n\ndef top_students(rows, cutoff):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "filtering-data",
+    "boolean-masks-pandas"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        [
+          {
+            "name": "Asha",
+            "marks": 88
+          },
+          {
+            "name": "Ravi",
+            "marks": 72
+          },
+          {
+            "name": "Pip",
+            "marks": 95
+          }
+        ],
+        80
+      ],
+      "expected": "['Asha', 'Pip']"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        [
+          {
+            "name": "A",
+            "marks": 50
+          }
+        ],
+        60
+      ],
+      "expected": "[]"
+    },
+    {
+      "input": [
+        [
+          {
+            "name": "B",
+            "marks": 60
+          },
+          {
+            "name": "A",
+            "marks": 60
+          }
+        ],
+        60
+      ],
+      "expected": "['A', 'B']"
+    },
+    {
+      "input": [
+        [
+          {
+            "name": "Z",
+            "marks": 100
+          },
+          {
+            "name": "Y",
+            "marks": 99
+          }
+        ],
+        99
+      ],
+      "expected": "['Y', 'Z']"
+    }
+  ],
+  "hints": [],
+  "solution_code": "import pandas as pd\n\ndef top_students(rows, cutoff):\n    df = pd.DataFrame(rows)\n    return sorted(df[df['marks'] >= cutoff]['name'].tolist())\n"
+}

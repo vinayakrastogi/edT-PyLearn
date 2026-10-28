@@ -1,0 +1,86 @@
+{
+  "id": "07-group-average",
+  "title": "Average per Group",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `class_averages(rows)` where each row is `{'class': '7A', 'marks': 88}`. Return a dictionary mapping each class to its average marks (rounded to 2 decimals), with classes in alphabetical order. Use `groupby`.",
+  "starter_code": "import pandas as pd\n\ndef class_averages(rows):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "groupby",
+    "aggregation"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        [
+          {
+            "class": "7A",
+            "marks": 88
+          },
+          {
+            "class": "7B",
+            "marks": 72
+          },
+          {
+            "class": "7A",
+            "marks": 96
+          }
+        ]
+      ],
+      "expected": "{'7A': 92.0, '7B': 72.0}"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        [
+          {
+            "class": "X",
+            "marks": 50
+          }
+        ]
+      ],
+      "expected": "{'X': 50.0}"
+    },
+    {
+      "input": [
+        [
+          {
+            "class": "B",
+            "marks": 10
+          },
+          {
+            "class": "A",
+            "marks": 20
+          },
+          {
+            "class": "B",
+            "marks": 15
+          }
+        ]
+      ],
+      "expected": "{'A': 20.0, 'B': 12.5}"
+    },
+    {
+      "input": [
+        [
+          {
+            "class": "C",
+            "marks": 33
+          },
+          {
+            "class": "C",
+            "marks": 34
+          },
+          {
+            "class": "C",
+            "marks": 34
+          }
+        ]
+      ],
+      "expected": "{'C': 33.67}"
+    }
+  ],
+  "hints": [],
+  "solution_code": "import pandas as pd\n\ndef class_averages(rows):\n    df = pd.DataFrame(rows)\n    means = df.groupby('class')['marks'].mean().round(2)\n    return {k: float(v) for k, v in means.items()}\n"
+}

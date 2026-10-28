@@ -1,0 +1,42 @@
+{
+  "id": "09-bank-account-class",
+  "title": "Bank Account Class",
+  "type": "driver",
+  "difficulty": "hard",
+  "description": "Create `Account(balance=0)` with `deposit(n)` and `withdraw(n)` (both reject `n <= 0` with `ValueError`; `withdraw` also raises `ValueError` when funds are insufficient). Create `CurrentAccount(Account)` taking an extra `overdraft` amount that lets the balance go down to `-overdraft`.",
+  "starter_code": "class Account:\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "project-banking",
+    "inheritance-in-projects"
+  ],
+  "visible_tests": [
+    {
+      "driver": "a = Account(100)\na.withdraw(30)\nprint(a.balance)",
+      "expected": "70"
+    },
+    {
+      "driver": "c = CurrentAccount(50, overdraft=100)\nc.withdraw(120)\nprint(c.balance)",
+      "expected": "-70"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "a = Account(10)\ntry:\n    a.withdraw(20)\nexcept ValueError as e:\n    print(e)",
+      "expected": "insufficient funds"
+    },
+    {
+      "driver": "c = CurrentAccount(0, overdraft=50)\ntry:\n    c.withdraw(51)\nexcept ValueError as e:\n    print(e)",
+      "expected": "insufficient funds"
+    },
+    {
+      "driver": "a = Account()\ntry:\n    a.deposit(0)\nexcept ValueError as e:\n    print(e)",
+      "expected": "invalid amount"
+    },
+    {
+      "driver": "print(isinstance(CurrentAccount(), Account))",
+      "expected": "True"
+    }
+  ],
+  "hints": [],
+  "solution_code": "class Account:\n    def __init__(self, balance=0):\n        self.balance = balance\n\n    def _available(self):\n        return self.balance\n\n    def deposit(self, n):\n        if n <= 0:\n            raise ValueError('invalid amount')\n        self.balance += n\n\n    def withdraw(self, n):\n        if n <= 0:\n            raise ValueError('invalid amount')\n        if n > self._available():\n            raise ValueError('insufficient funds')\n        self.balance -= n\n\nclass CurrentAccount(Account):\n    def __init__(self, balance=0, overdraft=0):\n        super().__init__(balance)\n        self.overdraft = overdraft\n\n    def _available(self):\n        return self.balance + self.overdraft\n"
+}

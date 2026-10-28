@@ -1,0 +1,48 @@
+{
+  "id": "05-even-or-odd",
+  "title": "Even or Odd",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `parity(n)` that returns the number `0` if `n` is even and `1` if `n` is odd. Do not use `if`; use the `%` operator.\n\nExample: `parity(7)` returns `1`.",
+  "starter_code": "def parity(n):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "operators",
+    "arithmetic"
+  ],
+  "visible_tests": [
+    {
+      "input": 4,
+      "expected": "0"
+    },
+    {
+      "input": 7,
+      "expected": "1"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": 0,
+      "expected": "0"
+    },
+    {
+      "input": 1,
+      "expected": "1"
+    },
+    {
+      "input": 100,
+      "expected": "0"
+    },
+    {
+      "input": 99,
+      "expected": "1"
+    },
+    {
+      "input": -3,
+      "expected": "1"
+    }
+  ],
+  "hints": [
+    "The remainder when dividing by 2 tells you everything."
+  ],
+  "solution_code": "def parity(n):\n    return n % 2\n"
+}

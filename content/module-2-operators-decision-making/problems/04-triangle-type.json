@@ -1,0 +1,67 @@
+{
+  "id": "04-triangle-type",
+  "title": "Triangle Classifier",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `triangle_type(a, b, c)` that returns `'equilateral'` (all sides equal), `'isosceles'` (exactly two equal) or `'scalene'` (all different).\n\nAssume the sides form a valid triangle.",
+  "starter_code": "def triangle_type(a, b, c):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "if-else",
+    "elif",
+    "logical-operators"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        3,
+        3,
+        3
+      ],
+      "expected": "equilateral"
+    },
+    {
+      "input": [
+        5,
+        5,
+        8
+      ],
+      "expected": "isosceles"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        3,
+        4,
+        5
+      ],
+      "expected": "scalene"
+    },
+    {
+      "input": [
+        7,
+        5,
+        7
+      ],
+      "expected": "isosceles"
+    },
+    {
+      "input": [
+        2,
+        6,
+        6
+      ],
+      "expected": "isosceles"
+    },
+    {
+      "input": [
+        9,
+        9,
+        9
+      ],
+      "expected": "equilateral"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def triangle_type(a, b, c):\n    if a == b == c:\n        return 'equilateral'\n    elif a == b or b == c or a == c:\n        return 'isosceles'\n    else:\n        return 'scalene'\n"
+}

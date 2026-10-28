@@ -1,0 +1,45 @@
+{
+  "id": "08-atm-withdrawal",
+  "title": "ATM Withdrawal",
+  "type": "program",
+  "difficulty": "medium",
+  "description": "The account balance is `5000`. Read the PIN (line 1) and the amount (line 2). Print exactly one message:\n\n- `Wrong PIN` if the PIN is not `1234`\n- `Amount must be a multiple of 100`\n- `Insufficient funds` if the amount is more than the balance\n- otherwise `Collect your cash: <amount>`\n\nCheck the rules in the order listed.",
+  "starter_code": "balance = 5000\npin = input()\namount = int(input())\n# Decide what to print\n",
+  "concepts": [
+    "if-else",
+    "elif",
+    "decision-programs"
+  ],
+  "visible_tests": [
+    {
+      "stdin": "1234\n2500\n",
+      "expected": "Collect your cash: 2500"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "stdin": "1111\n500\n",
+      "expected": "Wrong PIN"
+    },
+    {
+      "stdin": "1234\n250\n",
+      "expected": "Amount must be a multiple of 100"
+    },
+    {
+      "stdin": "1234\n9000\n",
+      "expected": "Insufficient funds"
+    },
+    {
+      "stdin": "1234\n5000\n",
+      "expected": "Collect your cash: 5000"
+    },
+    {
+      "stdin": "1234\n100\n",
+      "expected": "Collect your cash: 100"
+    }
+  ],
+  "hints": [
+    "Use an if / elif chain of refusal reasons, then `else` for success."
+  ],
+  "solution_code": "balance = 5000\npin = input()\namount = int(input())\nif pin != '1234':\n    print('Wrong PIN')\nelif amount % 100 != 0:\n    print('Amount must be a multiple of 100')\nelif amount > balance:\n    print('Insufficient funds')\nelse:\n    print(f'Collect your cash: {amount}')\n"
+}

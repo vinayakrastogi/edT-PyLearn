@@ -1,0 +1,443 @@
+{
+  "id": "module-10-mini-projects-quiz",
+  "title": "Module 10 Mastery Quiz",
+  "questions": [
+    {
+      "type": "mcq",
+      "question": "What is the first step of the project method?",
+      "options": [
+        "Start coding immediately",
+        "Understand the goal and list the requirements",
+        "Draw a chart",
+        "Write the tests last"
+      ],
+      "correct_answer": 1,
+      "explanation": "Turning a vague idea into a checklist of small, testable requirements comes before design or code.",
+      "concepts": [
+        "project-planning"
+      ],
+      "id": "m10_q1"
+    },
+    {
+      "type": "mcq",
+      "question": "Which of these is a good, testable requirement?",
+      "options": [
+        "Make a nice contact book",
+        "Find a contact by name and return their phone or 'not found'",
+        "Be fast",
+        "Make it easy"
+      ],
+      "correct_answer": 1,
+      "explanation": "A requirement should be specific enough that you can say exactly how to check it.",
+      "concepts": [
+        "project-planning"
+      ],
+      "id": "m10_q2"
+    },
+    {
+      "type": "mcq",
+      "question": "Why should logic functions avoid `print()` and `input()`?",
+      "options": [
+        "Python forbids it",
+        "They become easy to test and reuse",
+        "It makes code slower",
+        "print is deprecated"
+      ],
+      "correct_answer": 1,
+      "explanation": "Pure functions that take arguments and return results can be tested without a human and reused with any interface.",
+      "concepts": [
+        "project-structure",
+        "testing-basics"
+      ],
+      "id": "m10_q3"
+    },
+    {
+      "type": "mcq",
+      "question": "Which cases should you test for every function?",
+      "options": [
+        "Only the normal case",
+        "Normal, edge and bad inputs",
+        "Only errors",
+        "Only large inputs"
+      ],
+      "correct_answer": 1,
+      "explanation": "Bugs hide at the edges (empty input, zero, boundaries) and in invalid data.",
+      "concepts": [
+        "testing-basics"
+      ],
+      "id": "m10_q4"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `assert x == 5, \"msg\"` do when `x` is 4?",
+      "options": [
+        "Nothing",
+        "Raises AssertionError with the message",
+        "Prints the message only",
+        "Sets x to 5"
+      ],
+      "correct_answer": 1,
+      "explanation": "`assert` raises `AssertionError` when its condition is false.",
+      "concepts": [
+        "testing-basics"
+      ],
+      "id": "m10_q5"
+    },
+    {
+      "type": "mcq",
+      "question": "Why guard the program with `if __name__ == \"__main__\":`?",
+      "options": [
+        "To make it faster",
+        "So the file can be imported without running the program",
+        "Python requires it",
+        "To hide errors"
+      ],
+      "correct_answer": 1,
+      "explanation": "Importing a module then does not start the interactive program.",
+      "concepts": [
+        "project-structure"
+      ],
+      "id": "m10_q6"
+    },
+    {
+      "type": "mcq",
+      "question": "In the to-do project, why use `max(id) + 1` instead of `len(tasks) + 1` for new ids?",
+      "options": [
+        "It is shorter",
+        "After a deletion, len + 1 could repeat an existing id",
+        "len is slow",
+        "ids must be even"
+      ],
+      "correct_answer": 1,
+      "explanation": "Ids must stay unique even when tasks are removed.",
+      "concepts": [
+        "project-todo"
+      ],
+      "id": "m10_q7"
+    },
+    {
+      "type": "mcq",
+      "question": "What should `load_tasks` return when the JSON file does not exist yet?",
+      "options": [
+        "Raise an error",
+        "An empty list",
+        "None",
+        "The string 'empty'"
+      ],
+      "correct_answer": 1,
+      "explanation": "A missing file on the first run simply means \"no data yet\".",
+      "concepts": [
+        "json-persistence",
+        "project-todo"
+      ],
+      "id": "m10_q8"
+    },
+    {
+      "type": "mcq",
+      "question": "Why does the contact book store phone numbers as strings?",
+      "options": [
+        "Strings are faster",
+        "Integers lose leading zeros and cannot hold +91 or dashes",
+        "JSON cannot store ints",
+        "It saves memory"
+      ],
+      "correct_answer": 1,
+      "explanation": "Phone numbers are identifiers, not quantities: you never do arithmetic on them.",
+      "concepts": [
+        "project-contacts"
+      ],
+      "id": "m10_q9"
+    },
+    {
+      "type": "mcq",
+      "question": "Why normalise contact names (lower-case, collapse spaces) for the dictionary key?",
+      "options": [
+        "To save space",
+        "So 'Asha' and ' asha ' are the same contact",
+        "To sort faster",
+        "JSON needs it"
+      ],
+      "correct_answer": 1,
+      "explanation": "Normalised keys make lookups forgiving and prevent accidental duplicates.",
+      "concepts": [
+        "dictionaries-in-projects",
+        "project-contacts"
+      ],
+      "id": "m10_q10"
+    },
+    {
+      "type": "mcq",
+      "question": "Why is `float` a poor choice for real money?",
+      "options": [
+        "It is too big",
+        "Decimal fractions like 0.1 cannot be stored exactly",
+        "It cannot be negative",
+        "It is slower"
+      ],
+      "correct_answer": 1,
+      "explanation": "Use whole paise (integers) or `decimal.Decimal` for exact arithmetic; floats are for measurements.",
+      "concepts": [
+        "project-expenses",
+        "project-banking"
+      ],
+      "id": "m10_q11"
+    },
+    {
+      "type": "mcq",
+      "question": "Why do ISO dates like `2025-03-05` work well in a CSV?",
+      "options": [
+        "They are shorter",
+        "They sort correctly as text and are easy to slice for the month",
+        "CSV requires them",
+        "They contain no numbers"
+      ],
+      "correct_answer": 1,
+      "explanation": "Year-month-day ordering means alphabetical order equals chronological order.",
+      "concepts": [
+        "csv-in-projects",
+        "project-expenses"
+      ],
+      "id": "m10_q12"
+    },
+    {
+      "type": "mcq",
+      "question": "After reading a CSV, an `amount` column arrives as...",
+      "options": [
+        "float",
+        "int",
+        "str",
+        "Decimal"
+      ],
+      "correct_answer": 2,
+      "explanation": "CSV stores text, so you must convert amounts back to numbers.",
+      "concepts": [
+        "csv-in-projects"
+      ],
+      "id": "m10_q13"
+    },
+    {
+      "type": "mcq",
+      "question": "In the quiz app, why must `shuffled()` recompute the index of the correct option?",
+      "options": [
+        "To save memory",
+        "The correct answer moves when the options are shuffled",
+        "Python requires it",
+        "To count the score"
+      ],
+      "correct_answer": 1,
+      "explanation": "Otherwise a different option would be marked correct.",
+      "concepts": [
+        "project-quiz",
+        "classes-in-projects"
+      ],
+      "id": "m10_q14"
+    },
+    {
+      "type": "mcq",
+      "question": "What does an invalid answer such as `X` do in the quiz loop?",
+      "options": [
+        "Counts as wrong",
+        "Is rejected with a message and asked again",
+        "Ends the quiz",
+        "Crashes"
+      ],
+      "correct_answer": 1,
+      "explanation": "Validate input in a loop until it is acceptable; do not penalise typos.",
+      "concepts": [
+        "project-quiz"
+      ],
+      "id": "m10_q15"
+    },
+    {
+      "type": "mcq",
+      "question": "In the library project, why pass `today` into `borrow` and `give_back`?",
+      "options": [
+        "Python needs it",
+        "It makes date logic testable and repeatable",
+        "To save the date",
+        "It is faster"
+      ],
+      "correct_answer": 1,
+      "explanation": "Calling `date.today()` inside the class makes tests depend on the real date.",
+      "concepts": [
+        "project-library",
+        "oop-in-projects"
+      ],
+      "id": "m10_q16"
+    },
+    {
+      "type": "mcq",
+      "question": "A `Library` holding `Book` and `Member` objects is an example of...",
+      "options": [
+        "Inheritance",
+        "Composition (has-a)",
+        "Polymorphism only",
+        "A dataclass"
+      ],
+      "correct_answer": 1,
+      "explanation": "The library owns collections of other objects.",
+      "concepts": [
+        "oop-in-projects",
+        "project-library"
+      ],
+      "id": "m10_q17"
+    },
+    {
+      "type": "mcq",
+      "question": "A book due on 15 March is returned on 20 March at 2 rupees per late day. What is the fine?",
+      "options": [
+        "5",
+        "10",
+        "2",
+        "0"
+      ],
+      "correct_answer": 1,
+      "explanation": "5 days late x 2 rupees = 10 rupees.",
+      "concepts": [
+        "project-library"
+      ],
+      "id": "m10_q18"
+    },
+    {
+      "type": "mcq",
+      "question": "Why store `average` in the student class as a property, not a plain attribute?",
+      "options": [
+        "Properties are faster",
+        "It is always calculated from the current marks and never goes stale",
+        "Attributes cannot be numbers",
+        "JSON needs properties"
+      ],
+      "correct_answer": 1,
+      "explanation": "A stored value would need updating whenever a mark changes.",
+      "concepts": [
+        "project-students",
+        "data-persistence-projects"
+      ],
+      "id": "m10_q19"
+    },
+    {
+      "type": "mcq",
+      "question": "What happens to `{1: \"Asha\"}` after `json.dumps` then `json.loads`?",
+      "options": [
+        "Nothing",
+        "The key becomes the string \"1\"",
+        "It becomes a list",
+        "It fails"
+      ],
+      "correct_answer": 1,
+      "explanation": "JSON object keys are always strings, so integer keys change type.",
+      "concepts": [
+        "data-persistence-projects"
+      ],
+      "id": "m10_q20"
+    },
+    {
+      "type": "mcq",
+      "question": "In the banking project, subclasses override a small hook such as `_available()` because...",
+      "options": [
+        "It is required by Python",
+        "The base `withdraw` can keep all the checking in one place",
+        "It hides the balance",
+        "It avoids exceptions"
+      ],
+      "correct_answer": 1,
+      "explanation": "Well-designed base classes expose small extension points instead of forcing copy-paste.",
+      "concepts": [
+        "project-banking",
+        "inheritance-in-projects"
+      ],
+      "id": "m10_q21"
+    },
+    {
+      "type": "mcq",
+      "question": "What rule must a money transfer always respect?",
+      "options": [
+        "The receiver pays a fee",
+        "Total money before and after is unchanged (money is never created or lost)",
+        "Both accounts must be the same type",
+        "Transfers must be even amounts"
+      ],
+      "correct_answer": 1,
+      "explanation": "Testing this invariant catches many bugs in multi-step operations.",
+      "concepts": [
+        "project-banking"
+      ],
+      "id": "m10_q22"
+    },
+    {
+      "type": "mcq",
+      "question": "Why does a transfer withdraw first, then deposit, and undo on failure?",
+      "options": [
+        "To be faster",
+        "So a failure in the second step cannot make money vanish",
+        "Withdrawals are always safe",
+        "To confuse hackers"
+      ],
+      "correct_answer": 1,
+      "explanation": "Do the step most likely to fail first and roll back if a later step fails.",
+      "concepts": [
+        "project-banking"
+      ],
+      "id": "m10_q23"
+    },
+    {
+      "type": "mcq",
+      "question": "How many guesses does binary search need at most for numbers 1 to 100?",
+      "options": [
+        "5",
+        "7",
+        "10",
+        "100"
+      ],
+      "correct_answer": 1,
+      "explanation": "ceil(log2(101)) = 7: every guess halves the remaining range.",
+      "concepts": [
+        "project-guessing-game"
+      ],
+      "id": "m10_q24"
+    },
+    {
+      "type": "mcq",
+      "question": "In the guessing game, why should invalid input not use up a try?",
+      "options": [
+        "It is the law",
+        "It is the player's typo, not a real guess, so use `continue` before counting",
+        "Tries are unlimited",
+        "It speeds up the game"
+      ],
+      "correct_answer": 1,
+      "explanation": "Count a try only after the input has been validated.",
+      "concepts": [
+        "project-guessing-game"
+      ],
+      "id": "m10_q25"
+    },
+    {
+      "type": "true_false",
+      "question": "Testing every possible secret number with a bot is a practical way to test the game logic.",
+      "correct_answer": true,
+      "explanation": "With only 100 possibilities, exhaustive testing gives a strong guarantee cheaply.",
+      "concepts": [
+        "project-guessing-game",
+        "testing-basics"
+      ],
+      "id": "m10_q26"
+    },
+    {
+      "type": "mcq",
+      "question": "What is a good way to keep improving after this course?",
+      "options": [
+        "Only watch tutorials",
+        "Build real projects, read other people's code and share your work on GitHub",
+        "Stop coding",
+        "Memorise the syntax"
+      ],
+      "correct_answer": 1,
+      "explanation": "Skills grow by building, reading and explaining.",
+      "concepts": [
+        "next-steps"
+      ],
+      "id": "m10_q27"
+    }
+  ]
+}

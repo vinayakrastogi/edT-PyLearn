@@ -1,0 +1,34 @@
+{
+  "id": "11-guess-game-program",
+  "title": "Guessing Game Judge",
+  "type": "program",
+  "difficulty": "medium",
+  "description": "The secret number is `42`. Read guesses, one per line. For each guess print `too low`, `too high` or `correct`. Stop reading after `correct` and then print `Attempts: <n>`.",
+  "starter_code": "secret = 42\nattempts = 0\n# Read guesses until correct\n",
+  "concepts": [
+    "function-programs",
+    "lab-practice"
+  ],
+  "visible_tests": [
+    {
+      "stdin": "50\n25\n42\n",
+      "expected": "too high\ntoo low\ncorrect\nAttempts: 3"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "stdin": "42\n",
+      "expected": "correct\nAttempts: 1"
+    },
+    {
+      "stdin": "1\n99\n42\n",
+      "expected": "too low\ntoo high\ncorrect\nAttempts: 3"
+    },
+    {
+      "stdin": "10\n20\n30\n40\n42\n",
+      "expected": "too low\ntoo low\ntoo low\ntoo low\ncorrect\nAttempts: 5"
+    }
+  ],
+  "hints": [],
+  "solution_code": "secret = 42\nattempts = 0\nwhile True:\n    guess = int(input())\n    attempts += 1\n    if guess < secret:\n        print('too low')\n    elif guess > secret:\n        print('too high')\n    else:\n        print('correct')\n        break\nprint('Attempts:', attempts)\n"
+}

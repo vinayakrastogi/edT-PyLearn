@@ -1,0 +1,398 @@
+{
+  "id": "module-1-introduction-to-python-quiz",
+  "title": "Module 1 Mastery Quiz",
+  "questions": [
+    {
+      "type": "mcq",
+      "question": "What does Python do with the line `print(\"Hi\")  # say hello`?",
+      "options": [
+        "Prints `Hi  # say hello`",
+        "Prints `Hi` and ignores the comment",
+        "Raises a SyntaxError",
+        "Prints nothing"
+      ],
+      "correct_answer": 1,
+      "explanation": "A `#` starts a comment and Python ignores the rest of the line, so only `Hi` is printed.",
+      "concepts": [
+        "comments"
+      ],
+      "id": "m1_q1"
+    },
+    {
+      "type": "true_false",
+      "question": "Python treats `print` and `Print` as the same function.",
+      "correct_answer": false,
+      "explanation": "Python is case-sensitive. `print` is the built-in function; `Print` is an unknown name and causes a NameError.",
+      "concepts": [
+        "syntax"
+      ],
+      "id": "m1_q2"
+    },
+    {
+      "type": "mcq",
+      "question": "What is the standard indentation in Python?",
+      "options": [
+        "1 space",
+        "2 spaces",
+        "4 spaces",
+        "It does not matter at all"
+      ],
+      "correct_answer": 2,
+      "explanation": "PEP 8 recommends 4 spaces per level. Python requires consistent indentation to group code into blocks.",
+      "concepts": [
+        "syntax"
+      ],
+      "id": "m1_q3"
+    },
+    {
+      "type": "mcq",
+      "question": "Which is a valid variable name?",
+      "options": [
+        "2nd_place",
+        "my-score",
+        "class",
+        "_total_marks"
+      ],
+      "correct_answer": 3,
+      "explanation": "Names may contain letters, digits and underscores but cannot start with a digit, contain hyphens, or be a keyword such as `class`.",
+      "concepts": [
+        "naming"
+      ],
+      "id": "m1_q4"
+    },
+    {
+      "type": "mcq",
+      "question": "After `x = 5` then `x = x + 2`, what is `x`?",
+      "options": [
+        "5",
+        "2",
+        "7",
+        "52"
+      ],
+      "correct_answer": 2,
+      "explanation": "Python evaluates the right side first (5 + 2 = 7) and stores the result back in `x`.",
+      "concepts": [
+        "assignment",
+        "variables"
+      ],
+      "id": "m1_q5"
+    },
+    {
+      "type": "true_false",
+      "question": "In Python, `=` checks whether two values are equal.",
+      "correct_answer": false,
+      "explanation": "`=` assigns a value to a variable. Equality is tested with `==`.",
+      "concepts": [
+        "assignment"
+      ],
+      "id": "m1_q6"
+    },
+    {
+      "type": "mcq",
+      "question": "What is the output of `print(type(3.0))`?",
+      "options": [
+        "<class 'int'>",
+        "<class 'float'>",
+        "<class 'str'>",
+        "<class 'decimal'>"
+      ],
+      "correct_answer": 1,
+      "explanation": "Any number written with a decimal point, even `3.0`, is a float.",
+      "concepts": [
+        "data-types",
+        "type-function"
+      ],
+      "id": "m1_q7"
+    },
+    {
+      "type": "mcq",
+      "question": "What is the value of `\"5\" + \"5\"`?",
+      "options": [
+        "10",
+        "\"10\"",
+        "\"55\"",
+        "TypeError"
+      ],
+      "correct_answer": 2,
+      "explanation": "Both are strings, so `+` joins them (concatenation), giving `\"55\"`.",
+      "concepts": [
+        "data-types"
+      ],
+      "id": "m1_q8"
+    },
+    {
+      "type": "mcq",
+      "question": "Which of these is a boolean value in Python?",
+      "options": [
+        "true",
+        "\"True\"",
+        "True",
+        "1.0"
+      ],
+      "correct_answer": 2,
+      "explanation": "`True` and `False` with a capital first letter are the only booleans. `\"True\"` is a string.",
+      "concepts": [
+        "data-types"
+      ],
+      "id": "m1_q9"
+    },
+    {
+      "type": "mcq",
+      "question": "What is `17 // 5`?",
+      "options": [
+        "3.4",
+        "3",
+        "4",
+        "2"
+      ],
+      "correct_answer": 1,
+      "explanation": "`//` is floor division: 17 divided by 5 is 3.4 and the decimals are dropped, leaving 3.",
+      "concepts": [
+        "arithmetic",
+        "operators"
+      ],
+      "id": "m1_q10"
+    },
+    {
+      "type": "mcq",
+      "question": "What is `17 % 5`?",
+      "options": [
+        "3",
+        "2",
+        "3.4",
+        "12"
+      ],
+      "correct_answer": 1,
+      "explanation": "`%` returns the remainder: 17 = 3 x 5 + 2, so the remainder is 2.",
+      "concepts": [
+        "arithmetic",
+        "operators"
+      ],
+      "id": "m1_q11"
+    },
+    {
+      "type": "mcq",
+      "question": "What is `2 + 3 * 4`?",
+      "options": [
+        "20",
+        "14",
+        "24",
+        "9"
+      ],
+      "correct_answer": 1,
+      "explanation": "Multiplication is done before addition: 3 * 4 = 12, then 2 + 12 = 14.",
+      "concepts": [
+        "precedence",
+        "operators"
+      ],
+      "id": "m1_q12"
+    },
+    {
+      "type": "mcq",
+      "question": "What is `2 ** 3`?",
+      "options": [
+        "6",
+        "5",
+        "8",
+        "9"
+      ],
+      "correct_answer": 2,
+      "explanation": "`**` is the exponent operator: 2 to the power of 3 is 8.",
+      "concepts": [
+        "arithmetic",
+        "operators"
+      ],
+      "id": "m1_q13"
+    },
+    {
+      "type": "mcq",
+      "question": "What type does `input()` always return?",
+      "options": [
+        "int",
+        "float",
+        "str",
+        "bool"
+      ],
+      "correct_answer": 2,
+      "explanation": "`input()` always returns a string, even if the user types digits. Convert it with `int()` or `float()` if you need a number.",
+      "concepts": [
+        "input",
+        "type-conversion"
+      ],
+      "id": "m1_q14"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `int(7.9)` return?",
+      "options": [
+        "8",
+        "7",
+        "7.9",
+        "ValueError"
+      ],
+      "correct_answer": 1,
+      "explanation": "`int()` truncates (cuts off) the decimal part instead of rounding, so `int(7.9)` is 7.",
+      "concepts": [
+        "type-conversion",
+        "casting"
+      ],
+      "id": "m1_q15"
+    },
+    {
+      "type": "mcq",
+      "question": "Which line prints `Total: 12.50` when `total = 12.5`?",
+      "options": [
+        "print(f\"Total: {total:.2f}\")",
+        "print(\"Total: {total}\")",
+        "print(f\"Total: {total:.1f}\")",
+        "print(\"Total: \" + total)"
+      ],
+      "correct_answer": 0,
+      "explanation": "`:.2f` inside an f-string formats a float with exactly two decimals. Without the `f` prefix the braces are printed literally, and `+` cannot join a string and a float.",
+      "concepts": [
+        "f-strings",
+        "output-formatting"
+      ],
+      "id": "m1_q16"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `print(\"a\", \"b\", \"c\", sep=\"-\")` output?",
+      "options": [
+        "a b c",
+        "a-b-c",
+        "abc",
+        "a,b,c"
+      ],
+      "correct_answer": 1,
+      "explanation": "`sep` sets the separator placed between the printed items.",
+      "concepts": [
+        "print",
+        "output-formatting"
+      ],
+      "id": "m1_q17"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `print(\"Hi\", end=\"!\")` followed by `print(\"there\")` display?",
+      "options": [
+        "Hi!\nthere",
+        "Hi!there",
+        "Hi there",
+        "Hi\nthere!"
+      ],
+      "correct_answer": 1,
+      "explanation": "`end=\"!\"` replaces the usual newline with `!`, so the next print continues on the same line.",
+      "concepts": [
+        "print"
+      ],
+      "id": "m1_q18"
+    },
+    {
+      "type": "true_false",
+      "question": "`bool(\"False\")` evaluates to `False`.",
+      "correct_answer": false,
+      "explanation": "Any non-empty string is truthy, even the text \"False\". Only an empty string `\"\"` is falsy.",
+      "concepts": [
+        "type-conversion"
+      ],
+      "id": "m1_q19"
+    },
+    {
+      "type": "mcq",
+      "question": "Given `word = \"Python\"`, what is `word[-1]`?",
+      "options": [
+        "P",
+        "n",
+        "o",
+        "IndexError"
+      ],
+      "correct_answer": 1,
+      "explanation": "Negative indexes count from the end, so `-1` is the last character, `n`.",
+      "concepts": [
+        "indexing",
+        "strings-basics"
+      ],
+      "id": "m1_q20"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `\"Programming\"[3:7]` return?",
+      "options": [
+        "gram",
+        "ogra",
+        "gramm",
+        "ramm"
+      ],
+      "correct_answer": 0,
+      "explanation": "Slicing includes the start index (3) and excludes the stop index (7): characters 3, 4, 5, 6 are `g`, `r`, `a`, `m`.",
+      "concepts": [
+        "indexing",
+        "strings-basics"
+      ],
+      "id": "m1_q21"
+    },
+    {
+      "type": "true_false",
+      "question": "`text.upper()` permanently changes the original string `text`.",
+      "correct_answer": false,
+      "explanation": "Strings are immutable. `upper()` returns a new string; you must store it (e.g. `text = text.upper()`) to keep it.",
+      "concepts": [
+        "string-methods",
+        "strings-basics"
+      ],
+      "id": "m1_q22"
+    },
+    {
+      "type": "mcq",
+      "question": "Which kind of error does Python report *before* running any of your code?",
+      "options": [
+        "ZeroDivisionError",
+        "Logic error",
+        "SyntaxError",
+        "NameError"
+      ],
+      "correct_answer": 2,
+      "explanation": "A SyntaxError means Python cannot parse your code, so nothing runs. The others happen while the program is executing (or, for logic errors, are never reported).",
+      "concepts": [
+        "errors",
+        "syntax-error"
+      ],
+      "id": "m1_q23"
+    },
+    {
+      "type": "mcq",
+      "question": "Your program runs without any error but prints the wrong average. What kind of bug is this?",
+      "options": [
+        "Syntax error",
+        "Runtime error",
+        "Logic error",
+        "Import error"
+      ],
+      "correct_answer": 2,
+      "explanation": "A logic error means the code is valid but does not do what you intended. Python cannot detect it; you find it by testing and printing values.",
+      "concepts": [
+        "errors",
+        "debugging"
+      ],
+      "id": "m1_q24"
+    },
+    {
+      "type": "mcq",
+      "question": "Which part of a traceback tells you WHAT went wrong?",
+      "options": [
+        "The first line",
+        "The last line",
+        "The line number only",
+        "The file name"
+      ],
+      "correct_answer": 1,
+      "explanation": "Read a traceback from the bottom. The last line names the error type and reason.",
+      "concepts": [
+        "errors",
+        "debugging"
+      ],
+      "id": "m1_q25"
+    }
+  ]
+}

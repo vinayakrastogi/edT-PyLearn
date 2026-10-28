@@ -1,0 +1,56 @@
+{
+  "id": "01-days-between",
+  "title": "Days Between Dates",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `days_between(start, end)` where both dates are text in `YYYY-MM-DD` form. Return the number of days from `start` to `end` as an integer (negative if `end` is earlier).\n\nExample: `days_between('2025-01-01', '2025-03-01')` returns `59`.",
+  "starter_code": "from datetime import datetime\n\ndef days_between(start, end):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "datetime-module",
+    "timedelta"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        "2025-01-01",
+        "2025-03-01"
+      ],
+      "expected": "59"
+    },
+    {
+      "input": [
+        "2024-02-28",
+        "2024-03-01"
+      ],
+      "expected": "2"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        "2025-05-05",
+        "2025-05-05"
+      ],
+      "expected": "0"
+    },
+    {
+      "input": [
+        "2025-12-25",
+        "2025-01-01"
+      ],
+      "expected": "-358"
+    },
+    {
+      "input": [
+        "2000-01-01",
+        "2025-01-01"
+      ],
+      "expected": "9132"
+    }
+  ],
+  "hints": [
+    "`datetime.strptime(text, '%Y-%m-%d')` turns text into a datetime.",
+    "Subtracting two datetimes gives a timedelta with `.days`."
+  ],
+  "solution_code": "from datetime import datetime\n\ndef days_between(start, end):\n    a = datetime.strptime(start, '%Y-%m-%d')\n    b = datetime.strptime(end, '%Y-%m-%d')\n    return (b - a).days\n"
+}

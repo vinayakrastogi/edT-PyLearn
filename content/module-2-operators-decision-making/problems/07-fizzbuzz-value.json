@@ -1,0 +1,50 @@
+{
+  "id": "07-fizzbuzz-value",
+  "title": "FizzBuzz Value",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `fizzbuzz(n)` that returns `'FizzBuzz'` if `n` is divisible by both 3 and 5, `'Fizz'` if by 3 only, `'Buzz'` if by 5 only, otherwise `n` itself.",
+  "starter_code": "def fizzbuzz(n):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "elif",
+    "if-else"
+  ],
+  "visible_tests": [
+    {
+      "input": 15,
+      "expected": "FizzBuzz"
+    },
+    {
+      "input": 9,
+      "expected": "Fizz"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": 10,
+      "expected": "Buzz"
+    },
+    {
+      "input": 7,
+      "expected": "7"
+    },
+    {
+      "input": 30,
+      "expected": "FizzBuzz"
+    },
+    {
+      "input": 1,
+      "expected": "1"
+    },
+    {
+      "input": 20,
+      "expected": "Buzz"
+    },
+    {
+      "input": 33,
+      "expected": "Fizz"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def fizzbuzz(n):\n    if n % 15 == 0:\n        return 'FizzBuzz'\n    elif n % 3 == 0:\n        return 'Fizz'\n    elif n % 5 == 0:\n        return 'Buzz'\n    else:\n        return n\n"
+}

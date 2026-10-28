@@ -1,0 +1,49 @@
+{
+  "id": "08-rupees-format",
+  "title": "Format Money",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Money is stored as whole paise. Write `rupees(paise)` returning text like `'Rs 1,234.56'`. Negative amounts look like `'-Rs 5.00'`.",
+  "starter_code": "def rupees(paise):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "project-banking"
+  ],
+  "visible_tests": [
+    {
+      "input": 123456,
+      "expected": "Rs 1,234.56"
+    },
+    {
+      "input": 5,
+      "expected": "Rs 0.05"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": 0,
+      "expected": "Rs 0.00"
+    },
+    {
+      "input": 100,
+      "expected": "Rs 1.00"
+    },
+    {
+      "input": -500,
+      "expected": "-Rs 5.00"
+    },
+    {
+      "input": 100000000,
+      "expected": "Rs 1,000,000.00"
+    },
+    {
+      "input": 99,
+      "expected": "Rs 0.99"
+    },
+    {
+      "input": -1,
+      "expected": "-Rs 0.01"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def rupees(paise):\n    sign = '-' if paise < 0 else ''\n    paise = abs(paise)\n    return f\"{sign}Rs {paise // 100:,}.{paise % 100:02d}\"\n"
+}

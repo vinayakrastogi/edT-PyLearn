@@ -1,0 +1,54 @@
+{
+  "id": "06-ticket-price",
+  "title": "Ticket Price",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `ticket_price(age)`: free (`0`) under 3, `100` for ages 3-11, `250` for 12-59, and `150` for 60 and over.",
+  "starter_code": "def ticket_price(age):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "elif",
+    "multi-way-decisions"
+  ],
+  "visible_tests": [
+    {
+      "input": 2,
+      "expected": "0"
+    },
+    {
+      "input": 30,
+      "expected": "250"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": 3,
+      "expected": "100"
+    },
+    {
+      "input": 11,
+      "expected": "100"
+    },
+    {
+      "input": 12,
+      "expected": "250"
+    },
+    {
+      "input": 59,
+      "expected": "250"
+    },
+    {
+      "input": 60,
+      "expected": "150"
+    },
+    {
+      "input": 85,
+      "expected": "150"
+    },
+    {
+      "input": 0,
+      "expected": "0"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def ticket_price(age):\n    if age < 3:\n        return 0\n    elif age < 12:\n        return 100\n    elif age < 60:\n        return 250\n    else:\n        return 150\n"
+}

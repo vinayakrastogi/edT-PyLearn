@@ -1,0 +1,78 @@
+{
+  "id": "03-normalise",
+  "title": "Normalise to 0-1",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `normalise(values)` that rescales a list so the smallest value becomes 0 and the largest becomes 1, using `(x - min) / (max - min)`. Return a list rounded to 2 decimals. If all values are equal, return a list of zeros.",
+  "starter_code": "import numpy as np\n\ndef normalise(values):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "numpy-operations",
+    "broadcasting"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        [
+          10,
+          20,
+          30
+        ]
+      ],
+      "expected": "[0.0, 0.5, 1.0]"
+    },
+    {
+      "input": [
+        [
+          5,
+          5,
+          5
+        ]
+      ],
+      "expected": "[0.0, 0.0, 0.0]"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        [
+          0,
+          50,
+          100
+        ]
+      ],
+      "expected": "[0.0, 0.5, 1.0]"
+    },
+    {
+      "input": [
+        [
+          3,
+          9
+        ]
+      ],
+      "expected": "[0.0, 1.0]"
+    },
+    {
+      "input": [
+        [
+          -1,
+          0,
+          1
+        ]
+      ],
+      "expected": "[0.0, 0.5, 1.0]"
+    },
+    {
+      "input": [
+        [
+          2,
+          4,
+          8,
+          16
+        ]
+      ],
+      "expected": "[0.0, 0.14, 0.43, 1.0]"
+    }
+  ],
+  "hints": [],
+  "solution_code": "import numpy as np\n\ndef normalise(values):\n    arr = np.array(values, dtype=float)\n    span = arr.max() - arr.min()\n    if span == 0:\n        return [0.0] * len(arr)\n    return ((arr - arr.min()) / span).round(2).tolist()\n"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "07-employee-hierarchy",
+  "title": "Employee and Manager",
+  "type": "driver",
+  "difficulty": "hard",
+  "description": "Create `Employee(name, salary)` with `annual_pay()` returning the salary. Create `Manager(name, salary, bonus)` inheriting from `Employee` (use `super()`), whose `annual_pay()` returns salary plus bonus.",
+  "starter_code": "class Employee:\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "inheritance",
+    "super-function",
+    "method-overriding"
+  ],
+  "visible_tests": [
+    {
+      "driver": "print(Employee('A', 50000).annual_pay())",
+      "expected": "50000"
+    },
+    {
+      "driver": "print(Manager('M', 90000, 10000).annual_pay())",
+      "expected": "100000"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "m = Manager('M', 1, 2)\nprint(m.name, m.salary, m.bonus)",
+      "expected": "M 1 2"
+    },
+    {
+      "driver": "print(sum(e.annual_pay() for e in [Employee('a', 10), Manager('b', 20, 5)]))",
+      "expected": "35"
+    },
+    {
+      "driver": "print(isinstance(Manager('m', 0, 0), Employee))",
+      "expected": "True"
+    }
+  ],
+  "hints": [],
+  "solution_code": "class Employee:\n    def __init__(self, name, salary):\n        self.name = name\n        self.salary = salary\n\n    def annual_pay(self):\n        return self.salary\n\nclass Manager(Employee):\n    def __init__(self, name, salary, bonus):\n        super().__init__(name, salary)\n        self.bonus = bonus\n\n    def annual_pay(self):\n        return self.salary + self.bonus\n"
+}

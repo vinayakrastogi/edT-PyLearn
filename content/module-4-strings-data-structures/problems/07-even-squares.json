@@ -1,0 +1,63 @@
+{
+  "id": "07-even-squares",
+  "title": "Squares of Evens",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `even_squares(numbers)` that returns a list of the squares of the even numbers, in order. Use a list comprehension.\n\nExample: `even_squares([1, 2, 3, 4])` returns `[4, 16]`.",
+  "starter_code": "def even_squares(numbers):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "list-comprehensions"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        [
+          1,
+          2,
+          3,
+          4
+        ]
+      ],
+      "expected": "[4, 16]"
+    },
+    {
+      "input": [
+        [
+          5,
+          7
+        ]
+      ],
+      "expected": "[]"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        []
+      ],
+      "expected": "[]"
+    },
+    {
+      "input": [
+        [
+          2,
+          4,
+          6
+        ]
+      ],
+      "expected": "[4, 16, 36]"
+    },
+    {
+      "input": [
+        [
+          0,
+          -2,
+          3
+        ]
+      ],
+      "expected": "[0, 4]"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def even_squares(numbers):\n    return [n * n for n in numbers if n % 2 == 0]\n"
+}

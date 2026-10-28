@@ -1,0 +1,528 @@
+{
+  "id": "module-8-libraries-automation-quiz",
+  "title": "Module 8 Mastery Quiz",
+  "questions": [
+    {
+      "type": "mcq",
+      "question": "Which function returns the names inside a folder?",
+      "options": [
+        "os.walk",
+        "os.listdir",
+        "os.getcwd",
+        "os.path.join"
+      ],
+      "correct_answer": 1,
+      "explanation": "`os.listdir(path)` returns the names of files and folders directly inside `path`.",
+      "concepts": [
+        "os-module"
+      ],
+      "id": "m8_q1"
+    },
+    {
+      "type": "mcq",
+      "question": "Why use `os.path.join(\"a\", \"b.txt\")` instead of `\"a\" + \"/\" + \"b.txt\"`?",
+      "options": [
+        "It is shorter",
+        "It uses the right separator for every operating system",
+        "It checks the file exists",
+        "It creates the folder"
+      ],
+      "correct_answer": 1,
+      "explanation": "Windows uses backslashes and macOS/Linux use slashes; `join` handles both.",
+      "concepts": [
+        "os-module"
+      ],
+      "id": "m8_q2"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `os.makedirs(\"a/b/c\", exist_ok=True)` do?",
+      "options": [
+        "Creates only folder a",
+        "Creates the whole chain and does not fail if it exists",
+        "Deletes the folders",
+        "Lists the folders"
+      ],
+      "correct_answer": 1,
+      "explanation": "`makedirs` creates intermediate folders as well; `exist_ok=True` avoids an error if it already exists.",
+      "concepts": [
+        "os-module"
+      ],
+      "id": "m8_q3"
+    },
+    {
+      "type": "mcq",
+      "question": "Which function deletes a non-empty folder tree?",
+      "options": [
+        "os.rmdir",
+        "os.remove",
+        "shutil.rmtree",
+        "os.rename"
+      ],
+      "correct_answer": 2,
+      "explanation": "`os.rmdir` only removes empty folders; `shutil.rmtree` removes a whole tree (permanently!).",
+      "concepts": [
+        "shutil-module"
+      ],
+      "id": "m8_q4"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `os.walk(folder)` provide?",
+      "options": [
+        "Only the files in one folder",
+        "For every folder in the tree: its path, sub-folders and files",
+        "A list of file sizes",
+        "The current directory"
+      ],
+      "correct_answer": 1,
+      "explanation": "It walks recursively and yields `(folder, subfolders, files)` tuples.",
+      "concepts": [
+        "os-module"
+      ],
+      "id": "m8_q5"
+    },
+    {
+      "type": "mcq",
+      "question": "What is the best way to read an API key in a script?",
+      "options": [
+        "Hard-code it in the source",
+        "Read it from an environment variable with os.environ.get",
+        "Ask the user each time",
+        "Put it in a comment"
+      ],
+      "correct_answer": 1,
+      "explanation": "Environment variables keep secrets out of your source code.",
+      "concepts": [
+        "environment"
+      ],
+      "id": "m8_q6"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `datetime.strptime(\"14/03/2025\", \"%d/%m/%Y\")` do?",
+      "options": [
+        "Formats a date as text",
+        "Parses text into a datetime",
+        "Adds days",
+        "Prints today"
+      ],
+      "correct_answer": 1,
+      "explanation": "`strptime` (parse time) reads text according to a format; `strftime` goes the other way.",
+      "concepts": [
+        "datetime-module",
+        "date-formatting"
+      ],
+      "id": "m8_q7"
+    },
+    {
+      "type": "mcq",
+      "question": "Which format code gives the full month name (e.g. \"March\")?",
+      "options": [
+        "%m",
+        "%b",
+        "%B",
+        "%M"
+      ],
+      "correct_answer": 2,
+      "explanation": "`%B` is the full month name, `%b` the short one, `%m` the number and `%M` the minute.",
+      "concepts": [
+        "date-formatting"
+      ],
+      "id": "m8_q8"
+    },
+    {
+      "type": "mcq",
+      "question": "What is `date(2025, 3, 20) - date(2025, 3, 10)`?",
+      "options": [
+        "A date",
+        "A timedelta of 10 days",
+        "The integer 10",
+        "An error"
+      ],
+      "correct_answer": 1,
+      "explanation": "Subtracting dates produces a `timedelta`; use `.days` to get the number.",
+      "concepts": [
+        "timedelta",
+        "datetime-module"
+      ],
+      "id": "m8_q9"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `date(2025, 1, 1) + timedelta(days=45)` give?",
+      "options": [
+        "2025-02-15",
+        "2025-02-14",
+        "2025-01-45",
+        "An error"
+      ],
+      "correct_answer": 0,
+      "explanation": "January has 31 days, so 45 days after 1 January is 15 February.",
+      "concepts": [
+        "timedelta"
+      ],
+      "id": "m8_q10"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `weekday()` return for a Monday?",
+      "options": [
+        "1",
+        "0",
+        "7",
+        "Monday"
+      ],
+      "correct_answer": 1,
+      "explanation": "Monday is 0 and Sunday is 6.",
+      "concepts": [
+        "datetime-module"
+      ],
+      "id": "m8_q11"
+    },
+    {
+      "type": "mcq",
+      "question": "Why does `datetime(2025, 1, 1) - date(2025, 1, 1)` fail?",
+      "options": [
+        "Dates cannot be subtracted",
+        "It mixes a datetime with a date",
+        "Year 2025 is invalid",
+        "It works fine"
+      ],
+      "correct_answer": 1,
+      "explanation": "A `datetime` and a `date` are different types; convert one (e.g. `.date()`) first.",
+      "concepts": [
+        "datetime-module"
+      ],
+      "id": "m8_q12"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `random.randint(1, 6)` include?",
+      "options": [
+        "1 to 5",
+        "1 to 6 inclusive",
+        "2 to 6",
+        "0 to 6"
+      ],
+      "correct_answer": 1,
+      "explanation": "`randint(a, b)` includes both endpoints.",
+      "concepts": [
+        "random-module"
+      ],
+      "id": "m8_q13"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `random.seed(7)` achieve?",
+      "options": [
+        "Speeds up random",
+        "Makes the random sequence repeatable",
+        "Makes numbers truly random",
+        "Selects a distribution"
+      ],
+      "correct_answer": 1,
+      "explanation": "The same seed produces the same sequence, which is useful for tests.",
+      "concepts": [
+        "random-module"
+      ],
+      "id": "m8_q14"
+    },
+    {
+      "type": "mcq",
+      "question": "What is the difference between `random.choices` and `random.sample`?",
+      "options": [
+        "None",
+        "choices allows repeats; sample gives unique items",
+        "sample allows repeats; choices does not",
+        "choices only works on strings"
+      ],
+      "correct_answer": 1,
+      "explanation": "`sample(seq, k)` picks unique items; `choices(seq, k=n)` picks with replacement.",
+      "concepts": [
+        "random-module"
+      ],
+      "id": "m8_q15"
+    },
+    {
+      "type": "mcq",
+      "question": "For passwords and tokens you should use...",
+      "options": [
+        "random",
+        "secrets",
+        "math",
+        "time"
+      ],
+      "correct_answer": 1,
+      "explanation": "`secrets` draws from the operating system's secure random source; `random` is predictable.",
+      "concepts": [
+        "secrets-module"
+      ],
+      "id": "m8_q16"
+    },
+    {
+      "type": "mcq",
+      "question": "What is `math.gcd(48, 18)`?",
+      "options": [
+        "3",
+        "6",
+        "9",
+        "12"
+      ],
+      "correct_answer": 1,
+      "explanation": "The greatest common divisor of 48 and 18 is 6.",
+      "concepts": [
+        "math-module"
+      ],
+      "id": "m8_q17"
+    },
+    {
+      "type": "mcq",
+      "question": "Trigonometric functions in `math` expect angles in...",
+      "options": [
+        "degrees",
+        "radians",
+        "gradians",
+        "percent"
+      ],
+      "correct_answer": 1,
+      "explanation": "Convert degrees with `math.radians(deg)`.",
+      "concepts": [
+        "math-module"
+      ],
+      "id": "m8_q18"
+    },
+    {
+      "type": "mcq",
+      "question": "For `[30, 32, 35, 36, 38, 400]`, which statistic best describes the typical value?",
+      "options": [
+        "mean",
+        "median",
+        "maximum",
+        "range"
+      ],
+      "correct_answer": 1,
+      "explanation": "The extreme value 400 drags the mean up; the median is robust against outliers.",
+      "concepts": [
+        "statistics-module"
+      ],
+      "id": "m8_q19"
+    },
+    {
+      "type": "mcq",
+      "question": "What does JSON's `null` become in Python?",
+      "options": [
+        "0",
+        "\"\"",
+        "None",
+        "False"
+      ],
+      "correct_answer": 2,
+      "explanation": "`null`, `true` and `false` become `None`, `True` and `False`.",
+      "concepts": [
+        "json-basics"
+      ],
+      "id": "m8_q20"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `json.loads(text)` do?",
+      "options": [
+        "Reads a file",
+        "Parses a JSON string into Python objects",
+        "Writes JSON to a file",
+        "Sends a request"
+      ],
+      "correct_answer": 1,
+      "explanation": "`loads` = load from a **s**tring; `load` reads from a file.",
+      "concepts": [
+        "json-basics"
+      ],
+      "id": "m8_q21"
+    },
+    {
+      "type": "mcq",
+      "question": "Which HTTP status code means \"not found\"?",
+      "options": [
+        "200",
+        "301",
+        "404",
+        "500"
+      ],
+      "correct_answer": 2,
+      "explanation": "404 means the resource does not exist; 200 is success; 500 is a server error.",
+      "concepts": [
+        "requests-library",
+        "api-errors"
+      ],
+      "id": "m8_q22"
+    },
+    {
+      "type": "mcq",
+      "question": "Why should every `requests.get` call include `timeout=`?",
+      "options": [
+        "It is required by Python",
+        "Without it a stuck server can freeze your program forever",
+        "It makes requests faster",
+        "It enables JSON"
+      ],
+      "correct_answer": 1,
+      "explanation": "By default `requests` waits indefinitely.",
+      "concepts": [
+        "requests-library",
+        "api-errors"
+      ],
+      "id": "m8_q23"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `response.raise_for_status()` do?",
+      "options": [
+        "Prints the status",
+        "Raises an exception for 4xx/5xx responses",
+        "Retries the request",
+        "Parses JSON"
+      ],
+      "correct_answer": 1,
+      "explanation": "It turns error status codes into `HTTPError` exceptions you can catch.",
+      "concepts": [
+        "api-errors",
+        "requests-library"
+      ],
+      "id": "m8_q24"
+    },
+    {
+      "type": "mcq",
+      "question": "In tkinter, what does `root.mainloop()` do?",
+      "options": [
+        "Closes the window",
+        "Runs the event loop that keeps the window open",
+        "Creates the window",
+        "Pauses for one second"
+      ],
+      "correct_answer": 1,
+      "explanation": "It waits for events (clicks, key presses) until the window is closed.",
+      "concepts": [
+        "tkinter-intro",
+        "gui-events"
+      ],
+      "id": "m8_q25"
+    },
+    {
+      "type": "mcq",
+      "question": "What is wrong with `tk.Button(root, text=\"Go\", command=go())`?",
+      "options": [
+        "Nothing",
+        "It calls `go` immediately instead of on click; use `command=go`",
+        "Buttons need lambda",
+        "It should be `onclick`"
+      ],
+      "correct_answer": 1,
+      "explanation": "Pass the function itself, without brackets, so tkinter can call it later.",
+      "concepts": [
+        "gui-events",
+        "tkinter-intro"
+      ],
+      "id": "m8_q26"
+    },
+    {
+      "type": "mcq",
+      "question": "How do you repeat an action every second in a tkinter app?",
+      "options": [
+        "while True with time.sleep(1)",
+        "root.after(1000, function)",
+        "for loop",
+        "threading is the only way"
+      ],
+      "correct_answer": 1,
+      "explanation": "`after` schedules a call without blocking the event loop; `sleep` would freeze the window.",
+      "concepts": [
+        "gui-events",
+        "tkinter-intro"
+      ],
+      "id": "m8_q27"
+    },
+    {
+      "type": "mcq",
+      "question": "What is `sys.argv[0]`?",
+      "options": [
+        "The first user argument",
+        "The script name",
+        "The Python version",
+        "An empty string"
+      ],
+      "correct_answer": 1,
+      "explanation": "User arguments begin at `sys.argv[1]`.",
+      "concepts": [
+        "command-line-args"
+      ],
+      "id": "m8_q28"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `action=\"store_true\"` create in argparse?",
+      "options": [
+        "A required argument",
+        "A flag that is False unless given",
+        "A file",
+        "A number"
+      ],
+      "correct_answer": 1,
+      "explanation": "It is a boolean switch such as `--shout` or `--dry-run`.",
+      "concepts": [
+        "argparse-module"
+      ],
+      "id": "m8_q29"
+    },
+    {
+      "type": "mcq",
+      "question": "What exit code signals success?",
+      "options": [
+        "1",
+        "0",
+        "-1",
+        "255"
+      ],
+      "correct_answer": 1,
+      "explanation": "Zero means success; non-zero values signal an error.",
+      "concepts": [
+        "command-line-args"
+      ],
+      "id": "m8_q30"
+    },
+    {
+      "type": "mcq",
+      "question": "Why do automation scripts offer a \"dry run\"?",
+      "options": [
+        "To run faster",
+        "To preview what would change before changing anything",
+        "To delete logs",
+        "To test the network"
+      ],
+      "correct_answer": 1,
+      "explanation": "Printing the plan first lets you catch a wrong rule before it damages files.",
+      "concepts": [
+        "dry-run",
+        "automation-scripts"
+      ],
+      "id": "m8_q31"
+    },
+    {
+      "type": "mcq",
+      "question": "Why keep categories like `{\"Images\": {\".jpg\", \".png\"}}` in a dictionary in a file organiser?",
+      "options": [
+        "Dictionaries are faster than files",
+        "The rules live in data, so you can extend them without changing logic",
+        "It is required by os",
+        "It hides the code"
+      ],
+      "correct_answer": 1,
+      "explanation": "Data-driven rules are easy to change and test.",
+      "concepts": [
+        "file-organizer",
+        "automation-scripts"
+      ],
+      "id": "m8_q32"
+    }
+  ]
+}

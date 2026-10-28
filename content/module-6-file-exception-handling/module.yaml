@@ -1,0 +1,5 @@
+id: module-6-file-exception-handling
+title: "Module 6 - File Handling and Exception Handling"
+description: "Learn to read/write files and handle errors gracefully in Python."
+order: 6
+icon: "folder-open"

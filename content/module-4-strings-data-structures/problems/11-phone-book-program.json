@@ -1,0 +1,37 @@
+{
+  "id": "11-phone-book-program",
+  "title": "Phone Book",
+  "type": "program",
+  "difficulty": "hard",
+  "description": "Process commands, one per line, until `quit`:\n\n- `add <name> <number>`: store the contact (no output)\n- `find <name>`: print the number, or `<name> not found`\n- `delete <name>`: remove the contact (no output)\n\nUse a dictionary.",
+  "starter_code": "book = {}\n# Read commands until 'quit'\n",
+  "concepts": [
+    "dictionaries",
+    "data-programs"
+  ],
+  "visible_tests": [
+    {
+      "stdin": "add Asha 111\nfind Asha\nfind Zoya\nquit\n",
+      "expected": "111\nZoya not found"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "stdin": "add A 1\nadd A 2\nfind A\nquit\n",
+      "expected": "2"
+    },
+    {
+      "stdin": "find X\nquit\n",
+      "expected": "X not found"
+    },
+    {
+      "stdin": "add B 5\ndelete B\nfind B\nquit\n",
+      "expected": "B not found"
+    }
+  ],
+  "hints": [
+    "`book.get(name, default)` avoids KeyError.",
+    "`dict.pop(key, None)` deletes safely."
+  ],
+  "solution_code": "book = {}\nwhile True:\n    parts = input().split()\n    if parts[0] == 'quit':\n        break\n    if parts[0] == 'add':\n        book[parts[1]] = parts[2]\n    elif parts[0] == 'find':\n        print(book.get(parts[1], parts[1] + ' not found'))\n    elif parts[0] == 'delete':\n        book.pop(parts[1], None)\n"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "10-cinema-entry",
+  "title": "Cinema Entry",
+  "type": "program",
+  "difficulty": "medium",
+  "description": "Read the age (line 1) and, only if the age is 12 or more, read `yes` or `no` for \"has a ticket?\" (line 2).\n\n- Age under 12: print `Needs a guardian` (there is no second input line).\n- Age 12+ with a ticket: print `Enter`.\n- Age 12+ without a ticket: print `Buy a ticket`.",
+  "starter_code": "age = int(input())\n# Ask about the ticket only when age >= 12\n",
+  "concepts": [
+    "nested-conditions",
+    "if-else"
+  ],
+  "visible_tests": [
+    {
+      "stdin": "15\nyes\n",
+      "expected": "Enter"
+    },
+    {
+      "stdin": "8\n",
+      "expected": "Needs a guardian"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "stdin": "12\nno\n",
+      "expected": "Buy a ticket"
+    },
+    {
+      "stdin": "11\n",
+      "expected": "Needs a guardian"
+    },
+    {
+      "stdin": "40\nyes\n",
+      "expected": "Enter"
+    },
+    {
+      "stdin": "30\nno\n",
+      "expected": "Buy a ticket"
+    }
+  ],
+  "hints": [],
+  "solution_code": "age = int(input())\nif age >= 12:\n    ticket = input()\n    if ticket == 'yes':\n        print('Enter')\n    else:\n        print('Buy a ticket')\nelse:\n    print('Needs a guardian')\n"
+}

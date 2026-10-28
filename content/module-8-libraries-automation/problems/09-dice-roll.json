@@ -1,0 +1,33 @@
+{
+  "id": "09-dice-roll",
+  "title": "Roll a Die",
+  "type": "driver",
+  "difficulty": "easy",
+  "description": "Write `roll()` that returns a random whole number from 1 to 6 (both included), using the `random` module.",
+  "starter_code": "import random\n\ndef roll():\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "random-module"
+  ],
+  "visible_tests": [
+    {
+      "driver": "rolls = [roll() for _ in range(200)]\nprint(all(1 <= r <= 6 for r in rolls))",
+      "expected": "True"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "rolls = [roll() for _ in range(500)]\nprint(set(rolls) == {1, 2, 3, 4, 5, 6})",
+      "expected": "True"
+    },
+    {
+      "driver": "print(type(roll()).__name__)",
+      "expected": "int"
+    },
+    {
+      "driver": "print(min(roll() for _ in range(300)) >= 1)",
+      "expected": "True"
+    }
+  ],
+  "hints": [],
+  "solution_code": "import random\n\ndef roll():\n    return random.randint(1, 6)\n"
+}

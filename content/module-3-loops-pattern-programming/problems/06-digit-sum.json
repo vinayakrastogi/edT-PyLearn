@@ -1,0 +1,42 @@
+{
+  "id": "06-digit-sum",
+  "title": "Sum of Digits",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `digit_sum(n)` that adds up the digits of a non-negative whole number.\n\nExample: `digit_sum(4729)` returns `22`.",
+  "starter_code": "def digit_sum(n):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "while-loop",
+    "loop-programs"
+  ],
+  "visible_tests": [
+    {
+      "input": 4729,
+      "expected": "22"
+    },
+    {
+      "input": 100,
+      "expected": "1"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": 0,
+      "expected": "0"
+    },
+    {
+      "input": 9,
+      "expected": "9"
+    },
+    {
+      "input": 12345,
+      "expected": "15"
+    },
+    {
+      "input": 999999,
+      "expected": "54"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def digit_sum(n):\n    total = 0\n    while n > 0:\n        total += n % 10\n        n //= 10\n    return total\n"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "11-sum-valid-numbers",
+  "title": "Sum the Valid Numbers",
+  "type": "program",
+  "difficulty": "medium",
+  "description": "Read one line of space-separated tokens. Add up every token that is a whole number and ignore the rest. Print the total.\n\nExample: `4 apples 6 x 10` prints `20`.",
+  "starter_code": "line = input()\n# Add the valid integers\n",
+  "concepts": [
+    "try-except",
+    "exception-types"
+  ],
+  "visible_tests": [
+    {
+      "stdin": "4 apples 6 x 10\n",
+      "expected": "20"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "stdin": "\n",
+      "expected": "0"
+    },
+    {
+      "stdin": "1 2 3\n",
+      "expected": "6"
+    },
+    {
+      "stdin": "abc def\n",
+      "expected": "0"
+    },
+    {
+      "stdin": "-3 3 2.5 7\n",
+      "expected": "7"
+    }
+  ],
+  "hints": [],
+  "solution_code": "line = input()\ntotal = 0\nfor token in line.split():\n    try:\n        total += int(token)\n    except ValueError:\n        pass\nprint(total)\n"
+}

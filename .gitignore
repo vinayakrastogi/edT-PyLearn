@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+venv/
+.venv/
+.venv-runner/
+*.egg
+.pytest_cache/
+.mypy_cache/
+
+# Environment
+.env
+.env.*
+**/.env.*
+!**/.env.example
+!**/.env.*.example
+*.env.local
+**/.streamlit/secrets.toml
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Database
+*.db
+*.sqlite3
+*.sqlite
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Alembic (keep versions dir, ignore compiled)
+backend/alembic/versions/__pycache__/
+
+# Archived coursework and temporary build helpers stay local.
+/Review-2/
+/frontend/.sim-build.tmp.mjs
+*.tsbuildinfo

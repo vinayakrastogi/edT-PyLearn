@@ -1,0 +1,68 @@
+{
+  "id": "05-remove-duplicates",
+  "title": "Remove Duplicates",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `unique(items)` that returns a list of the unique items **in their original order** (first occurrence wins).\n\nExample: `unique([3, 1, 3, 2, 1])` returns `[3, 1, 2]`.",
+  "starter_code": "def unique(items):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "lists",
+    "sets"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        [
+          3,
+          1,
+          3,
+          2,
+          1
+        ]
+      ],
+      "expected": "[3, 1, 2]"
+    },
+    {
+      "input": [
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "expected": "[1]"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        []
+      ],
+      "expected": "[]"
+    },
+    {
+      "input": [
+        [
+          "a",
+          "b",
+          "a"
+        ]
+      ],
+      "expected": "['a', 'b']"
+    },
+    {
+      "input": [
+        [
+          5,
+          4,
+          3
+        ]
+      ],
+      "expected": "[5, 4, 3]"
+    }
+  ],
+  "hints": [
+    "A set remembers what you have already seen; a list keeps the order."
+  ],
+  "solution_code": "def unique(items):\n    seen = set()\n    result = []\n    for x in items:\n        if x not in seen:\n            seen.add(x)\n            result.append(x)\n    return result\n"
+}

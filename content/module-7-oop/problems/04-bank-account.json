@@ -1,0 +1,43 @@
+{
+  "id": "04-bank-account",
+  "title": "Bank Account",
+  "type": "driver",
+  "difficulty": "medium",
+  "description": "Create `BankAccount(balance=0)` with `deposit(amount)`, `withdraw(amount)` and a `balance` attribute. `withdraw` must `raise ValueError('Insufficient funds')` if the amount is more than the balance. Deposits and withdrawals of zero or less must raise `ValueError('Invalid amount')`.",
+  "starter_code": "class BankAccount:\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "encapsulation",
+    "raising-exceptions",
+    "custom-exceptions"
+  ],
+  "visible_tests": [
+    {
+      "driver": "a = BankAccount(100)\na.deposit(50)\na.withdraw(30)\nprint(a.balance)",
+      "expected": "120"
+    },
+    {
+      "driver": "a = BankAccount(10)\ntry:\n    a.withdraw(20)\nexcept ValueError as e:\n    print(e)",
+      "expected": "Insufficient funds"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "print(BankAccount().balance)",
+      "expected": "0"
+    },
+    {
+      "driver": "a = BankAccount(5)\ntry:\n    a.deposit(-1)\nexcept ValueError as e:\n    print(e)",
+      "expected": "Invalid amount"
+    },
+    {
+      "driver": "a = BankAccount(100)\na.withdraw(100)\nprint(a.balance)",
+      "expected": "0"
+    },
+    {
+      "driver": "a = BankAccount(1)\ntry:\n    a.withdraw(0)\nexcept ValueError as e:\n    print(e)",
+      "expected": "Invalid amount"
+    }
+  ],
+  "hints": [],
+  "solution_code": "class BankAccount:\n    def __init__(self, balance=0):\n        self.balance = balance\n\n    def deposit(self, amount):\n        if amount <= 0:\n            raise ValueError('Invalid amount')\n        self.balance += amount\n\n    def withdraw(self, amount):\n        if amount <= 0:\n            raise ValueError('Invalid amount')\n        if amount > self.balance:\n            raise ValueError('Insufficient funds')\n        self.balance -= amount\n"
+}

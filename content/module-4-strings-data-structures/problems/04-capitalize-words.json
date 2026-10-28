@@ -1,0 +1,42 @@
+{
+  "id": "04-capitalize-words",
+  "title": "Capitalise Each Word",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `title_case(text)` that trims extra spaces, and makes each word start with a capital and continue in lower case. Words must be joined by single spaces.\n\nExample: `title_case('  aSHA   kumar ')` returns `Asha Kumar`.",
+  "starter_code": "def title_case(text):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "string-methods-toolkit",
+    "split-join"
+  ],
+  "visible_tests": [
+    {
+      "input": "  aSHA   kumar ",
+      "expected": "Asha Kumar"
+    },
+    {
+      "input": "PIP",
+      "expected": "Pip"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": "hello world",
+      "expected": "Hello World"
+    },
+    {
+      "input": "",
+      "expected": ""
+    },
+    {
+      "input": "one",
+      "expected": "One"
+    },
+    {
+      "input": "mIxEd CaSe wOrDs",
+      "expected": "Mixed Case Words"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def title_case(text):\n    return ' '.join(w.capitalize() for w in text.split())\n"
+}

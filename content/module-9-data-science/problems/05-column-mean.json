@@ -1,0 +1,76 @@
+{
+  "id": "05-column-mean",
+  "title": "Column Mean",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `column_mean(data, column)` where `data` is a list of dictionaries (rows). Build a pandas DataFrame and return the mean of `column`, rounded to 2 decimals.\n\nExample: `column_mean([{'a': 1}, {'a': 4}], 'a')` returns `2.5`.",
+  "starter_code": "import pandas as pd\n\ndef column_mean(data, column):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "dataframe",
+    "aggregation"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        [
+          {
+            "a": 1
+          },
+          {
+            "a": 4
+          }
+        ],
+        "a"
+      ],
+      "expected": "2.5"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        [
+          {
+            "x": 10,
+            "y": 1
+          },
+          {
+            "x": 20,
+            "y": 2
+          }
+        ],
+        "y"
+      ],
+      "expected": "1.5"
+    },
+    {
+      "input": [
+        [
+          {
+            "s": 90
+          },
+          {
+            "s": 85
+          },
+          {
+            "s": 70
+          }
+        ],
+        "s"
+      ],
+      "expected": "81.67"
+    },
+    {
+      "input": [
+        [
+          {
+            "v": 2.5
+          }
+        ],
+        "v"
+      ],
+      "expected": "2.5"
+    }
+  ],
+  "hints": [],
+  "solution_code": "import pandas as pd\n\ndef column_mean(data, column):\n    df = pd.DataFrame(data)\n    return round(float(df[column].mean()), 2)\n"
+}

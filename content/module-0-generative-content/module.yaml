@@ -1,0 +1,6 @@
+id: module-0-generative-content
+title: "Module 0 - Generative Content"
+description: "Upload a PDF study material and let AI generate a complete module, quiz, and coding practices for you!"
+order: 0
+icon: "sparkles"
+is_generative: true

@@ -1,0 +1,64 @@
+{
+  "id": "05-over-budget",
+  "title": "Over Budget",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `over_budget(spent, budgets)` where both arguments are dictionaries `{category: amount}`. Return a sorted list of the categories whose spending is **greater than** their budget. Categories without a budget are ignored.",
+  "starter_code": "def over_budget(spent, budgets):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "project-expenses"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        {
+          "Food": 730,
+          "Fun": 1200
+        },
+        {
+          "Food": 600,
+          "Fun": 1000,
+          "Travel": 200
+        }
+      ],
+      "expected": "['Food', 'Fun']"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        {},
+        {
+          "Food": 100
+        }
+      ],
+      "expected": "[]"
+    },
+    {
+      "input": [
+        {
+          "Food": 100
+        },
+        {
+          "Food": 100
+        }
+      ],
+      "expected": "[]"
+    },
+    {
+      "input": [
+        {
+          "A": 5,
+          "B": 9
+        },
+        {
+          "A": 4,
+          "B": 10
+        }
+      ],
+      "expected": "['A']"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def over_budget(spent, budgets):\n    return sorted(c for c, limit in budgets.items() if spent.get(c, 0) > limit)\n"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "09-apply-twice",
+  "title": "Apply Twice",
+  "type": "driver",
+  "difficulty": "medium",
+  "description": "Write a function `apply_twice(func, value)` that applies `func` to `value` two times and returns the result.\n\nExample: `apply_twice(lambda x: x + 3, 10)` returns `16`.",
+  "starter_code": "def apply_twice(func, value):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "higher-order-functions",
+    "lambda"
+  ],
+  "visible_tests": [
+    {
+      "driver": "print(apply_twice(lambda x: x + 3, 10))",
+      "expected": "16"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "print(apply_twice(lambda s: s + '!', 'hi'))",
+      "expected": "hi!!"
+    },
+    {
+      "driver": "print(apply_twice(lambda x: x * 2, 5))",
+      "expected": "20"
+    },
+    {
+      "driver": "print(apply_twice(str.upper, 'abc'))",
+      "expected": "ABC"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def apply_twice(func, value):\n    return func(func(value))\n"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "10-make-multiplier",
+  "title": "Function Factory",
+  "type": "driver",
+  "difficulty": "hard",
+  "description": "Write `make_multiplier(n)` that **returns a function** which multiplies its argument by `n`.\n\nExample: `make_multiplier(3)(5)` returns `15`.",
+  "starter_code": "def make_multiplier(n):\n    # Return a function here\n    pass\n",
+  "concepts": [
+    "higher-order-functions",
+    "legb-rule"
+  ],
+  "visible_tests": [
+    {
+      "driver": "print(make_multiplier(3)(5))",
+      "expected": "15"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "double = make_multiplier(2)\nprint(double(21))",
+      "expected": "42"
+    },
+    {
+      "driver": "t = make_multiplier(3)\nd = make_multiplier(2)\nprint(t(4), d(4))",
+      "expected": "12 8"
+    },
+    {
+      "driver": "print(make_multiplier(0)(99))",
+      "expected": "0"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def make_multiplier(n):\n    def multiply(x):\n        return x * n\n    return multiply\n"
+}

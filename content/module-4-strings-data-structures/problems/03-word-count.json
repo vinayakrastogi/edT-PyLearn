@@ -1,0 +1,42 @@
+{
+  "id": "03-word-count",
+  "title": "Count the Words",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `word_count(sentence)` that returns how many words are in the sentence. Words are separated by one or more spaces.",
+  "starter_code": "def word_count(sentence):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "split-join",
+    "string-methods-toolkit"
+  ],
+  "visible_tests": [
+    {
+      "input": "the quick brown fox",
+      "expected": "4"
+    },
+    {
+      "input": "hello",
+      "expected": "1"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": "",
+      "expected": "0"
+    },
+    {
+      "input": "  spaced   out  words ",
+      "expected": "3"
+    },
+    {
+      "input": "one two",
+      "expected": "2"
+    },
+    {
+      "input": "a b c d e f",
+      "expected": "6"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def word_count(sentence):\n    return len(sentence.split())\n"
+}

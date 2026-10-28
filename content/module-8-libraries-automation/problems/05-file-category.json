@@ -1,0 +1,50 @@
+{
+  "id": "05-file-category",
+  "title": "File Category",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `category(filename)` returning `'Images'` for `.jpg .jpeg .png .gif`, `'Documents'` for `.pdf .txt .docx`, `'Code'` for `.py .js .html`, otherwise `'Other'`. Ignore upper/lower case of the extension.",
+  "starter_code": "import os\n\ndef category(filename):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "file-organizer",
+    "os-module"
+  ],
+  "visible_tests": [
+    {
+      "input": "holiday.JPG",
+      "expected": "Images"
+    },
+    {
+      "input": "notes.txt",
+      "expected": "Documents"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": "script.py",
+      "expected": "Code"
+    },
+    {
+      "input": "song.mp3",
+      "expected": "Other"
+    },
+    {
+      "input": "README",
+      "expected": "Other"
+    },
+    {
+      "input": "archive.tar.gz",
+      "expected": "Other"
+    },
+    {
+      "input": "page.HTML",
+      "expected": "Code"
+    },
+    {
+      "input": "photo.final.png",
+      "expected": "Images"
+    }
+  ],
+  "hints": [],
+  "solution_code": "import os\n\ndef category(filename):\n    ext = os.path.splitext(filename)[1].lower()\n    groups = {\n        'Images': {'.jpg', '.jpeg', '.png', '.gif'},\n        'Documents': {'.pdf', '.txt', '.docx'},\n        'Code': {'.py', '.js', '.html'},\n    }\n    for name, extensions in groups.items():\n        if ext in extensions:\n            return name\n    return 'Other'\n"
+}

@@ -1,0 +1,50 @@
+{
+  "id": "03-simple-interest",
+  "title": "Simple Interest",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `simple_interest(principal, rate, years)` returning `principal * rate * years / 100`.\n\nExample: `simple_interest(10000, 5, 3)` returns `1500.0`.",
+  "starter_code": "def simple_interest(principal, rate, years):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "operators",
+    "arithmetic"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        10000,
+        5,
+        3
+      ],
+      "expected": "1500.0"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        2000,
+        10,
+        2
+      ],
+      "expected": "400.0"
+    },
+    {
+      "input": [
+        500,
+        4,
+        1
+      ],
+      "expected": "20.0"
+    },
+    {
+      "input": [
+        0,
+        5,
+        5
+      ],
+      "expected": "0.0"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def simple_interest(principal, rate, years):\n    return principal * rate * years / 100\n"
+}

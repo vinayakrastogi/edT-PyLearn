@@ -1,0 +1,33 @@
+{
+  "id": "08-greet-user",
+  "title": "Greet the User",
+  "type": "program",
+  "difficulty": "easy",
+  "description": "Write a **program** that reads a name from the user with `input()` and prints `Hello, <name>!`.\n\nExample: if the input is `Asha`, print `Hello, Asha!`.",
+  "starter_code": "name = input()\n# Print the greeting here\n",
+  "concepts": [
+    "input",
+    "print",
+    "f-strings"
+  ],
+  "visible_tests": [
+    {
+      "stdin": "Asha\n",
+      "expected": "Hello, Asha!"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "stdin": "Pip\n",
+      "expected": "Hello, Pip!"
+    },
+    {
+      "stdin": "Ravi Kumar\n",
+      "expected": "Hello, Ravi Kumar!"
+    }
+  ],
+  "hints": [
+    "Use an f-string: f'Hello, {name}!'"
+  ],
+  "solution_code": "name = input()\nprint(f'Hello, {name}!')\n"
+}

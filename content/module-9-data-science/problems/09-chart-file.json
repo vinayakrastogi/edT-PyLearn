@@ -1,0 +1,30 @@
+{
+  "id": "09-chart-file",
+  "title": "Save a Bar Chart",
+  "type": "driver",
+  "difficulty": "medium",
+  "description": "Write `save_bar_chart(labels, values, filename)` that draws a bar chart with a title `'Scores'`, saves it to `filename` and returns `True`. Use matplotlib's `pyplot`, and remember to close the figure.",
+  "starter_code": "import matplotlib.pyplot as plt\n\ndef save_bar_chart(labels, values, filename):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "bar-chart",
+    "matplotlib-basics"
+  ],
+  "visible_tests": [
+    {
+      "driver": "import os\nprint(save_bar_chart(['A', 'B'], [3, 5], 'c.png'), os.path.exists('c.png'))",
+      "expected": "True True"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "import os\nsave_bar_chart(['x'], [1], 'd.png')\nprint(os.path.getsize('d.png') > 500)",
+      "expected": "True"
+    },
+    {
+      "driver": "print(save_bar_chart(['a', 'b', 'c'], [1, 2, 3], 'e.png'))",
+      "expected": "True"
+    }
+  ],
+  "hints": [],
+  "solution_code": "import matplotlib.pyplot as plt\n\ndef save_bar_chart(labels, values, filename):\n    plt.bar(labels, values)\n    plt.title('Scores')\n    plt.savefig(filename)\n    plt.close()\n    return True\n"
+}

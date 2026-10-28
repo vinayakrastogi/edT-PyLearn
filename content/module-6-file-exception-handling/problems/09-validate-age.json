@@ -1,0 +1,38 @@
+{
+  "id": "09-validate-age",
+  "title": "Validate Age",
+  "type": "driver",
+  "difficulty": "medium",
+  "description": "Write `validate_age(age)` that returns `age` if it is between 0 and 120 inclusive. Otherwise `raise ValueError('invalid age')`.",
+  "starter_code": "def validate_age(age):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "raising-exceptions",
+    "try-except"
+  ],
+  "visible_tests": [
+    {
+      "driver": "print(validate_age(30))",
+      "expected": "30"
+    },
+    {
+      "driver": "try:\n    validate_age(-1)\nexcept ValueError as e:\n    print(e)",
+      "expected": "invalid age"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "print(validate_age(0), validate_age(120))",
+      "expected": "0 120"
+    },
+    {
+      "driver": "try:\n    validate_age(121)\nexcept ValueError as e:\n    print('error:', e)",
+      "expected": "error: invalid age"
+    },
+    {
+      "driver": "try:\n    validate_age(50)\n    print('ok')\nexcept ValueError:\n    print('bad')",
+      "expected": "ok"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def validate_age(age):\n    if not 0 <= age <= 120:\n        raise ValueError('invalid age')\n    return age\n"
+}

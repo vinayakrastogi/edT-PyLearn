@@ -1,0 +1,36 @@
+{
+  "id": "09-add-two-numbers",
+  "title": "Add Two Numbers",
+  "type": "program",
+  "difficulty": "easy",
+  "description": "Write a program that reads two whole numbers (one per line) and prints their sum.\n\nExample: inputs `7` and `3` print `10`.",
+  "starter_code": "a = input()\nb = input()\n# Convert to numbers, add them and print the sum\n",
+  "concepts": [
+    "input",
+    "type-conversion"
+  ],
+  "visible_tests": [
+    {
+      "stdin": "7\n3\n",
+      "expected": "10"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "stdin": "10\n20\n",
+      "expected": "30"
+    },
+    {
+      "stdin": "-5\n5\n",
+      "expected": "0"
+    },
+    {
+      "stdin": "100\n250\n",
+      "expected": "350"
+    }
+  ],
+  "hints": [
+    "`input()` returns text. Convert with `int()` before adding."
+  ],
+  "solution_code": "a = int(input())\nb = int(input())\nprint(a + b)\n"
+}

@@ -1,0 +1,48 @@
+{
+  "id": "05-fibonacci-nth",
+  "title": "Nth Fibonacci Number",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `fib(n)` returning the n-th Fibonacci number where `fib(0) = 0`, `fib(1) = 1`, `fib(2) = 1`, `fib(3) = 2`, ...",
+  "starter_code": "def fib(n):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "for-loop",
+    "loop-programs"
+  ],
+  "visible_tests": [
+    {
+      "input": 0,
+      "expected": "0"
+    },
+    {
+      "input": 6,
+      "expected": "8"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": 1,
+      "expected": "1"
+    },
+    {
+      "input": 2,
+      "expected": "1"
+    },
+    {
+      "input": 10,
+      "expected": "55"
+    },
+    {
+      "input": 20,
+      "expected": "6765"
+    },
+    {
+      "input": 30,
+      "expected": "832040"
+    }
+  ],
+  "hints": [
+    "Keep two variables `a, b = 0, 1` and update both at once."
+  ],
+  "solution_code": "def fib(n):\n    a, b = 0, 1\n    for _ in range(n):\n        a, b = b, a + b\n    return a\n"
+}

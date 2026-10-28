@@ -1,0 +1,38 @@
+{
+  "id": "04-count-words",
+  "title": "Count Words with a Function",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `count_words(text)` that returns the number of words in `text`.",
+  "starter_code": "def count_words(text):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "functions",
+    "return-statement"
+  ],
+  "visible_tests": [
+    {
+      "input": "hello world",
+      "expected": "2"
+    },
+    {
+      "input": "one",
+      "expected": "1"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": "",
+      "expected": "0"
+    },
+    {
+      "input": "  many   spaces here ",
+      "expected": "3"
+    },
+    {
+      "input": "a b c d",
+      "expected": "4"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def count_words(text):\n    return len(text.split())\n"
+}

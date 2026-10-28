@@ -1,0 +1,56 @@
+{
+  "id": "02-safe-int",
+  "title": "Safe Integer Conversion",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `safe_int(text, default=0)` returning `int(text)` or `default` if the text is not a valid integer.",
+  "starter_code": "def safe_int(text, default=0):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "try-except",
+    "exception-types"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        "42"
+      ],
+      "expected": "42"
+    },
+    {
+      "input": [
+        "abc",
+        -1
+      ],
+      "expected": "-1"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        "3.5"
+      ],
+      "expected": "0"
+    },
+    {
+      "input": [
+        ""
+      ],
+      "expected": "0"
+    },
+    {
+      "input": [
+        "  7 "
+      ],
+      "expected": "7"
+    },
+    {
+      "input": [
+        "x",
+        99
+      ],
+      "expected": "99"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def safe_int(text, default=0):\n    try:\n        return int(text)\n    except ValueError:\n        return default\n"
+}

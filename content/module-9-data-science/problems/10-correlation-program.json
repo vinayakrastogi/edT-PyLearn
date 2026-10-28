@@ -1,0 +1,34 @@
+{
+  "id": "10-correlation-program",
+  "title": "Correlation of Two Lists",
+  "type": "program",
+  "difficulty": "hard",
+  "description": "Read two lines of space-separated numbers (the same length). Print the correlation coefficient between them, rounded to 2 decimals, using `np.corrcoef`.\n\nExample: `1 2 3 4` and `2 4 6 8` print `1.0`.",
+  "starter_code": "import numpy as np\n\nxs = [float(v) for v in input().split()]\nys = [float(v) for v in input().split()]\n# Print the correlation\n",
+  "concepts": [
+    "scatter-plot",
+    "array-statistics"
+  ],
+  "visible_tests": [
+    {
+      "stdin": "1 2 3 4\n2 4 6 8\n",
+      "expected": "1.0"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "stdin": "1 2 3\n3 2 1\n",
+      "expected": "-1.0"
+    },
+    {
+      "stdin": "1 2 3 4 5\n2 1 4 3 5\n",
+      "expected": "0.8"
+    },
+    {
+      "stdin": "10 20 30\n5 5.5 6\n",
+      "expected": "1.0"
+    }
+  ],
+  "hints": [],
+  "solution_code": "import numpy as np\n\nxs = [float(v) for v in input().split()]\nys = [float(v) for v in input().split()]\nprint(round(float(np.corrcoef(xs, ys)[0, 1]), 2))\n"
+}

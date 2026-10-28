@@ -1,0 +1,45 @@
+{
+  "id": "06-recursive-factorial",
+  "title": "Recursive Factorial",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `factorial(n)` **recursively** (no loops): `factorial(0)` is `1` and `factorial(n)` is `n * factorial(n - 1)`.",
+  "starter_code": "def factorial(n):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "recursion",
+    "base-case"
+  ],
+  "visible_tests": [
+    {
+      "input": 5,
+      "expected": "120"
+    },
+    {
+      "input": 0,
+      "expected": "1"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": 1,
+      "expected": "1"
+    },
+    {
+      "input": 3,
+      "expected": "6"
+    },
+    {
+      "input": 7,
+      "expected": "5040"
+    },
+    {
+      "input": 10,
+      "expected": "3628800"
+    }
+  ],
+  "hints": [
+    "What is the simplest case? That is your base case.",
+    "Call `factorial(n - 1)` for everything else."
+  ],
+  "solution_code": "def factorial(n):\n    if n == 0:\n        return 1\n    return n * factorial(n - 1)\n"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "07-shout",
+  "title": "Shout It Out",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `shout(text)` that returns the text in capital letters with `!` added at the end.\n\nExample: `shout('hello')` returns `HELLO!`.",
+  "starter_code": "def shout(text):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "strings-basics",
+    "string-methods"
+  ],
+  "visible_tests": [
+    {
+      "input": "hello",
+      "expected": "HELLO!"
+    },
+    {
+      "input": "python",
+      "expected": "PYTHON!"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": "a",
+      "expected": "A!"
+    },
+    {
+      "input": "Ada Lovelace",
+      "expected": "ADA LOVELACE!"
+    },
+    {
+      "input": "",
+      "expected": "!"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def shout(text):\n    return text.upper() + '!'\n"
+}

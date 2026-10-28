@@ -1,0 +1,47 @@
+{
+  "id": "03-leap-year",
+  "title": "Leap Year",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `is_leap(year)` returning `True` for a leap year and `False` otherwise.\n\nA leap year is divisible by 4, except century years, which must be divisible by 400.",
+  "starter_code": "def is_leap(year):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "logical-operators"
+  ],
+  "visible_tests": [
+    {
+      "input": 2024,
+      "expected": "True"
+    },
+    {
+      "input": 1900,
+      "expected": "False"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": 2000,
+      "expected": "True"
+    },
+    {
+      "input": 2023,
+      "expected": "False"
+    },
+    {
+      "input": 2100,
+      "expected": "False"
+    },
+    {
+      "input": 1996,
+      "expected": "True"
+    },
+    {
+      "input": 2400,
+      "expected": "True"
+    }
+  ],
+  "hints": [
+    "Combine three remainder checks with `and` / `or`."
+  ],
+  "solution_code": "def is_leap(year):\n    return (year % 4 == 0 and year % 100 != 0) or year % 400 == 0\n"
+}

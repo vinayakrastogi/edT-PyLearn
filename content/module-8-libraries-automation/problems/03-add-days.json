@@ -1,0 +1,60 @@
+{
+  "id": "03-add-days",
+  "title": "Add Days",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `add_days(text, n)` that takes a `YYYY-MM-DD` date and a whole number of days (may be negative) and returns the new date in the same format.",
+  "starter_code": "from datetime import datetime, timedelta\n\ndef add_days(text, n):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "timedelta",
+    "date-formatting"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        "2025-01-01",
+        45
+      ],
+      "expected": "2025-02-15"
+    },
+    {
+      "input": [
+        "2025-03-01",
+        -1
+      ],
+      "expected": "2025-02-28"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        "2024-02-28",
+        2
+      ],
+      "expected": "2024-03-01"
+    },
+    {
+      "input": [
+        "2025-12-31",
+        1
+      ],
+      "expected": "2026-01-01"
+    },
+    {
+      "input": [
+        "2025-06-15",
+        0
+      ],
+      "expected": "2025-06-15"
+    },
+    {
+      "input": [
+        "2025-01-01",
+        -1
+      ],
+      "expected": "2024-12-31"
+    }
+  ],
+  "hints": [],
+  "solution_code": "from datetime import datetime, timedelta\n\ndef add_days(text, n):\n    d = datetime.strptime(text, '%Y-%m-%d') + timedelta(days=n)\n    return d.strftime('%Y-%m-%d')\n"
+}

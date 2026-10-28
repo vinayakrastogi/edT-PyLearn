@@ -1,0 +1,43 @@
+{
+  "id": "08-letter-frequency",
+  "title": "Letter Frequency",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `letter_count(word)` returning a dictionary that maps each letter of the word to how many times it appears, in order of first appearance.\n\nExample: `letter_count('banana')` returns `{'b': 1, 'a': 3, 'n': 2}`.",
+  "starter_code": "def letter_count(word):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "dictionaries",
+    "counting",
+    "dict-patterns"
+  ],
+  "visible_tests": [
+    {
+      "input": "banana",
+      "expected": "{'b': 1, 'a': 3, 'n': 2}"
+    },
+    {
+      "input": "aab",
+      "expected": "{'a': 2, 'b': 1}"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": "",
+      "expected": "{}"
+    },
+    {
+      "input": "z",
+      "expected": "{'z': 1}"
+    },
+    {
+      "input": "mississippi",
+      "expected": "{'m': 1, 'i': 4, 's': 4, 'p': 2}"
+    },
+    {
+      "input": "hello",
+      "expected": "{'h': 1, 'e': 1, 'l': 2, 'o': 1}"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def letter_count(word):\n    counts = {}\n    for ch in word:\n        counts[ch] = counts.get(ch, 0) + 1\n    return counts\n"
+}

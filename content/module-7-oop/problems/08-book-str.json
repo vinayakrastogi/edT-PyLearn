@@ -1,0 +1,38 @@
+{
+  "id": "08-book-str",
+  "title": "Book with __str__",
+  "type": "driver",
+  "difficulty": "easy",
+  "description": "Create `Book(title, author)` with `__str__` returning `'<title>' by <author>` (with the quotes around the title), and `__eq__` so two books with the same title and author are equal.",
+  "starter_code": "class Book:\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "special-methods",
+    "str-repr"
+  ],
+  "visible_tests": [
+    {
+      "driver": "print(Book('Matilda', 'Roald Dahl'))",
+      "expected": "'Matilda' by Roald Dahl"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "print(Book('A', 'B') == Book('A', 'B'))",
+      "expected": "True"
+    },
+    {
+      "driver": "print(Book('A', 'B') == Book('A', 'C'))",
+      "expected": "False"
+    },
+    {
+      "driver": "print(str(Book('X', 'Y')))",
+      "expected": "'X' by Y"
+    },
+    {
+      "driver": "print(Book('A', 'B') == 'A')",
+      "expected": "False"
+    }
+  ],
+  "hints": [],
+  "solution_code": "class Book:\n    def __init__(self, title, author):\n        self.title = title\n        self.author = author\n\n    def __str__(self):\n        return f\"'{self.title}' by {self.author}\"\n\n    def __eq__(self, other):\n        return isinstance(other, Book) and self.title == other.title and self.author == other.author\n"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "09-vector-add",
+  "title": "Vector Addition",
+  "type": "driver",
+  "difficulty": "hard",
+  "description": "Create `Vector(x, y)` where `v1 + v2` returns a **new** `Vector` with added components, `v * k` multiplies by a number, and `str(v)` gives `(x, y)`.",
+  "starter_code": "class Vector:\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "operator-overloading",
+    "special-methods"
+  ],
+  "visible_tests": [
+    {
+      "driver": "print(Vector(1, 2) + Vector(3, 4))",
+      "expected": "(4, 6)"
+    },
+    {
+      "driver": "print(Vector(1, 2) * 3)",
+      "expected": "(3, 6)"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "a = Vector(1, 1)\nb = a + Vector(1, 1)\nprint(a, b)",
+      "expected": "(1, 1) (2, 2)"
+    },
+    {
+      "driver": "print(Vector(0, 0) + Vector(0, 0))",
+      "expected": "(0, 0)"
+    },
+    {
+      "driver": "print(Vector(2, -3) * 0)",
+      "expected": "(0, 0)"
+    }
+  ],
+  "hints": [],
+  "solution_code": "class Vector:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __add__(self, other):\n        return Vector(self.x + other.x, self.y + other.y)\n\n    def __mul__(self, k):\n        return Vector(self.x * k, self.y * k)\n\n    def __str__(self):\n        return f'({self.x}, {self.y})'\n"
+}

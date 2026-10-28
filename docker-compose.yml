@@ -1,0 +1,91 @@
+name: edt
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: edt_postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-edt_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-edt_password}
+      POSTGRES_DB: ${POSTGRES_DB:-edt_db}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 3s
+      timeout: 5s
+      retries: 20
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    init: true
+    env_file:
+      - path: ./backend/.env
+        required: false
+      - path: ./.env
+        required: false
+    environment:
+      DATABASE_URL: postgresql+psycopg2://${POSTGRES_USER:-edt_user}:${POSTGRES_PASSWORD:-edt_password}@postgres:5432/${POSTGRES_DB:-edt_db}
+      CONTENT_DIR: /app/content
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:5173}
+      LIFEADMIN_API_URL: ${LIFEADMIN_DOCKER_API_URL:-http://host.docker.internal:8001}
+      # Local defaults; hosted deployments must select remote/docker/disabled.
+      ENVIRONMENT: ${ENVIRONMENT:-development}
+      SANDBOX_MODE: ${SANDBOX_MODE:-local}
+      SERVE_FRONTEND: ${SERVE_FRONTEND:-false}
+      SEED_DEMO_USER: ${SEED_DEMO_USER:-true}
+      MPLCONFIGDIR: /tmp/matplotlib
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./content:/app/content
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 15s
+
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/frontend.Dockerfile
+    ports:
+      - "5173:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1/healthz"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    profiles: ["tools"]
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@edt.local}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin}
+    ports:
+      - "5050:80"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
+volumes:
+  postgres_data:
+  pgadmin_data:

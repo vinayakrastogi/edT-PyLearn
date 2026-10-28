@@ -1,0 +1,33 @@
+{
+  "id": "06-json-average",
+  "title": "Average from JSON",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `average_marks(text)` where `text` is JSON like `[{\"name\": \"Asha\", \"marks\": 90}, ...]`. Return the average of the `marks` values (`0` for an empty list).",
+  "starter_code": "import json\n\ndef average_marks(text):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "json-basics"
+  ],
+  "visible_tests": [
+    {
+      "input": "[{\"name\": \"Asha\", \"marks\": 90}, {\"name\": \"Ravi\", \"marks\": 70}]",
+      "expected": "80.0"
+    },
+    {
+      "input": "[]",
+      "expected": "0"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": "[{\"name\": \"Pip\", \"marks\": 85}]",
+      "expected": "85.0"
+    },
+    {
+      "input": "[{\"marks\": 1}, {\"marks\": 2}, {\"marks\": 4}]",
+      "expected": "2.3333333333333335"
+    }
+  ],
+  "hints": [],
+  "solution_code": "import json\n\ndef average_marks(text):\n    data = json.loads(text)\n    if not data:\n        return 0\n    return sum(item['marks'] for item in data) / len(data)\n"
+}

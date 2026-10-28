@@ -1,0 +1,45 @@
+{
+  "id": "03-clean-phone",
+  "title": "Clean a Phone Number",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `clean_phone(text)`: keep only the digits; if the result starts with `91` and has 12 digits, drop the `91`. Return the 10-digit number, or the text `'invalid'` if it does not have exactly 10 digits.",
+  "starter_code": "def clean_phone(text):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "project-contacts"
+  ],
+  "visible_tests": [
+    {
+      "input": "98100-12345",
+      "expected": "9810012345"
+    },
+    {
+      "input": "+91 98222 33444",
+      "expected": "9822233444"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": "12345",
+      "expected": "invalid"
+    },
+    {
+      "input": "9810012345",
+      "expected": "9810012345"
+    },
+    {
+      "input": "91 9810012345",
+      "expected": "9810012345"
+    },
+    {
+      "input": "",
+      "expected": "invalid"
+    },
+    {
+      "input": "98100 12345 678",
+      "expected": "invalid"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def clean_phone(text):\n    digits = ''.join(ch for ch in text if ch.isdigit())\n    if digits.startswith('91') and len(digits) == 12:\n        digits = digits[2:]\n    return digits if len(digits) == 10 else 'invalid'\n"
+}

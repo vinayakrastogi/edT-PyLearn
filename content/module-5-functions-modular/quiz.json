@@ -1,0 +1,507 @@
+{
+  "id": "module-5-functions-modular-quiz",
+  "title": "Module 5 Mastery Quiz",
+  "questions": [
+    {
+      "type": "mcq",
+      "question": "Which keyword defines a function?",
+      "options": [
+        "func",
+        "define",
+        "def",
+        "function"
+      ],
+      "correct_answer": 2,
+      "explanation": "Python functions start with `def name(parameters):`.",
+      "concepts": [
+        "functions",
+        "def-keyword"
+      ],
+      "id": "m5_q1"
+    },
+    {
+      "type": "true_false",
+      "question": "Defining a function with `def` immediately runs its body.",
+      "correct_answer": false,
+      "explanation": "`def` only saves the function. The body runs when you call it, e.g. `greet()`.",
+      "concepts": [
+        "functions",
+        "def-keyword"
+      ],
+      "id": "m5_q2"
+    },
+    {
+      "type": "mcq",
+      "question": "What is the string written as the first line of a function body called?",
+      "options": [
+        "comment",
+        "docstring",
+        "annotation",
+        "header"
+      ],
+      "correct_answer": 1,
+      "explanation": "A docstring documents the function and is available through `__doc__` and `help()`.",
+      "concepts": [
+        "docstrings"
+      ],
+      "id": "m5_q3"
+    },
+    {
+      "type": "mcq",
+      "question": "In `def area(w, h):` and the call `area(3, 4)`, what are `3` and `4`?",
+      "options": [
+        "parameters",
+        "arguments",
+        "variables",
+        "attributes"
+      ],
+      "correct_answer": 1,
+      "explanation": "The names in the definition are parameters; the values passed in the call are arguments.",
+      "concepts": [
+        "parameters"
+      ],
+      "id": "m5_q4"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `greet(greeting=\"Hi\", name=\"Asha\")` demonstrate?",
+      "options": [
+        "Positional arguments",
+        "Keyword arguments",
+        "Default arguments",
+        "Variable arguments"
+      ],
+      "correct_answer": 1,
+      "explanation": "Naming each parameter in the call makes the order irrelevant.",
+      "concepts": [
+        "keyword-arguments"
+      ],
+      "id": "m5_q5"
+    },
+    {
+      "type": "mcq",
+      "question": "For `def power(base, exponent=2): return base ** exponent`, what is `power(5)`?",
+      "options": [
+        "10",
+        "25",
+        "125",
+        "Error"
+      ],
+      "correct_answer": 1,
+      "explanation": "`exponent` defaults to 2, so `power(5)` is 5 squared = 25.",
+      "concepts": [
+        "default-arguments"
+      ],
+      "id": "m5_q6"
+    },
+    {
+      "type": "mcq",
+      "question": "Why is `def add(item, basket=[])` a bad idea?",
+      "options": [
+        "Lists cannot be defaults",
+        "The default list is created once and shared by all calls",
+        "It is a syntax error",
+        "basket must come first"
+      ],
+      "correct_answer": 1,
+      "explanation": "A mutable default is created when the function is defined, so changes persist between calls. Use `None` and create the list inside.",
+      "concepts": [
+        "default-arguments"
+      ],
+      "id": "m5_q7"
+    },
+    {
+      "type": "mcq",
+      "question": "What type does `*args` collect its values into?",
+      "options": [
+        "list",
+        "tuple",
+        "set",
+        "dict"
+      ],
+      "correct_answer": 1,
+      "explanation": "Extra positional arguments are packed into a tuple.",
+      "concepts": [
+        "parameters"
+      ],
+      "id": "m5_q8"
+    },
+    {
+      "type": "mcq",
+      "question": "What type does `**kwargs` collect its values into?",
+      "options": [
+        "list",
+        "tuple",
+        "dict",
+        "string"
+      ],
+      "correct_answer": 2,
+      "explanation": "Extra keyword arguments are packed into a dictionary.",
+      "concepts": [
+        "parameters"
+      ],
+      "id": "m5_q9"
+    },
+    {
+      "type": "mcq",
+      "question": "What does a function return if it has no `return` statement?",
+      "options": [
+        "0",
+        "\"\"",
+        "None",
+        "It raises an error"
+      ],
+      "correct_answer": 2,
+      "explanation": "Without `return` the call evaluates to `None`.",
+      "concepts": [
+        "return-statement",
+        "none-value"
+      ],
+      "id": "m5_q10"
+    },
+    {
+      "type": "mcq",
+      "question": "What is the difference between `print(x)` and `return x` inside a function?",
+      "options": [
+        "None",
+        "print displays; return hands the value back to the caller",
+        "return displays; print hands back",
+        "print ends the function"
+      ],
+      "correct_answer": 1,
+      "explanation": "Printing shows the value on screen; returning lets the caller store and use it.",
+      "concepts": [
+        "return-statement"
+      ],
+      "id": "m5_q11"
+    },
+    {
+      "type": "mcq",
+      "question": "What does this print?\n\n`def f():`\n`    return 1`\n`    print(2)`\n`print(f())`",
+      "options": [
+        "1",
+        "2",
+        "1 then 2",
+        "None"
+      ],
+      "correct_answer": 0,
+      "explanation": "`return` ends the function immediately, so `print(2)` is never reached.",
+      "concepts": [
+        "return-statement"
+      ],
+      "id": "m5_q12"
+    },
+    {
+      "type": "mcq",
+      "question": "How does a function return several values?",
+      "options": [
+        "It cannot",
+        "Separate them with commas; they arrive as a tuple",
+        "Use return twice",
+        "Use yield only"
+      ],
+      "correct_answer": 1,
+      "explanation": "`return a, b` packs the values into a tuple that can be unpacked: `x, y = f()`.",
+      "concepts": [
+        "multiple-return"
+      ],
+      "id": "m5_q13"
+    },
+    {
+      "type": "mcq",
+      "question": "Which name is best for a function that answers yes/no?",
+      "options": [
+        "check",
+        "is_valid",
+        "valid",
+        "run"
+      ],
+      "correct_answer": 1,
+      "explanation": "Predicate functions are conventionally named with `is_` or `has_` prefixes and return a boolean.",
+      "concepts": [
+        "return-statement"
+      ],
+      "id": "m5_q14"
+    },
+    {
+      "type": "mcq",
+      "question": "Where is a variable created inside a function visible?",
+      "options": [
+        "Everywhere",
+        "Only inside that function",
+        "In all functions",
+        "In the whole file"
+      ],
+      "correct_answer": 1,
+      "explanation": "Local variables exist only while the function runs and are invisible outside it.",
+      "concepts": [
+        "scope",
+        "local-global"
+      ],
+      "id": "m5_q15"
+    },
+    {
+      "type": "mcq",
+      "question": "What error does this cause?\n\n`count = 0`\n`def inc():`\n`    count += 1`\n`inc()`",
+      "options": [
+        "NameError",
+        "UnboundLocalError",
+        "SyntaxError",
+        "No error"
+      ],
+      "correct_answer": 1,
+      "explanation": "Assigning to `count` makes it local, but it has no value yet. Declare `global count` to change the global.",
+      "concepts": [
+        "local-global",
+        "scope"
+      ],
+      "id": "m5_q16"
+    },
+    {
+      "type": "mcq",
+      "question": "What does LEGB stand for?",
+      "options": [
+        "Local, Enclosing, Global, Built-in",
+        "Loop, Else, Global, Basic",
+        "Local, External, General, Base",
+        "List, Enum, Global, Built-in"
+      ],
+      "correct_answer": 0,
+      "explanation": "It is the order in which Python searches for a name.",
+      "concepts": [
+        "legb-rule"
+      ],
+      "id": "m5_q17"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `nonlocal` do?",
+      "options": [
+        "Makes a variable global",
+        "Lets an inner function modify an enclosing function's variable",
+        "Deletes a variable",
+        "Imports a module"
+      ],
+      "correct_answer": 1,
+      "explanation": "`nonlocal` binds a name to the variable in the nearest enclosing function scope, enabling closures with state.",
+      "concepts": [
+        "legb-rule",
+        "scope"
+      ],
+      "id": "m5_q18"
+    },
+    {
+      "type": "mcq",
+      "question": "Every correct recursive function needs...",
+      "options": [
+        "A loop",
+        "A base case",
+        "Global variables",
+        "A lambda"
+      ],
+      "correct_answer": 1,
+      "explanation": "The base case stops the recursion; without it the function calls itself until a RecursionError.",
+      "concepts": [
+        "recursion",
+        "base-case"
+      ],
+      "id": "m5_q19"
+    },
+    {
+      "type": "mcq",
+      "question": "What is `factorial(4)` for `def factorial(n): return 1 if n == 0 else n * factorial(n - 1)`?",
+      "options": [
+        "10",
+        "24",
+        "16",
+        "4"
+      ],
+      "correct_answer": 1,
+      "explanation": "4 x 3 x 2 x 1 = 24.",
+      "concepts": [
+        "recursion"
+      ],
+      "id": "m5_q20"
+    },
+    {
+      "type": "mcq",
+      "question": "What happens if a recursive function never reaches its base case?",
+      "options": [
+        "It returns 0",
+        "RecursionError",
+        "It runs forever silently",
+        "Python fixes it"
+      ],
+      "correct_answer": 1,
+      "explanation": "Python stops at about 1000 nested calls and raises `RecursionError`.",
+      "concepts": [
+        "recursion",
+        "call-stack"
+      ],
+      "id": "m5_q21"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `(lambda x: x * 2)(5)` evaluate to?",
+      "options": [
+        "5",
+        "10",
+        "25",
+        "A function"
+      ],
+      "correct_answer": 1,
+      "explanation": "The lambda doubles its argument, and we call it immediately with 5.",
+      "concepts": [
+        "lambda"
+      ],
+      "id": "m5_q22"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `sorted([\"bb\", \"a\", \"ccc\"], key=len)` return?",
+      "options": [
+        "['a', 'bb', 'ccc']",
+        "['ccc', 'bb', 'a']",
+        "['a', 'ccc', 'bb']",
+        "['bb', 'a', 'ccc']"
+      ],
+      "correct_answer": 0,
+      "explanation": "The key function `len` sorts by length: 1, 2, 3.",
+      "concepts": [
+        "higher-order-functions",
+        "lambda"
+      ],
+      "id": "m5_q23"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `list(filter(lambda n: n > 2, [1, 2, 3, 4]))` return?",
+      "options": [
+        "[3, 4]",
+        "[1, 2]",
+        "[True, True]",
+        "[4]"
+      ],
+      "correct_answer": 0,
+      "explanation": "`filter` keeps the items for which the function returns True.",
+      "concepts": [
+        "map-filter"
+      ],
+      "id": "m5_q24"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `list(map(str, [1, 2]))` return?",
+      "options": [
+        "[1, 2]",
+        "['1', '2']",
+        "'12'",
+        "Error"
+      ],
+      "correct_answer": 1,
+      "explanation": "`map` applies `str` to every item, producing `['1', '2']`.",
+      "concepts": [
+        "map-filter"
+      ],
+      "id": "m5_q25"
+    },
+    {
+      "type": "mcq",
+      "question": "How do you import only `sqrt` from `math`?",
+      "options": [
+        "import sqrt from math",
+        "from math import sqrt",
+        "import math.sqrt only",
+        "using math.sqrt"
+      ],
+      "correct_answer": 1,
+      "explanation": "The syntax is `from module import name`.",
+      "concepts": [
+        "import-statement",
+        "modules"
+      ],
+      "id": "m5_q26"
+    },
+    {
+      "type": "mcq",
+      "question": "Why is `from math import *` discouraged?",
+      "options": [
+        "It is slow",
+        "It hides where names come from and can overwrite yours",
+        "It is a syntax error",
+        "It only imports pi"
+      ],
+      "correct_answer": 1,
+      "explanation": "Star imports pollute your namespace, making bugs hard to trace.",
+      "concepts": [
+        "import-statement"
+      ],
+      "id": "m5_q27"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `random.randint(1, 6)` return?",
+      "options": [
+        "1 to 5",
+        "1 to 6 inclusive",
+        "0 to 6",
+        "a float"
+      ],
+      "correct_answer": 1,
+      "explanation": "`randint(a, b)` includes both ends, so it simulates a die.",
+      "concepts": [
+        "modules"
+      ],
+      "id": "m5_q28"
+    },
+    {
+      "type": "mcq",
+      "question": "When is the code under `if __name__ == \"__main__\":` executed?",
+      "options": [
+        "Whenever the file is imported",
+        "Only when the file is run directly",
+        "Never",
+        "Only in the shell"
+      ],
+      "correct_answer": 1,
+      "explanation": "`__name__` is `\"__main__\"` only for the file being executed, not for imported modules.",
+      "concepts": [
+        "name-main"
+      ],
+      "id": "m5_q29"
+    },
+    {
+      "type": "mcq",
+      "question": "Which command installs a third-party package?",
+      "options": [
+        "python install numpy",
+        "pip install numpy",
+        "import numpy install",
+        "get numpy"
+      ],
+      "correct_answer": 1,
+      "explanation": "`pip` is Python's package installer.",
+      "concepts": [
+        "modules"
+      ],
+      "id": "m5_q30"
+    },
+    {
+      "type": "mcq",
+      "question": "In a well-structured program, which function design is best?",
+      "options": [
+        "One function that reads, calculates and prints",
+        "Small functions each doing one job",
+        "Only global variables",
+        "No functions"
+      ],
+      "correct_answer": 1,
+      "explanation": "Small single-purpose functions are easier to test and reuse.",
+      "concepts": [
+        "function-programs",
+        "lab-practice"
+      ],
+      "id": "m5_q31"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "02-is-palindrome",
+  "title": "Palindrome Check",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `is_palindrome(text)` returning `True` if the text reads the same both ways, ignoring capitals and spaces.\n\nExample: `is_palindrome('Never odd or even')` returns `True`.",
+  "starter_code": "def is_palindrome(text):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "strings",
+    "string-methods-toolkit"
+  ],
+  "visible_tests": [
+    {
+      "input": "level",
+      "expected": "True"
+    },
+    {
+      "input": "Python",
+      "expected": "False"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": "Never odd or even",
+      "expected": "True"
+    },
+    {
+      "input": "A",
+      "expected": "True"
+    },
+    {
+      "input": "ab",
+      "expected": "False"
+    },
+    {
+      "input": "Taco cat",
+      "expected": "True"
+    },
+    {
+      "input": "Was it a car",
+      "expected": "False"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def is_palindrome(text):\n    cleaned = text.lower().replace(' ', '')\n    return cleaned == cleaned[::-1]\n"
+}

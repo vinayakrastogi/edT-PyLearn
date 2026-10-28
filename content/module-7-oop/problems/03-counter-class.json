@@ -1,0 +1,34 @@
+{
+  "id": "03-counter-class",
+  "title": "Counter Class",
+  "type": "driver",
+  "difficulty": "easy",
+  "description": "Create a class `Counter` that starts at 0. Methods: `increment()`, `decrement()` and `reset()`. Read the value through the attribute `value`. Two counters must not affect each other.",
+  "starter_code": "class Counter:\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "classes",
+    "self-keyword"
+  ],
+  "visible_tests": [
+    {
+      "driver": "c = Counter()\nc.increment()\nc.increment()\nc.decrement()\nprint(c.value)",
+      "expected": "1"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "c = Counter()\nprint(c.value)",
+      "expected": "0"
+    },
+    {
+      "driver": "a = Counter()\nb = Counter()\na.increment()\nprint(a.value, b.value)",
+      "expected": "1 0"
+    },
+    {
+      "driver": "c = Counter()\nc.increment()\nc.reset()\nprint(c.value)",
+      "expected": "0"
+    }
+  ],
+  "hints": [],
+  "solution_code": "class Counter:\n    def __init__(self):\n        self.value = 0\n\n    def increment(self):\n        self.value += 1\n\n    def decrement(self):\n        self.value -= 1\n\n    def reset(self):\n        self.value = 0\n"
+}

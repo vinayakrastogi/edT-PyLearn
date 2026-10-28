@@ -1,0 +1,34 @@
+{
+  "id": "12-weekday-program",
+  "title": "Weekday Finder",
+  "type": "program",
+  "difficulty": "medium",
+  "description": "Read a date in `DD/MM/YYYY` form and print the weekday name.\n\nExample: `14/03/2025` prints `Friday`.",
+  "starter_code": "from datetime import datetime\n\ntext = input()\n# Print the weekday name\n",
+  "concepts": [
+    "datetime-module",
+    "date-formatting"
+  ],
+  "visible_tests": [
+    {
+      "stdin": "14/03/2025\n",
+      "expected": "Friday"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "stdin": "01/01/2000\n",
+      "expected": "Saturday"
+    },
+    {
+      "stdin": "29/02/2024\n",
+      "expected": "Thursday"
+    },
+    {
+      "stdin": "25/12/2025\n",
+      "expected": "Thursday"
+    }
+  ],
+  "hints": [],
+  "solution_code": "from datetime import datetime\n\ntext = input()\nprint(datetime.strptime(text, '%d/%m/%Y').strftime('%A'))\n"
+}

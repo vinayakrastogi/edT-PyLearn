@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Inter', sans-serif;
+    background-color: #FFF9E6;
+    color: #0D0D0D;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: #FFF9E6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    color: #0D0D0D;
+  }
+
+  code, pre, kbd {
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FFF9E6;
+    border-left: 2px solid #1A1A1A;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1A1A1A;
+  }
+}
+
+@layer components {
+  /* Neo-card: base neobrutalist card */
+  .neo-card {
+    @apply bg-bg-card border-2 border-border-dark shadow-neo;
+    border-radius: 4px;
+    transition: all 0.15s ease;
+  }
+  
+  .dark .neo-card {
+    background-color: #3B4252;
+    border-color: #4C566A;
+    box-shadow: 4px 4px 0px #4C566A;
+  }
+  
+  .dark .neo-card:hover {
+    box-shadow: 6px 6px 0px #5E81AC;
+  }
+
+  /* Neo-button base */
+  .neo-btn {
+    @apply font-heading font-bold border-2 border-border-dark shadow-neo
+           transition-all duration-150 cursor-pointer select-none
+           inline-flex items-center justify-center gap-2;
+    border-radius: 4px;
+  }
+  .neo-btn:hover {
+    @apply translate-x-[2px] translate-y-[2px];
+    box-shadow: 2px 2px 0px #1A1A1A;
+  }
+  .neo-btn:active {
+    @apply translate-x-[4px] translate-y-[4px];
+    box-shadow: none;
+  }
+
+  /* Prose for markdown rendering */
+  .neo-prose {
+    @apply max-w-none text-text-primary;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.75;
+  }
+  
+  .dark .neo-prose {
+    background-color: #2E3440;
+    color: #ECEFF4;
+  }
+  
+  .neo-prose h2 { 
+    @apply text-h2 font-heading mt-6 mb-3; 
+  }
+  
+  .neo-prose h3 { 
+    @apply text-h3 font-heading mt-5 mb-2; 
+  }
+  
+  .neo-prose p { 
+    @apply mb-4; 
+  }
+  
+  .neo-prose strong { 
+    @apply font-bold; 
+  }
+  
+  .neo-prose a { 
+    @apply text-brand-blue underline font-medium; 
+  }
+  
+  .neo-prose ul { 
+    @apply list-disc list-outside ml-6 mb-4 space-y-1; 
+  }
+  
+  .neo-prose ol { 
+    @apply list-decimal list-outside ml-6 mb-4 space-y-1; 
+  }
+  
+  .neo-prose code {
+    @apply font-mono bg-brand-yellow/20 border border-border-dark px-1.5 py-0.5 text-sm;
+    border-radius: 2px;
+  }
+  
+  .neo-prose pre {
+    @apply bg-bg-dark text-white border-2 border-border-dark shadow-neo p-4 overflow-x-auto mb-4;
+    border-radius: 4px;
+  }
+  
+  .neo-prose pre code {
+    @apply bg-transparent border-none p-0 text-white;
+  }
+  
+  .dark .neo-prose pre {
+    background-color: #2E3440;
+    border-color: #4C566A;
+    box-shadow: 4px 4px 0px #4C566A;
+  }
+  
+  .dark .neo-prose pre code {
+    color: #ECEFF4;
+  }
+  
+  .neo-prose blockquote {
+    @apply border-l-4 border-brand-blue pl-4 italic text-text-muted my-4;
+  }
+  
+  .dark .neo-prose blockquote {
+    border-color: #88C0D0;
+    color: #81A1C1;
+  }
+  
+  .neo-prose table { 
+    @apply w-full border-collapse border-2 border-border-dark mb-4; 
+  }
+  
+  .neo-prose th { 
+    @apply bg-brand-yellow border-2 border-border-dark px-3 py-2 text-left font-heading; 
+  }
+  
+  .neo-prose td { 
+    @apply border border-border-dark px-3 py-2;
+  }
+}
+/* ------------------------------------------------------------------ */
+/* Mascot (Pip) animations                                             */
+/* ------------------------------------------------------------------ */
+@keyframes pip-sway { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
+@keyframes pip-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes pip-droop { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(3px) rotate(-1.5deg); } }
+@keyframes pip-shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-3px); } 75% { transform: translateX(3px); } }
+.pip-sway { animation: pip-sway 3s ease-in-out infinite; transform-origin: 50% 90%; }
+.pip-bounce { animation: pip-bounce 0.7s ease-in-out infinite; }
+.pip-droop { animation: pip-droop 3.5s ease-in-out infinite; transform-origin: 50% 90%; }
+.pip-shake { animation: pip-shake 0.5s ease-in-out 3; }
+
+/* Confetti for great scores */
+@keyframes confetti-fall {
+  0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(340px) rotate(540deg); opacity: 0; }
+}
+.confetti-piece { position: absolute; top: 0; width: 10px; height: 14px; border: 1.5px solid #1A1A1A; animation: confetti-fall 2.4s ease-in forwards; }
+
+/* Skeleton loading blocks */
+@keyframes skeleton-pulse { 0%, 100% { opacity: 0.55; } 50% { opacity: 1; } }
+.skeleton { background: rgba(26, 26, 26, 0.12); border: 2px solid rgba(26, 26, 26, 0.2); animation: skeleton-pulse 1.2s ease-in-out infinite; }
+
+/* Accessibility: always show where keyboard focus is; respect reduced motion */
+:focus-visible { outline: 3px solid #3A86FF; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+/* Lesson code blocks and callouts */
+.lesson-callout p:last-child { margin-bottom: 0; }
+html { scroll-behavior: smooth; }
+h2[id], h3[id] { scroll-margin-top: 90px; }
+
+/* An "Output" panel sits flush against the code block above it */
+.lesson-code + .lesson-output { margin-top: -1.5rem; }
+
+:root { --nav-h: 76px; }
+
+/* ------------------------------------------------------------------ */
+/* Gamification: XP toasts, badge reveal, streak flame                 */
+/* ------------------------------------------------------------------ */
+@keyframes toast-in { 0% { transform: translateX(28px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
+@keyframes badge-pop {
+  0% { transform: scale(0.3) rotate(-14deg); opacity: 0; }
+  60% { transform: scale(1.18) rotate(4deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+@keyframes flame-flicker {
+  0%, 100% { transform: scale(1, 1) rotate(-2deg); }
+  25% { transform: scale(1.06, 1.12) rotate(2deg); }
+  50% { transform: scale(0.97, 1.03) rotate(-1deg); }
+  75% { transform: scale(1.04, 1.09) rotate(1.5deg); }
+}
+@keyframes risk-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+@keyframes reward-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+.toast-in { animation: toast-in 220ms ease-out both; }
+.badge-pop { animation: badge-pop 520ms cubic-bezier(0.2, 0.9, 0.3, 1.3) both; }
+.flame-flicker { animation: flame-flicker 1.8s ease-in-out infinite; transform-origin: 50% 90%; }
+.risk-pulse { animation: risk-pulse 1.4s ease-in-out infinite; }
+.reward-backdrop { animation: reward-backdrop-in 160ms ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  .toast-in, .badge-pop, .flame-flicker, .risk-pulse, .reward-backdrop { animation: none !important; }
+}

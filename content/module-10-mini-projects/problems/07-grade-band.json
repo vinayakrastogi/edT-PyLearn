@@ -1,0 +1,57 @@
+{
+  "id": "07-grade-band",
+  "title": "Grade Band",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `grade(average)` returning `'A'` for 90+, `'B'` for 75-89, `'C'` for 60-74, `'D'` for 40-59 and `'F'` below 40.",
+  "starter_code": "def grade(average):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "project-students"
+  ],
+  "visible_tests": [
+    {
+      "input": 95,
+      "expected": "A"
+    },
+    {
+      "input": 75,
+      "expected": "B"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": 90,
+      "expected": "A"
+    },
+    {
+      "input": 89.99,
+      "expected": "B"
+    },
+    {
+      "input": 60,
+      "expected": "C"
+    },
+    {
+      "input": 59,
+      "expected": "D"
+    },
+    {
+      "input": 40,
+      "expected": "D"
+    },
+    {
+      "input": 39.9,
+      "expected": "F"
+    },
+    {
+      "input": 0,
+      "expected": "F"
+    },
+    {
+      "input": 100,
+      "expected": "A"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def grade(average):\n    for cutoff, letter in [(90, 'A'), (75, 'B'), (60, 'C'), (40, 'D')]:\n        if average >= cutoff:\n            return letter\n    return 'F'\n"
+}

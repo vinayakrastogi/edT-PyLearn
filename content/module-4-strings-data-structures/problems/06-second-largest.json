@@ -1,0 +1,71 @@
+{
+  "id": "06-second-largest",
+  "title": "Second Largest",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `second_largest(numbers)` returning the second largest **distinct** value in a list that contains at least two different numbers.\n\nExample: `second_largest([5, 9, 9, 2])` returns `5`.",
+  "starter_code": "def second_largest(numbers):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "lists",
+    "sorting"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        [
+          5,
+          9,
+          9,
+          2
+        ]
+      ],
+      "expected": "5"
+    },
+    {
+      "input": [
+        [
+          1,
+          2
+        ]
+      ],
+      "expected": "1"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        [
+          10,
+          20,
+          30,
+          40
+        ]
+      ],
+      "expected": "30"
+    },
+    {
+      "input": [
+        [
+          -1,
+          -5,
+          -3
+        ]
+      ],
+      "expected": "-3"
+    },
+    {
+      "input": [
+        [
+          7,
+          7,
+          3,
+          3,
+          1
+        ]
+      ],
+      "expected": "3"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def second_largest(numbers):\n    return sorted(set(numbers))[-2]\n"
+}

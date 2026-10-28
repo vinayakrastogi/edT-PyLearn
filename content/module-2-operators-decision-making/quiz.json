@@ -1,0 +1,453 @@
+{
+  "id": "module-2-operators-decision-making-quiz",
+  "title": "Module 2 Mastery Quiz",
+  "questions": [
+    {
+      "type": "mcq",
+      "question": "What is `divmod(23, 5)`?",
+      "options": [
+        "(4, 3)",
+        "(3, 4)",
+        "(4.6, 3)",
+        "(5, 2)"
+      ],
+      "correct_answer": 0,
+      "explanation": "`divmod(a, b)` returns `(a // b, a % b)`. 23 // 5 = 4 and 23 % 5 = 3.",
+      "concepts": [
+        "arithmetic-review"
+      ],
+      "id": "m2_q1"
+    },
+    {
+      "type": "mcq",
+      "question": "After `x = 10`, `x -= 3`, `x *= 2`, what is `x`?",
+      "options": [
+        "7",
+        "14",
+        "17",
+        "4"
+      ],
+      "correct_answer": 1,
+      "explanation": "10 - 3 = 7, then 7 * 2 = 14. Each augmented assignment updates the variable using its current value.",
+      "concepts": [
+        "assignment-operators"
+      ],
+      "id": "m2_q2"
+    },
+    {
+      "type": "mcq",
+      "question": "What is `-3 ** 2`?",
+      "options": [
+        "9",
+        "-9",
+        "6",
+        "-6"
+      ],
+      "correct_answer": 1,
+      "explanation": "`**` binds tighter than the unary minus, so it is `-(3 ** 2)` = -9. Write `(-3) ** 2` to get 9.",
+      "concepts": [
+        "arithmetic-review"
+      ],
+      "id": "m2_q3"
+    },
+    {
+      "type": "true_false",
+      "question": "`0.1 + 0.2 == 0.3` is `True` in Python.",
+      "correct_answer": false,
+      "explanation": "Floats are stored in binary and 0.1 + 0.2 is 0.30000000000000004. Compare floats with a small tolerance instead.",
+      "concepts": [
+        "arithmetic-review",
+        "math-functions"
+      ],
+      "id": "m2_q4"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `x = 4`, `x =+ 1` leave in `x`?",
+      "options": [
+        "5",
+        "1",
+        "4",
+        "Error"
+      ],
+      "correct_answer": 1,
+      "explanation": "`x =+ 1` is parsed as `x = +1`, which simply assigns positive 1. The augmented operator must be written `+=`.",
+      "concepts": [
+        "assignment-operators"
+      ],
+      "id": "m2_q5"
+    },
+    {
+      "type": "mcq",
+      "question": "What is `5 == 5.0`?",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "None"
+      ],
+      "correct_answer": 0,
+      "explanation": "Numbers compare by value regardless of type, so the int 5 equals the float 5.0.",
+      "concepts": [
+        "comparison-operators"
+      ],
+      "id": "m2_q6"
+    },
+    {
+      "type": "mcq",
+      "question": "What is `\"apple\" < \"Banana\"`?",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "Depends on the length"
+      ],
+      "correct_answer": 1,
+      "explanation": "Strings compare by character code, and lowercase letters (a = 97) come after capitals (B = 66), so \"apple\" is greater. The result is False.",
+      "concepts": [
+        "comparison-operators"
+      ],
+      "id": "m2_q7"
+    },
+    {
+      "type": "mcq",
+      "question": "Which expression is `True` when `x` is between 10 and 20 (inclusive)?",
+      "options": [
+        "10 <= x <= 20",
+        "10 <= x or x <= 20",
+        "x == 10 to 20",
+        "x in 10..20"
+      ],
+      "correct_answer": 0,
+      "explanation": "Python supports chained comparisons like `10 <= x <= 20`. The `or` version is true for every number.",
+      "concepts": [
+        "comparison-operators"
+      ],
+      "id": "m2_q8"
+    },
+    {
+      "type": "true_false",
+      "question": "`\"5\" == 5` evaluates to `True`.",
+      "correct_answer": false,
+      "explanation": "A string and an integer are never equal, even if the text looks like the number. Convert first with `int()`.",
+      "concepts": [
+        "comparison-operators"
+      ],
+      "id": "m2_q9"
+    },
+    {
+      "type": "mcq",
+      "question": "What is `True and False or True`?",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "None"
+      ],
+      "correct_answer": 0,
+      "explanation": "`and` runs first: `True and False` is False; then `False or True` is True.",
+      "concepts": [
+        "logical-operators"
+      ],
+      "id": "m2_q10"
+    },
+    {
+      "type": "mcq",
+      "question": "What is `not (5 > 3 and 2 > 4)`?",
+      "options": [
+        "True",
+        "False",
+        "None",
+        "Error"
+      ],
+      "correct_answer": 0,
+      "explanation": "`5 > 3` is True and `2 > 4` is False, so the `and` gives False. `not False` is True.",
+      "concepts": [
+        "logical-operators"
+      ],
+      "id": "m2_q11"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `\"\" or \"guest\"` return?",
+      "options": [
+        "\"\"",
+        "\"guest\"",
+        "True",
+        "False"
+      ],
+      "correct_answer": 1,
+      "explanation": "`or` returns the first truthy operand. The empty string is falsy, so the result is \"guest\".",
+      "concepts": [
+        "logical-operators",
+        "short-circuit"
+      ],
+      "id": "m2_q12"
+    },
+    {
+      "type": "mcq",
+      "question": "Why is `d != 0 and 10 / d > 2` safe when `d = 0`?",
+      "options": [
+        "Python fixes the division",
+        "Short-circuit: `10 / d` is never evaluated",
+        "`and` always evaluates right first",
+        "It is not safe"
+      ],
+      "correct_answer": 1,
+      "explanation": "When the left side of `and` is False, Python knows the result and skips the right side, avoiding the ZeroDivisionError.",
+      "concepts": [
+        "short-circuit"
+      ],
+      "id": "m2_q13"
+    },
+    {
+      "type": "mcq",
+      "question": "What is `\"nan\" in \"banana\"`?",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "3"
+      ],
+      "correct_answer": 0,
+      "explanation": "`in` on strings tests for a substring. \"nan\" appears at positions 2-4 of \"banana\".",
+      "concepts": [
+        "membership-operators"
+      ],
+      "id": "m2_q14"
+    },
+    {
+      "type": "mcq",
+      "question": "For `d = {\"a\": 1, \"b\": 2}`, what is `1 in d`?",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "1"
+      ],
+      "correct_answer": 1,
+      "explanation": "`in` on a dictionary checks the keys, not the values. The keys are \"a\" and \"b\".",
+      "concepts": [
+        "membership-operators"
+      ],
+      "id": "m2_q15"
+    },
+    {
+      "type": "mcq",
+      "question": "Which is the correct way to check for `None`?",
+      "options": [
+        "x == None",
+        "x is None",
+        "x = None",
+        "None in x"
+      ],
+      "correct_answer": 1,
+      "explanation": "`None` is a singleton, so identity (`is None`) is the standard and preferred test.",
+      "concepts": [
+        "identity-operators"
+      ],
+      "id": "m2_q16"
+    },
+    {
+      "type": "mcq",
+      "question": "After `a = [1, 2]`, `b = a`, `b.append(3)`, what is `a`?",
+      "options": [
+        "[1, 2]",
+        "[1, 2, 3]",
+        "[3]",
+        "Error"
+      ],
+      "correct_answer": 1,
+      "explanation": "`b = a` does not copy the list; both names refer to the same object, so the change is visible through `a`.",
+      "concepts": [
+        "identity-operators"
+      ],
+      "id": "m2_q17"
+    },
+    {
+      "type": "mcq",
+      "question": "What is `[1, 2] == [1, 2]` and `[1, 2] is [1, 2]`?",
+      "options": [
+        "True and True",
+        "True and False",
+        "False and True",
+        "False and False"
+      ],
+      "correct_answer": 1,
+      "explanation": "The lists have equal contents (`==` is True) but they are two separate objects (`is` is False).",
+      "concepts": [
+        "identity-operators"
+      ],
+      "id": "m2_q18"
+    },
+    {
+      "type": "mcq",
+      "question": "What is required at the end of the `if` line?",
+      "options": [
+        "A semicolon",
+        "A colon",
+        "Curly braces",
+        "Nothing"
+      ],
+      "correct_answer": 1,
+      "explanation": "Python needs a colon after the condition, followed by an indented block.",
+      "concepts": [
+        "if-statement"
+      ],
+      "id": "m2_q19"
+    },
+    {
+      "type": "mcq",
+      "question": "What happens in `if x > 3:` when the next line is not indented?",
+      "options": [
+        "It works",
+        "IndentationError",
+        "NameError",
+        "It prints x"
+      ],
+      "correct_answer": 1,
+      "explanation": "The body of an `if` must be indented; otherwise Python raises `IndentationError: expected an indented block`.",
+      "concepts": [
+        "if-statement",
+        "indentation"
+      ],
+      "id": "m2_q20"
+    },
+    {
+      "type": "true_false",
+      "question": "An empty list `[]` counts as `False` when used as an `if` condition.",
+      "correct_answer": true,
+      "explanation": "Empty containers, zero, empty strings and None are falsy, so `if []:` never runs its body.",
+      "concepts": [
+        "if-statement",
+        "conditions"
+      ],
+      "id": "m2_q21"
+    },
+    {
+      "type": "mcq",
+      "question": "What is the output?\n\n`x = 10`\n`if x > 5: print(\"A\")`\n`if x > 8: print(\"B\")`\n`else: print(\"C\")`",
+      "options": [
+        "A",
+        "A then B",
+        "A then C",
+        "B"
+      ],
+      "correct_answer": 1,
+      "explanation": "The first `if` is separate: it prints A. The second `if`/`else` pair prints B because 10 > 8; C is not printed.",
+      "concepts": [
+        "if-else"
+      ],
+      "id": "m2_q22"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `\"even\" if n % 2 == 0 else \"odd\"` do?",
+      "options": [
+        "Raises an error",
+        "Chooses a value based on a condition",
+        "Prints text",
+        "Loops"
+      ],
+      "correct_answer": 1,
+      "explanation": "This is a conditional expression (ternary): it evaluates to \"even\" when the condition is true, otherwise \"odd\".",
+      "concepts": [
+        "ternary-expression",
+        "if-else"
+      ],
+      "id": "m2_q23"
+    },
+    {
+      "type": "true_false",
+      "question": "An `else` block can have its own condition.",
+      "correct_answer": false,
+      "explanation": "`else` never has a condition; it catches everything not matched before. Use `elif` for an extra condition.",
+      "concepts": [
+        "if-else"
+      ],
+      "id": "m2_q24"
+    },
+    {
+      "type": "mcq",
+      "question": "`marks = 95`. Which chain correctly assigns \"A\" for 90 and above?",
+      "options": [
+        "if marks >= 60: ... elif marks >= 90: ...",
+        "if marks >= 90: ... elif marks >= 60: ...",
+        "if marks == 90: ...",
+        "elif marks >= 90: ..."
+      ],
+      "correct_answer": 1,
+      "explanation": "Branches are checked top to bottom and the first true one wins, so the strictest test must come first.",
+      "concepts": [
+        "elif"
+      ],
+      "id": "m2_q25"
+    },
+    {
+      "type": "mcq",
+      "question": "In an `if / elif / elif / else` chain, how many blocks can run?",
+      "options": [
+        "All true ones",
+        "Exactly one",
+        "At most two",
+        "At least one condition and else"
+      ],
+      "correct_answer": 1,
+      "explanation": "Python runs only the first branch whose condition is true; if none is true, the `else` runs.",
+      "concepts": [
+        "elif",
+        "multi-way-decisions"
+      ],
+      "id": "m2_q26"
+    },
+    {
+      "type": "mcq",
+      "question": "Which keyword pair is the Python 3.10+ alternative to a long `elif` chain on exact values?",
+      "options": [
+        "switch/case",
+        "match/case",
+        "select/when",
+        "when/then"
+      ],
+      "correct_answer": 1,
+      "explanation": "Python uses `match value:` with `case ...:` branches; `case _:` is the default.",
+      "concepts": [
+        "elif"
+      ],
+      "id": "m2_q27"
+    },
+    {
+      "type": "mcq",
+      "question": "Which is the clearest way to write \"has ID and is an adult\" without nesting?",
+      "options": [
+        "if has_id: if age >= 18:",
+        "if has_id and age >= 18:",
+        "if has_id or age >= 18:",
+        "if has_id, age >= 18:"
+      ],
+      "correct_answer": 1,
+      "explanation": "Two independent conditions with no else between them can be joined with `and`, which keeps the code flat.",
+      "concepts": [
+        "nested-conditions"
+      ],
+      "id": "m2_q28"
+    },
+    {
+      "type": "mcq",
+      "question": "Before calling `int(text)` on user input, which check helps avoid a crash on something like \"12a\"?",
+      "options": [
+        "text.isdigit()",
+        "text.upper()",
+        "len(text)",
+        "text is int"
+      ],
+      "correct_answer": 0,
+      "explanation": "`isdigit()` returns True only when every character is a digit, so you can validate before converting.",
+      "concepts": [
+        "input-validation",
+        "nested-conditions"
+      ],
+      "id": "m2_q29"
+    }
+  ]
+}

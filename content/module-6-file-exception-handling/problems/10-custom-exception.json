@@ -1,0 +1,38 @@
+{
+  "id": "10-custom-exception",
+  "title": "Custom Exception",
+  "type": "driver",
+  "difficulty": "hard",
+  "description": "Define an exception class `InsufficientFundsError` (inheriting from `Exception`) and a function `withdraw(balance, amount)` that returns the new balance, or raises `InsufficientFundsError` if `amount` exceeds `balance`.",
+  "starter_code": "# Define InsufficientFundsError and withdraw\n",
+  "concepts": [
+    "custom-exceptions",
+    "raising-exceptions"
+  ],
+  "visible_tests": [
+    {
+      "driver": "print(withdraw(100, 30))",
+      "expected": "70"
+    },
+    {
+      "driver": "try:\n    withdraw(50, 80)\nexcept InsufficientFundsError:\n    print('denied')",
+      "expected": "denied"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "print(withdraw(10, 10))",
+      "expected": "0"
+    },
+    {
+      "driver": "print(issubclass(InsufficientFundsError, Exception))",
+      "expected": "True"
+    },
+    {
+      "driver": "try:\n    withdraw(0, 1)\nexcept InsufficientFundsError as e:\n    print(type(e).__name__)",
+      "expected": "InsufficientFundsError"
+    }
+  ],
+  "hints": [],
+  "solution_code": "class InsufficientFundsError(Exception):\n    pass\n\ndef withdraw(balance, amount):\n    if amount > balance:\n        raise InsufficientFundsError('not enough money')\n    return balance - amount\n"
+}

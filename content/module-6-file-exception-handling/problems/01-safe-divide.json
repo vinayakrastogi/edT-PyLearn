@@ -1,0 +1,60 @@
+{
+  "id": "01-safe-divide",
+  "title": "Safe Divide",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `safe_divide(a, b)` that returns `a / b`, or the text `'Cannot divide by zero'` when `b` is 0. Use `try/except`.",
+  "starter_code": "def safe_divide(a, b):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "try-except",
+    "exception-types"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        10,
+        2
+      ],
+      "expected": "5.0"
+    },
+    {
+      "input": [
+        5,
+        0
+      ],
+      "expected": "Cannot divide by zero"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        1,
+        4
+      ],
+      "expected": "0.25"
+    },
+    {
+      "input": [
+        0,
+        3
+      ],
+      "expected": "0.0"
+    },
+    {
+      "input": [
+        -6,
+        3
+      ],
+      "expected": "-2.0"
+    },
+    {
+      "input": [
+        7,
+        0
+      ],
+      "expected": "Cannot divide by zero"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def safe_divide(a, b):\n    try:\n        return a / b\n    except ZeroDivisionError:\n        return 'Cannot divide by zero'\n"
+}

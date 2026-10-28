@@ -1,0 +1,514 @@
+{
+  "id": "module-6-file-exception-handling-quiz",
+  "title": "Module 6 Mastery Quiz",
+  "questions": [
+    {
+      "type": "mcq",
+      "question": "Which mode opens a file for reading and is the default?",
+      "options": [
+        "\"w\"",
+        "\"r\"",
+        "\"a\"",
+        "\"x\""
+      ],
+      "correct_answer": 1,
+      "explanation": "`open(name)` without a mode is the same as `open(name, \"r\")`.",
+      "concepts": [
+        "reading-files",
+        "open-function"
+      ],
+      "id": "m6_q1"
+    },
+    {
+      "type": "mcq",
+      "question": "Why is `with open(...) as f:` preferred?",
+      "options": [
+        "It is faster",
+        "The file is closed automatically, even if an error occurs",
+        "It allows binary files",
+        "It creates the file"
+      ],
+      "correct_answer": 1,
+      "explanation": "The `with` statement guarantees the file is closed when the block ends.",
+      "concepts": [
+        "with-statement"
+      ],
+      "id": "m6_q2"
+    },
+    {
+      "type": "mcq",
+      "question": "What does opening an existing file in `\"w\"` mode do?",
+      "options": [
+        "Appends to it",
+        "Erases its contents immediately",
+        "Raises FileExistsError",
+        "Opens read-only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Write mode truncates the file to empty as soon as it is opened.",
+      "concepts": [
+        "writing-files",
+        "file-modes"
+      ],
+      "id": "m6_q3"
+    },
+    {
+      "type": "mcq",
+      "question": "Which mode adds text to the end of a file without erasing it?",
+      "options": [
+        "\"w\"",
+        "\"r+\"",
+        "\"a\"",
+        "\"x\""
+      ],
+      "correct_answer": 2,
+      "explanation": "Append mode `\"a\"` keeps existing content and writes at the end.",
+      "concepts": [
+        "appending-files",
+        "file-modes"
+      ],
+      "id": "m6_q4"
+    },
+    {
+      "type": "mcq",
+      "question": "Which mode fails if the file already exists?",
+      "options": [
+        "\"w\"",
+        "\"a\"",
+        "\"x\"",
+        "\"r\""
+      ],
+      "correct_answer": 2,
+      "explanation": "`\"x\"` (exclusive creation) raises `FileExistsError` for an existing file.",
+      "concepts": [
+        "file-modes"
+      ],
+      "id": "m6_q5"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `f.write(\"hi\")` do about newlines?",
+      "options": [
+        "Adds one automatically",
+        "Adds none: you must include `\\n`",
+        "Adds two",
+        "Removes them"
+      ],
+      "correct_answer": 1,
+      "explanation": "`write()` writes exactly what it is given; add `\\n` yourself.",
+      "concepts": [
+        "writing-files"
+      ],
+      "id": "m6_q6"
+    },
+    {
+      "type": "mcq",
+      "question": "What happens with `f.write(42)`?",
+      "options": [
+        "Writes 42",
+        "TypeError: write() argument must be str",
+        "Writes '42' automatically",
+        "Writes a byte"
+      ],
+      "correct_answer": 1,
+      "explanation": "`write` accepts only strings; convert with `str(42)` or an f-string.",
+      "concepts": [
+        "writing-files"
+      ],
+      "id": "m6_q7"
+    },
+    {
+      "type": "mcq",
+      "question": "What is the best way to process a very large text file?",
+      "options": [
+        "f.read() then split",
+        "for line in f:",
+        "f.readlines() always",
+        "Copy it to a list first"
+      ],
+      "correct_answer": 1,
+      "explanation": "Iterating over the file reads one line at a time without loading everything into memory.",
+      "concepts": [
+        "reading-files"
+      ],
+      "id": "m6_q8"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `f.readlines()` return?",
+      "options": [
+        "One big string",
+        "A list of lines (each with its newline)",
+        "A dictionary",
+        "The number of lines"
+      ],
+      "correct_answer": 1,
+      "explanation": "It returns a list of strings, one per line, keeping the trailing `\\n`.",
+      "concepts": [
+        "reading-files"
+      ],
+      "id": "m6_q9"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `line.strip()` do to `\"apple\\n\"`?",
+      "options": [
+        "Nothing",
+        "Removes the surrounding whitespace, including the newline",
+        "Adds a newline",
+        "Uppercases it"
+      ],
+      "correct_answer": 1,
+      "explanation": "`strip()` removes whitespace at both ends, which is how you clean lines read from a file.",
+      "concepts": [
+        "reading-files",
+        "text-processing"
+      ],
+      "id": "m6_q10"
+    },
+    {
+      "type": "true_false",
+      "question": "Everything read from a text file arrives as a string.",
+      "correct_answer": true,
+      "explanation": "Numbers must be converted with `int()` or `float()` after reading.",
+      "concepts": [
+        "reading-files"
+      ],
+      "id": "m6_q11"
+    },
+    {
+      "type": "mcq",
+      "question": "Which library gives a modern, cross-platform way to build paths with `/`?",
+      "options": [
+        "os.path only",
+        "pathlib",
+        "sys",
+        "string"
+      ],
+      "correct_answer": 1,
+      "explanation": "`pathlib.Path(\"folder\") / \"file.txt\"` works on every operating system.",
+      "concepts": [
+        "file-paths",
+        "pathlib"
+      ],
+      "id": "m6_q12"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `Path(\"a\") / \"b\" / \"c.txt\"` represent?",
+      "options": [
+        "A number",
+        "The path a/b/c.txt",
+        "A string comparison",
+        "An error"
+      ],
+      "correct_answer": 1,
+      "explanation": "The `/` operator joins path components.",
+      "concepts": [
+        "pathlib",
+        "file-paths"
+      ],
+      "id": "m6_q13"
+    },
+    {
+      "type": "mcq",
+      "question": "Why must a CSV file be opened with `newline=\"\"`?",
+      "options": [
+        "To make it faster",
+        "So the csv module controls line endings correctly",
+        "To allow appending",
+        "It is optional and useless"
+      ],
+      "correct_answer": 1,
+      "explanation": "Without it, embedded newlines and Windows line endings can be mangled.",
+      "concepts": [
+        "csv-files"
+      ],
+      "id": "m6_q14"
+    },
+    {
+      "type": "mcq",
+      "question": "What type are the values that `csv.reader` returns?",
+      "options": [
+        "Automatically converted numbers",
+        "Strings",
+        "Booleans",
+        "Tuples of ints"
+      ],
+      "correct_answer": 1,
+      "explanation": "CSV has no types: every field is a string until you convert it.",
+      "concepts": [
+        "csv-files"
+      ],
+      "id": "m6_q15"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `csv.DictReader` give for each row?",
+      "options": [
+        "A list",
+        "A dictionary keyed by the header row",
+        "A tuple",
+        "A string"
+      ],
+      "correct_answer": 1,
+      "explanation": "It uses the first row as keys, so you can write `row[\"name\"]`.",
+      "concepts": [
+        "csv-files"
+      ],
+      "id": "m6_q16"
+    },
+    {
+      "type": "mcq",
+      "question": "Which function converts a Python dict to a JSON string?",
+      "options": [
+        "json.loads",
+        "json.dumps",
+        "json.load",
+        "json.parse"
+      ],
+      "correct_answer": 1,
+      "explanation": "`dumps` (dump to string) produces JSON text; `loads` parses it back.",
+      "concepts": [
+        "json-files"
+      ],
+      "id": "m6_q17"
+    },
+    {
+      "type": "mcq",
+      "question": "How does Python's `None` appear in JSON?",
+      "options": [
+        "none",
+        "None",
+        "null",
+        "nil"
+      ],
+      "correct_answer": 2,
+      "explanation": "JSON uses `null`, `true` and `false`.",
+      "concepts": [
+        "json-files"
+      ],
+      "id": "m6_q18"
+    },
+    {
+      "type": "mcq",
+      "question": "What is an exception?",
+      "options": [
+        "A syntax mistake found before running",
+        "An error raised while the program runs",
+        "A warning message only",
+        "A comment"
+      ],
+      "correct_answer": 1,
+      "explanation": "Exceptions are runtime errors; if not handled, they stop the program with a traceback.",
+      "concepts": [
+        "exceptions"
+      ],
+      "id": "m6_q19"
+    },
+    {
+      "type": "mcq",
+      "question": "Which exception does `int(\"abc\")` raise?",
+      "options": [
+        "TypeError",
+        "ValueError",
+        "NameError",
+        "KeyError"
+      ],
+      "correct_answer": 1,
+      "explanation": "The argument has the right type (string) but an unacceptable value.",
+      "concepts": [
+        "exception-types",
+        "exceptions"
+      ],
+      "id": "m6_q20"
+    },
+    {
+      "type": "mcq",
+      "question": "Which exception does `{\"a\": 1}[\"b\"]` raise?",
+      "options": [
+        "IndexError",
+        "KeyError",
+        "ValueError",
+        "AttributeError"
+      ],
+      "correct_answer": 1,
+      "explanation": "A missing dictionary key raises `KeyError`.",
+      "concepts": [
+        "exception-types"
+      ],
+      "id": "m6_q21"
+    },
+    {
+      "type": "mcq",
+      "question": "In `try/except`, what happens to the rest of the `try` block after an exception occurs?",
+      "options": [
+        "It continues",
+        "It is skipped and the matching `except` runs",
+        "The program stops immediately",
+        "It restarts"
+      ],
+      "correct_answer": 1,
+      "explanation": "Python jumps straight to the matching `except` clause.",
+      "concepts": [
+        "try-except"
+      ],
+      "id": "m6_q22"
+    },
+    {
+      "type": "mcq",
+      "question": "Why is a bare `except:` considered bad practice?",
+      "options": [
+        "It is slow",
+        "It catches everything, hiding bugs and even Ctrl+C",
+        "It is a syntax error",
+        "It only catches ValueError"
+      ],
+      "correct_answer": 1,
+      "explanation": "Catch specific exceptions so that unexpected problems are not silently swallowed.",
+      "concepts": [
+        "try-except"
+      ],
+      "id": "m6_q23"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `except (ValueError, TypeError) as e:` do?",
+      "options": [
+        "Catches only ValueError",
+        "Catches either type and names the exception object `e`",
+        "Raises both",
+        "Is a syntax error"
+      ],
+      "correct_answer": 1,
+      "explanation": "A tuple of types catches any of them; `as e` gives access to the exception object.",
+      "concepts": [
+        "try-except"
+      ],
+      "id": "m6_q24"
+    },
+    {
+      "type": "mcq",
+      "question": "When does the `else` block of a `try` statement run?",
+      "options": [
+        "Always",
+        "Only if an exception occurred",
+        "Only if no exception occurred in `try`",
+        "Never"
+      ],
+      "correct_answer": 2,
+      "explanation": "`else` is the success path: it runs only when `try` finished without errors.",
+      "concepts": [
+        "try-else"
+      ],
+      "id": "m6_q25"
+    },
+    {
+      "type": "mcq",
+      "question": "When does a `finally` block run?",
+      "options": [
+        "Only on errors",
+        "Only on success",
+        "Always, whether or not an exception occurred",
+        "Never after return"
+      ],
+      "correct_answer": 2,
+      "explanation": "`finally` runs no matter what, even when the `try` contains a `return`.",
+      "concepts": [
+        "finally"
+      ],
+      "id": "m6_q26"
+    },
+    {
+      "type": "mcq",
+      "question": "Which exception does `open(\"missing.txt\")` raise?",
+      "options": [
+        "ValueError",
+        "FileNotFoundError",
+        "IOError only",
+        "KeyError"
+      ],
+      "correct_answer": 1,
+      "explanation": "Opening a non-existent file in read mode raises `FileNotFoundError` (a subclass of `OSError`).",
+      "concepts": [
+        "safe-file-handling"
+      ],
+      "id": "m6_q27"
+    },
+    {
+      "type": "mcq",
+      "question": "Which statement raises an error on purpose?",
+      "options": [
+        "throw ValueError()",
+        "raise ValueError(\"msg\")",
+        "error ValueError",
+        "assert ValueError"
+      ],
+      "correct_answer": 1,
+      "explanation": "Use `raise ExceptionType(\"message\")`.",
+      "concepts": [
+        "raising-exceptions"
+      ],
+      "id": "m6_q28"
+    },
+    {
+      "type": "mcq",
+      "question": "What does a bare `raise` inside an `except` block do?",
+      "options": [
+        "Creates a new error",
+        "Re-raises the exception being handled",
+        "Ends the program silently",
+        "Nothing"
+      ],
+      "correct_answer": 1,
+      "explanation": "It passes the same exception up after you have (for example) logged it.",
+      "concepts": [
+        "raising-exceptions"
+      ],
+      "id": "m6_q29"
+    },
+    {
+      "type": "true_false",
+      "question": "`assert` is the right tool to validate data typed by a user.",
+      "correct_answer": false,
+      "explanation": "Assertions can be disabled with `python -O`; use `raise ValueError` for input validation.",
+      "concepts": [
+        "assert-statement"
+      ],
+      "id": "m6_q30"
+    },
+    {
+      "type": "mcq",
+      "question": "How do you define a custom exception?",
+      "options": [
+        "def MyError():",
+        "class MyError(Exception):",
+        "exception MyError:",
+        "raise MyError"
+      ],
+      "correct_answer": 1,
+      "explanation": "Custom exceptions are classes that inherit from `Exception`.",
+      "concepts": [
+        "custom-exceptions"
+      ],
+      "id": "m6_q31"
+    },
+    {
+      "type": "mcq",
+      "question": "A file-backed program typically follows which cycle?",
+      "options": [
+        "print -> input -> exit",
+        "load -> change -> save",
+        "delete -> create -> read",
+        "open -> close only"
+      ],
+      "correct_answer": 1,
+      "explanation": "Programs load data from the file, change it in memory and save it back.",
+      "concepts": [
+        "file-programs",
+        "lab-practice"
+      ],
+      "id": "m6_q32"
+    }
+  ]
+}

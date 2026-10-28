@@ -1,0 +1,37 @@
+{
+  "id": "11-guess-judge-program",
+  "title": "Guess the Number Judge",
+  "type": "program",
+  "difficulty": "medium",
+  "description": "The secret number is `37` and the player has 5 tries. Read guesses (one per line). Ignore any line that is not a whole number (it does not use a try). For each valid guess print `low`, `high` or `correct`. Stop after `correct` (print `Won in <n> tries`) or after 5 valid tries (print `Lost`).",
+  "starter_code": "secret = 37\nmax_tries = 5\n# Read and judge the guesses\n",
+  "concepts": [
+    "project-guessing-game"
+  ],
+  "visible_tests": [
+    {
+      "stdin": "50\n25\n37\n",
+      "expected": "high\nlow\ncorrect\nWon in 3 tries"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "stdin": "abc\n10\n99\n37\n",
+      "expected": "low\nhigh\ncorrect\nWon in 3 tries"
+    },
+    {
+      "stdin": "1\n2\n3\n4\n5\n",
+      "expected": "low\nlow\nlow\nlow\nlow\nLost"
+    },
+    {
+      "stdin": "37\n",
+      "expected": "correct\nWon in 1 tries"
+    },
+    {
+      "stdin": "x\n\n40\n30\nfoo\n35\n38\n37\n",
+      "expected": "high\nlow\nlow\nhigh\ncorrect\nWon in 5 tries"
+    }
+  ],
+  "hints": [],
+  "solution_code": "secret = 37\nmax_tries = 5\ntries = 0\nwon = False\nwhile tries < max_tries:\n    text = input().strip()\n    if not text.lstrip('-').isdigit():\n        continue\n    guess = int(text)\n    tries += 1\n    if guess < secret:\n        print('low')\n    elif guess > secret:\n        print('high')\n    else:\n        print('correct')\n        won = True\n        break\nprint(f'Won in {tries} tries' if won else 'Lost')\n"
+}

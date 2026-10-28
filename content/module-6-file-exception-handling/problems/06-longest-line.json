@@ -1,0 +1,34 @@
+{
+  "id": "06-longest-line",
+  "title": "Longest Line",
+  "type": "driver",
+  "difficulty": "medium",
+  "description": "Write `longest_line(filename)` returning the longest line of the file, without its newline. If two lines tie, return the first. Return an empty string for an empty file.",
+  "starter_code": "def longest_line(filename):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "reading-files",
+    "text-processing"
+  ],
+  "visible_tests": [
+    {
+      "driver": "open('t.txt', 'w').write('hi\\nhello there\\nbye\\n')\nprint(longest_line('t.txt'))",
+      "expected": "hello there"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "open('e.txt', 'w').write('')\nprint(repr(longest_line('e.txt')))",
+      "expected": "''"
+    },
+    {
+      "driver": "open('t.txt', 'w').write('abc\\nxyz\\n')\nprint(longest_line('t.txt'))",
+      "expected": "abc"
+    },
+    {
+      "driver": "open('t.txt', 'w').write('a\\nbb\\nccc\\ndd\\n')\nprint(longest_line('t.txt'))",
+      "expected": "ccc"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def longest_line(filename):\n    best = ''\n    with open(filename) as f:\n        for line in f:\n            line = line.rstrip('\\n')\n            if len(line) > len(best):\n                best = line\n    return best\n"
+}

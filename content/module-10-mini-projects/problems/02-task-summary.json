@@ -1,0 +1,68 @@
+{
+  "id": "02-task-summary",
+  "title": "Task Summary",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `summary(tasks)` for tasks like `{'text': 'Buy milk', 'done': True}`. Return text such as `'2 of 3 done'` (and `'0 of 0 done'` for an empty list).",
+  "starter_code": "def summary(tasks):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "project-todo"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        [
+          {
+            "done": true
+          },
+          {
+            "done": false
+          },
+          {
+            "done": true
+          }
+        ]
+      ],
+      "expected": "2 of 3 done"
+    },
+    {
+      "input": [
+        []
+      ],
+      "expected": "0 of 0 done"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        [
+          {
+            "done": false
+          }
+        ]
+      ],
+      "expected": "0 of 1 done"
+    },
+    {
+      "input": [
+        [
+          {
+            "done": true
+          },
+          {
+            "done": true
+          },
+          {
+            "done": true
+          },
+          {
+            "done": true
+          }
+        ]
+      ],
+      "expected": "4 of 4 done"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def summary(tasks):\n    done = sum(1 for t in tasks if t['done'])\n    return f'{done} of {len(tasks)} done'\n"
+}

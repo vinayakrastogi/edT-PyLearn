@@ -1,0 +1,504 @@
+{
+  "id": "module-9-data-science-quiz",
+  "title": "Module 9 Mastery Quiz",
+  "questions": [
+    {
+      "type": "mcq",
+      "question": "What is `np.array([1, 2, 3]) * 2`?",
+      "options": [
+        "[1, 2, 3, 1, 2, 3]",
+        "array([2, 4, 6])",
+        "[2, 4, 6] as a list",
+        "Error"
+      ],
+      "correct_answer": 1,
+      "explanation": "NumPy arrays do element-wise arithmetic: each element is doubled. (A list would repeat.)",
+      "concepts": [
+        "numpy-arrays"
+      ],
+      "id": "m9_q1"
+    },
+    {
+      "type": "mcq",
+      "question": "Why are NumPy arrays faster than Python lists for maths?",
+      "options": [
+        "They use less code",
+        "They store one data type compactly and process it in optimised C code",
+        "They skip checks",
+        "They use the GPU by default"
+      ],
+      "correct_answer": 1,
+      "explanation": "Vectorised operations on typed arrays avoid the overhead of Python loops.",
+      "concepts": [
+        "numpy-arrays"
+      ],
+      "id": "m9_q2"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `np.arange(0, 10, 3)` return?",
+      "options": [
+        "[0 3 6 9]",
+        "[0 3 6]",
+        "[3 6 9]",
+        "[0 1 2 ... 9]"
+      ],
+      "correct_answer": 0,
+      "explanation": "It starts at 0 and steps by 3 until before 10: 0, 3, 6, 9.",
+      "concepts": [
+        "array-creation"
+      ],
+      "id": "m9_q3"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `np.linspace(0, 1, 5)` give?",
+      "options": [
+        "5 random numbers",
+        "5 evenly spaced numbers from 0 to 1 inclusive",
+        "[0, 1, 2, 3, 4]",
+        "5 zeros"
+      ],
+      "correct_answer": 1,
+      "explanation": "`linspace(start, stop, n)` includes both endpoints: 0, 0.25, 0.5, 0.75, 1.",
+      "concepts": [
+        "array-creation"
+      ],
+      "id": "m9_q4"
+    },
+    {
+      "type": "mcq",
+      "question": "What is the shape of `np.array([[1, 2, 3], [4, 5, 6]])`?",
+      "options": [
+        "(3, 2)",
+        "(2, 3)",
+        "(6,)",
+        "(2,)"
+      ],
+      "correct_answer": 1,
+      "explanation": "Two rows and three columns.",
+      "concepts": [
+        "numpy-arrays"
+      ],
+      "id": "m9_q5"
+    },
+    {
+      "type": "mcq",
+      "question": "For `g = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])`, what is `g[:, 1]`?",
+      "options": [
+        "[4 5 6]",
+        "[2 5 8]",
+        "[1 2 3]",
+        "5"
+      ],
+      "correct_answer": 1,
+      "explanation": "`:` selects all rows and `1` picks column 1: 2, 5, 8.",
+      "concepts": [
+        "array-indexing"
+      ],
+      "id": "m9_q6"
+    },
+    {
+      "type": "mcq",
+      "question": "If `a = np.array([1, 2, 3, 4, 5])`, what does `a[a > 3]` return?",
+      "options": [
+        "[True True]",
+        "[4 5]",
+        "[3 4 5]",
+        "[1 2 3]"
+      ],
+      "correct_answer": 1,
+      "explanation": "A boolean mask keeps only the elements where the condition is True.",
+      "concepts": [
+        "array-indexing"
+      ],
+      "id": "m9_q7"
+    },
+    {
+      "type": "mcq",
+      "question": "Which operator combines two array conditions with AND?",
+      "options": [
+        "and",
+        "&&",
+        "&",
+        "+"
+      ],
+      "correct_answer": 2,
+      "explanation": "Use `&` (with each condition in brackets); Python's `and` raises a ValueError on arrays.",
+      "concepts": [
+        "array-indexing"
+      ],
+      "id": "m9_q8"
+    },
+    {
+      "type": "true_false",
+      "question": "A slice of a NumPy array (like `a[1:4]`) is a copy, so changing it never affects the original.",
+      "correct_answer": false,
+      "explanation": "Slices are views that share memory with the original array; use `.copy()` for an independent array.",
+      "concepts": [
+        "array-indexing",
+        "numpy-arrays"
+      ],
+      "id": "m9_q9"
+    },
+    {
+      "type": "mcq",
+      "question": "For `m = np.array([[1, 2], [3, 4]])`, what is `m.sum(axis=0)`?",
+      "options": [
+        "[3 7]",
+        "[4 6]",
+        "10",
+        "[[1 2] [3 4]]"
+      ],
+      "correct_answer": 1,
+      "explanation": "`axis=0` collapses the rows, producing one total per column: 1+3 and 2+4.",
+      "concepts": [
+        "array-statistics"
+      ],
+      "id": "m9_q10"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `arr.argmax()` return?",
+      "options": [
+        "The largest value",
+        "The position of the largest value",
+        "The number of maximums",
+        "The sorted array"
+      ],
+      "correct_answer": 1,
+      "explanation": "`argmax` gives the index; `max` gives the value.",
+      "concepts": [
+        "array-statistics"
+      ],
+      "id": "m9_q11"
+    },
+    {
+      "type": "mcq",
+      "question": "What is `np.array([1, 2, 3]) + np.array([10])`?",
+      "options": [
+        "[11 2 3]",
+        "[11 12 13]",
+        "Error",
+        "[1 2 3 10]"
+      ],
+      "correct_answer": 1,
+      "explanation": "Broadcasting stretches the single element across the whole array.",
+      "concepts": [
+        "broadcasting"
+      ],
+      "id": "m9_q12"
+    },
+    {
+      "type": "mcq",
+      "question": "Which pair of shapes can NOT be added?",
+      "options": [
+        "(3,) and (1,)",
+        "(2, 3) and (3,)",
+        "(3,) and (2,)",
+        "(2, 3) and (2, 1)"
+      ],
+      "correct_answer": 2,
+      "explanation": "Broadcasting needs dimensions that are equal or 1; 3 and 2 are neither.",
+      "concepts": [
+        "broadcasting"
+      ],
+      "id": "m9_q13"
+    },
+    {
+      "type": "mcq",
+      "question": "In pandas, what is a Series?",
+      "options": [
+        "A whole table",
+        "A labelled one-dimensional column of data",
+        "A chart",
+        "A file"
+      ],
+      "correct_answer": 1,
+      "explanation": "A DataFrame is made of Series that share an index.",
+      "concepts": [
+        "series",
+        "pandas-basics"
+      ],
+      "id": "m9_q14"
+    },
+    {
+      "type": "mcq",
+      "question": "How do you select two columns `a` and `b` of a DataFrame `df`?",
+      "options": [
+        "df[\"a\", \"b\"]",
+        "df[[\"a\", \"b\"]]",
+        "df.a.b",
+        "df(\"a\", \"b\")"
+      ],
+      "correct_answer": 1,
+      "explanation": "A list of column names inside the brackets returns a smaller DataFrame.",
+      "concepts": [
+        "dataframe"
+      ],
+      "id": "m9_q15"
+    },
+    {
+      "type": "mcq",
+      "question": "What is the difference between `df.loc[2]` and `df.iloc[2]`?",
+      "options": [
+        "None",
+        "`loc` uses index labels; `iloc` uses positions",
+        "`iloc` uses labels; `loc` positions",
+        "`loc` is for columns only"
+      ],
+      "correct_answer": 1,
+      "explanation": "After sorting or filtering, the label 2 may not be the third row, so the difference matters.",
+      "concepts": [
+        "dataframe",
+        "pandas-basics"
+      ],
+      "id": "m9_q16"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `df.head(3)` show?",
+      "options": [
+        "The last 3 rows",
+        "The first 3 rows",
+        "3 random rows",
+        "3 columns"
+      ],
+      "correct_answer": 1,
+      "explanation": "`head(n)` shows the first n rows; `tail(n)` the last n.",
+      "concepts": [
+        "pandas-basics"
+      ],
+      "id": "m9_q17"
+    },
+    {
+      "type": "mcq",
+      "question": "Which function reads a CSV file into a DataFrame?",
+      "options": [
+        "pd.open_csv",
+        "pd.read_csv",
+        "pd.load_file",
+        "pd.csv"
+      ],
+      "correct_answer": 1,
+      "explanation": "`pd.read_csv(\"file.csv\")` returns a DataFrame.",
+      "concepts": [
+        "read-csv"
+      ],
+      "id": "m9_q18"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `na_values=[\"-\"]` do in `read_csv`?",
+      "options": [
+        "Removes those rows",
+        "Treats \"-\" as missing (NaN)",
+        "Sets the separator",
+        "Renames a column"
+      ],
+      "correct_answer": 1,
+      "explanation": "It tells pandas which extra symbols mean \"missing data\".",
+      "concepts": [
+        "read-csv"
+      ],
+      "id": "m9_q19"
+    },
+    {
+      "type": "mcq",
+      "question": "Which expression keeps rows with maths above 80 AND science above 80?",
+      "options": [
+        "df[df.maths > 80 and df.science > 80]",
+        "df[(df.maths > 80) & (df.science > 80)]",
+        "df[df.maths > 80 & df.science > 80]",
+        "df.filter(maths > 80, science > 80)"
+      ],
+      "correct_answer": 1,
+      "explanation": "Use `&` with brackets around each comparison.",
+      "concepts": [
+        "filtering-data",
+        "boolean-masks-pandas"
+      ],
+      "id": "m9_q20"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `df.dropna()` do?",
+      "options": [
+        "Fills missing values with 0",
+        "Removes rows containing missing values",
+        "Counts missing values",
+        "Sorts by missing values"
+      ],
+      "correct_answer": 1,
+      "explanation": "`fillna` replaces missing values; `dropna` removes the rows.",
+      "concepts": [
+        "filtering-data"
+      ],
+      "id": "m9_q21"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `df.groupby(\"class\")[\"marks\"].mean()` compute?",
+      "options": [
+        "The overall mean",
+        "The average marks for each class",
+        "The class with most marks",
+        "A list of classes"
+      ],
+      "correct_answer": 1,
+      "explanation": "Split by class, take the marks column, and average each group.",
+      "concepts": [
+        "groupby",
+        "aggregation"
+      ],
+      "id": "m9_q22"
+    },
+    {
+      "type": "mcq",
+      "question": "What is `transform` useful for after a `groupby`?",
+      "options": [
+        "Renaming columns",
+        "Returning a result with the original length, e.g. group mean for each row",
+        "Sorting",
+        "Plotting"
+      ],
+      "correct_answer": 1,
+      "explanation": "It aligns group statistics back onto every row.",
+      "concepts": [
+        "groupby",
+        "aggregation"
+      ],
+      "id": "m9_q23"
+    },
+    {
+      "type": "mcq",
+      "question": "Which merge keeps every row of the LEFT table?",
+      "options": [
+        "how=\"inner\"",
+        "how=\"left\"",
+        "how=\"outer\" only",
+        "how=\"cross\""
+      ],
+      "correct_answer": 1,
+      "explanation": "A left join keeps all left rows; unmatched right values become NaN.",
+      "concepts": [
+        "merging-data"
+      ],
+      "id": "m9_q24"
+    },
+    {
+      "type": "mcq",
+      "question": "Which call draws a line graph of `x` against `y`?",
+      "options": [
+        "plt.line(x, y)",
+        "plt.plot(x, y)",
+        "plt.draw(x, y)",
+        "plt.graph(x, y)"
+      ],
+      "correct_answer": 1,
+      "explanation": "`plt.plot` connects points with lines.",
+      "concepts": [
+        "matplotlib-basics",
+        "line-graph"
+      ],
+      "id": "m9_q25"
+    },
+    {
+      "type": "mcq",
+      "question": "Why call `plt.close()` after saving a figure?",
+      "options": [
+        "To delete the file",
+        "So the next chart starts on a clean figure",
+        "To show the chart",
+        "It is required by savefig"
+      ],
+      "correct_answer": 1,
+      "explanation": "Otherwise later plots are drawn over the previous one.",
+      "concepts": [
+        "matplotlib-basics"
+      ],
+      "id": "m9_q26"
+    },
+    {
+      "type": "mcq",
+      "question": "Which chart best compares categories such as class averages?",
+      "options": [
+        "line graph",
+        "bar chart",
+        "histogram",
+        "none"
+      ],
+      "correct_answer": 1,
+      "explanation": "Bars compare discrete categories; lines show change over time.",
+      "concepts": [
+        "bar-chart"
+      ],
+      "id": "m9_q27"
+    },
+    {
+      "type": "mcq",
+      "question": "Which chart shows how test marks are distributed?",
+      "options": [
+        "pie chart",
+        "histogram",
+        "line graph",
+        "bar of averages"
+      ],
+      "correct_answer": 1,
+      "explanation": "A histogram bins values and counts how many fall in each bin.",
+      "concepts": [
+        "histogram"
+      ],
+      "id": "m9_q28"
+    },
+    {
+      "type": "mcq",
+      "question": "A scatter plot with a trend line rising from bottom-left to top-right suggests...",
+      "options": [
+        "negative correlation",
+        "positive correlation",
+        "no data",
+        "causation proven"
+      ],
+      "correct_answer": 1,
+      "explanation": "Both variables tend to increase together. That is correlation, not proof of cause.",
+      "concepts": [
+        "scatter-plot"
+      ],
+      "id": "m9_q29"
+    },
+    {
+      "type": "mcq",
+      "question": "What does `fig, axes = plt.subplots(1, 2)` create?",
+      "options": [
+        "Two figures",
+        "One figure with two side-by-side charts",
+        "A pie chart",
+        "Nothing yet"
+      ],
+      "correct_answer": 1,
+      "explanation": "It returns a figure and an array of two axes arranged in one row.",
+      "concepts": [
+        "subplots"
+      ],
+      "id": "m9_q30"
+    },
+    {
+      "type": "mcq",
+      "question": "What is the most sensible first step in a new data project?",
+      "options": [
+        "Draw ten charts",
+        "Inspect and clean the data (shape, types, missing values, duplicates)",
+        "Delete outliers",
+        "Sort by name"
+      ],
+      "correct_answer": 1,
+      "explanation": "Bad data leads to wrong conclusions, so check it first.",
+      "concepts": [
+        "lab-practice",
+        "data-analysis-programs"
+      ],
+      "id": "m9_q31"
+    }
+  ]
+}

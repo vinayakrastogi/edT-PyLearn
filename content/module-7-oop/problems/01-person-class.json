@@ -1,0 +1,35 @@
+{
+  "id": "01-person-class",
+  "title": "Person Class",
+  "type": "driver",
+  "difficulty": "easy",
+  "description": "Create a class `Person` whose constructor takes `name` and `age`, and a method `greet()` that returns `Hello, I am <name> and I am <age> years old.`",
+  "starter_code": "class Person:\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "classes",
+    "constructor",
+    "instance-methods"
+  ],
+  "visible_tests": [
+    {
+      "driver": "print(Person('Alice', 25).greet())",
+      "expected": "Hello, I am Alice and I am 25 years old."
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "print(Person('Bob', 30).greet())",
+      "expected": "Hello, I am Bob and I am 30 years old."
+    },
+    {
+      "driver": "p = Person('Cy', 9)\nprint(p.name, p.age)",
+      "expected": "Cy 9"
+    },
+    {
+      "driver": "print(Person('Di', 41).greet())",
+      "expected": "Hello, I am Di and I am 41 years old."
+    }
+  ],
+  "hints": [],
+  "solution_code": "class Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    def greet(self):\n        return f'Hello, I am {self.name} and I am {self.age} years old.'\n"
+}

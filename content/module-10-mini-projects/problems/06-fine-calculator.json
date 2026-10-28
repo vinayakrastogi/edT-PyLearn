@@ -1,0 +1,52 @@
+{
+  "id": "06-fine-calculator",
+  "title": "Library Fine",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `fine(due, returned)` where both dates are `YYYY-MM-DD` text. The fine is 2 rupees per day late; returning on or before the due date costs nothing.",
+  "starter_code": "from datetime import datetime\n\ndef fine(due, returned):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "project-library"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        "2025-03-15",
+        "2025-03-20"
+      ],
+      "expected": "10"
+    },
+    {
+      "input": [
+        "2025-03-15",
+        "2025-03-15"
+      ],
+      "expected": "0"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        "2025-03-15",
+        "2025-03-01"
+      ],
+      "expected": "0"
+    },
+    {
+      "input": [
+        "2025-03-15",
+        "2025-04-14"
+      ],
+      "expected": "60"
+    },
+    {
+      "input": [
+        "2024-02-28",
+        "2024-03-01"
+      ],
+      "expected": "4"
+    }
+  ],
+  "hints": [],
+  "solution_code": "from datetime import datetime\n\ndef fine(due, returned):\n    late = (datetime.strptime(returned, '%Y-%m-%d') - datetime.strptime(due, '%Y-%m-%d')).days\n    return max(0, late) * 2\n"
+}

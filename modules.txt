@@ -1,0 +1,165 @@
+Module 1 – Introduction to Python
+Topics
+What is Python?
+Installing Python and VS Code
+Running Python Programs
+Python Syntax
+Comments
+Variables
+Data Types
+Input and Output
+Type Conversion
+Lab
+Calculator
+Temperature Converter
+Simple Interest Calculator
+Module 2 – Operators and Decision Making
+Topics
+Arithmetic Operators
+Assignment Operators
+Comparison Operators
+Logical Operators
+Membership Operators
+Identity Operators
+if
+if-else
+elif
+Nested Conditions
+Lab
+Grade Calculator
+Largest of Three Numbers
+ATM Eligibility Program
+Module 3 – Loops and Pattern Programming
+Topics
+while Loop
+for Loop
+range()
+Nested Loops
+break
+continue
+pass
+Pattern Programs
+Star Patterns
+Number Patterns
+Pyramid Patterns
+Lab
+Multiplication Table
+Prime Number Check
+Fibonacci Series
+Factorial
+Module 4 – Strings and Built-in Data Structures
+Topics
+Strings
+Indexing
+Slicing
+String Functions
+Formatting (f-strings)
+Lists
+Creating Lists
+Accessing Elements
+List Methods
+Tuples
+Sets
+Dictionaries
+Lab
+Word Counter
+Student Marks List
+Dictionary-based Phone Book
+Module 5 – Functions and Modular Programming
+Topics
+Why Functions?
+Defining Functions
+Parameters
+Return Values
+Default Arguments
+Keyword Arguments
+Variable Scope
+Recursion (Introduction)
+Modules
+Import Statement
+math Module
+random Module
+Lab
+Calculator using Functions
+Guess the Number Game
+Module 6 – File Handling and Exception Handling
+Topics
+Reading Files
+Writing Files
+Appending Data
+Working with Text Files
+CSV Files (Introduction)
+Exceptions
+try
+except
+finally
+Raising Exceptions
+Lab
+Student Record File
+Notes Management System
+Module 7 – Object-Oriented Programming
+Topics
+Classes
+Objects
+Constructors
+Attributes
+Methods
+Inheritance (Basic)
+Method Overriding
+Encapsulation (Introduction)
+Lab
+Student Class
+Employee Class
+Bank Account Class
+Module 8 – Python Libraries and Basic Automation
+Topics
+os Module
+datetime Module
+random Module
+math Module
+tkinter (Introduction)
+requests Library (Introduction)
+JSON Basics
+Lab
+Digital Clock
+Random Password Generator
+Weather Information using API
+Module 9 – Introduction to Data Science
+Topics
+NumPy
+Arrays
+Basic Operations
+Pandas
+DataFrames
+Reading CSV
+Filtering Data
+Matplotlib
+Line Graph
+Bar Chart
+Pie Chart
+Lab
+Student Marks Analysis
+Sales Report Visualization
+Module 10 – Mini Projects
+
+Students complete one project individually or in groups.
+
+Suggested Projects
+Student Management System
+Library Management System
+Quiz Application
+Expense Tracker
+Contact Book
+To-Do List
+Number Guessing Game
+Simple Banking System
+File Organizer
+Weather Application
+
+Students should apply:
+
+Functions
+OOP
+File Handling
+Python Libraries
+Basic Data Visualization (optional)

@@ -1,0 +1,72 @@
+{
+  "id": "04-category-totals",
+  "title": "Spending by Category",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `totals(expenses)` where each expense is `{'category': 'Food', 'amount': 250}`. Return a dictionary of category totals, with categories in the order they first appear.",
+  "starter_code": "def totals(expenses):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "project-expenses"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        [
+          {
+            "category": "Food",
+            "amount": 250
+          },
+          {
+            "category": "Fun",
+            "amount": 1200
+          },
+          {
+            "category": "Food",
+            "amount": 480
+          }
+        ]
+      ],
+      "expected": "{'Food': 730, 'Fun': 1200}"
+    },
+    {
+      "input": [
+        []
+      ],
+      "expected": "{}"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        [
+          {
+            "category": "A",
+            "amount": 1
+          }
+        ]
+      ],
+      "expected": "{'A': 1}"
+    },
+    {
+      "input": [
+        [
+          {
+            "category": "B",
+            "amount": 5
+          },
+          {
+            "category": "A",
+            "amount": 2
+          },
+          {
+            "category": "B",
+            "amount": 5
+          }
+        ]
+      ],
+      "expected": "{'B': 10, 'A': 2}"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def totals(expenses):\n    result = {}\n    for e in expenses:\n        result[e['category']] = result.get(e['category'], 0) + e['amount']\n    return result\n"
+}

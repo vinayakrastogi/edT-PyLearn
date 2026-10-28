@@ -1,0 +1,65 @@
+{
+  "id": "10-binary-search-guesses",
+  "title": "Binary Search Guesses",
+  "type": "function",
+  "difficulty": "hard",
+  "description": "Write `guesses(secret, low, high)` that returns the list of guesses a perfect player makes: always guess the middle `(low + high) // 2`; if it is too low, search above it; if too high, search below it; stop when correct.",
+  "starter_code": "def guesses(secret, low, high):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "project-guessing-game"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        42,
+        1,
+        100
+      ],
+      "expected": "[50, 25, 37, 43, 40, 41, 42]"
+    },
+    {
+      "input": [
+        1,
+        1,
+        10
+      ],
+      "expected": "[5, 2, 1]"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        100,
+        1,
+        100
+      ],
+      "expected": "[50, 75, 88, 94, 97, 99, 100]"
+    },
+    {
+      "input": [
+        50,
+        1,
+        100
+      ],
+      "expected": "[50]"
+    },
+    {
+      "input": [
+        7,
+        1,
+        7
+      ],
+      "expected": "[4, 6, 7]"
+    },
+    {
+      "input": [
+        3,
+        1,
+        5
+      ],
+      "expected": "[3]"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def guesses(secret, low, high):\n    result = []\n    while low <= high:\n        mid = (low + high) // 2\n        result.append(mid)\n        if mid == secret:\n            break\n        if mid < secret:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return result\n"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "08-format-duration",
+  "title": "Format a Duration",
+  "type": "function",
+  "difficulty": "medium",
+  "description": "Write `format_duration(seconds)` returning `'1h 02m 05s'` style text when there is at least one hour, otherwise `'2m 05s'` (minutes and two-digit seconds, even for 0 minutes).",
+  "starter_code": "def format_duration(seconds):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "automation-scripts",
+    "datetime-module"
+  ],
+  "visible_tests": [
+    {
+      "input": 3725,
+      "expected": "1h 02m 05s"
+    },
+    {
+      "input": 59,
+      "expected": "0m 59s"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": 0,
+      "expected": "0m 00s"
+    },
+    {
+      "input": 600,
+      "expected": "10m 00s"
+    },
+    {
+      "input": 3600,
+      "expected": "1h 00m 00s"
+    },
+    {
+      "input": 86399,
+      "expected": "23h 59m 59s"
+    },
+    {
+      "input": 61,
+      "expected": "1m 01s"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def format_duration(seconds):\n    hours, rest = divmod(seconds, 3600)\n    minutes, secs = divmod(rest, 60)\n    if hours:\n        return f'{hours}h {minutes:02d}m {secs:02d}s'\n    return f'{minutes}m {secs:02d}s'\n"
+}

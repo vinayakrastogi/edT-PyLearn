@@ -1,0 +1,36 @@
+{
+  "id": "11-sum-until-zero",
+  "title": "Sum Until Zero",
+  "type": "program",
+  "difficulty": "medium",
+  "description": "Read whole numbers, one per line, until the number `0` is entered (the `0` is not counted). Print the sum of the numbers entered.",
+  "starter_code": "total = 0\n# Keep reading numbers until 0\n",
+  "concepts": [
+    "while-loop",
+    "loop-recipes"
+  ],
+  "visible_tests": [
+    {
+      "stdin": "10\n20\n5\n0\n",
+      "expected": "35"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "stdin": "0\n",
+      "expected": "0"
+    },
+    {
+      "stdin": "-5\n5\n7\n0\n",
+      "expected": "7"
+    },
+    {
+      "stdin": "1\n1\n1\n1\n0\n",
+      "expected": "4"
+    }
+  ],
+  "hints": [
+    "Read once before the loop, then read again at the end of each round."
+  ],
+  "solution_code": "total = 0\nn = int(input())\nwhile n != 0:\n    total += n\n    n = int(input())\nprint(total)\n"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "06-last-digit",
+  "title": "Last Digit",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `last_digit(n)` that returns the last digit of a positive whole number.\n\nExample: `last_digit(4729)` returns `9`.",
+  "starter_code": "def last_digit(n):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "operators",
+    "arithmetic"
+  ],
+  "visible_tests": [
+    {
+      "input": 4729,
+      "expected": "9"
+    },
+    {
+      "input": 50,
+      "expected": "0"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": 7,
+      "expected": "7"
+    },
+    {
+      "input": 1000001,
+      "expected": "1"
+    },
+    {
+      "input": 65432,
+      "expected": "2"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def last_digit(n):\n    return n % 10\n"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "05-count-lines",
+  "title": "Count File Lines",
+  "type": "driver",
+  "difficulty": "medium",
+  "description": "Write `count_lines(filename)` returning the number of lines in a text file. If the file does not exist, return `0`.",
+  "starter_code": "def count_lines(filename):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "reading-files",
+    "with-statement",
+    "safe-file-handling"
+  ],
+  "visible_tests": [
+    {
+      "driver": "open('a.txt', 'w').write('one\\ntwo\\nthree\\n')\nprint(count_lines('a.txt'))",
+      "expected": "3"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "print(count_lines('missing.txt'))",
+      "expected": "0"
+    },
+    {
+      "driver": "open('b.txt', 'w').write('')\nprint(count_lines('b.txt'))",
+      "expected": "0"
+    },
+    {
+      "driver": "open('c.txt', 'w').write('x\\ny')\nprint(count_lines('c.txt'))",
+      "expected": "2"
+    }
+  ],
+  "hints": [],
+  "solution_code": "def count_lines(filename):\n    try:\n        with open(filename) as f:\n            return sum(1 for _ in f)\n    except FileNotFoundError:\n        return 0\n"
+}

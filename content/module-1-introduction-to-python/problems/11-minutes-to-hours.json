@@ -1,0 +1,41 @@
+{
+  "id": "11-minutes-to-hours",
+  "title": "Minutes to Hours",
+  "type": "program",
+  "difficulty": "medium",
+  "description": "Read a number of minutes and print it as hours and minutes in the form `H hours M minutes`.\n\nExample: input `250` prints `4 hours 10 minutes`.",
+  "starter_code": "minutes = int(input())\n# Work out the hours and the leftover minutes, then print\n",
+  "concepts": [
+    "input",
+    "operators",
+    "arithmetic"
+  ],
+  "visible_tests": [
+    {
+      "stdin": "250\n",
+      "expected": "4 hours 10 minutes"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "stdin": "60\n",
+      "expected": "1 hours 0 minutes"
+    },
+    {
+      "stdin": "59\n",
+      "expected": "0 hours 59 minutes"
+    },
+    {
+      "stdin": "1000\n",
+      "expected": "16 hours 40 minutes"
+    },
+    {
+      "stdin": "0\n",
+      "expected": "0 hours 0 minutes"
+    }
+  ],
+  "hints": [
+    "`//` gives whole hours, `%` gives the leftover minutes."
+  ],
+  "solution_code": "minutes = int(input())\nprint(f'{minutes // 60} hours {minutes % 60} minutes')\n"
+}

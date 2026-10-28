@@ -1,0 +1,39 @@
+{
+  "id": "06-animal-inheritance",
+  "title": "Animal Inheritance",
+  "type": "driver",
+  "difficulty": "medium",
+  "description": "Create a parent class `Animal(name)` with a method `speak()` returning `'...'`. Create `Dog` and `Cat` that inherit from it and override `speak()` to return `'Woof'` and `'Meow'`.",
+  "starter_code": "class Animal:\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "inheritance",
+    "method-overriding",
+    "polymorphism"
+  ],
+  "visible_tests": [
+    {
+      "driver": "print(Dog('Rex').speak(), Cat('Tom').speak())",
+      "expected": "Woof Meow"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "print(Animal('x').speak())",
+      "expected": "..."
+    },
+    {
+      "driver": "print(Dog('Rex').name)",
+      "expected": "Rex"
+    },
+    {
+      "driver": "print(isinstance(Dog('a'), Animal))",
+      "expected": "True"
+    },
+    {
+      "driver": "print([a.speak() for a in (Cat('a'), Dog('b'), Animal('c'))])",
+      "expected": "['Meow', 'Woof', '...']"
+    }
+  ],
+  "hints": [],
+  "solution_code": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return '...'\n\nclass Dog(Animal):\n    def speak(self):\n        return 'Woof'\n\nclass Cat(Animal):\n    def speak(self):\n        return 'Meow'\n"
+}

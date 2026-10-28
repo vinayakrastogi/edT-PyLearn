@@ -1,0 +1,44 @@
+{
+  "id": "01-reverse-string",
+  "title": "Reverse a String",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `reverse(text)` that returns the text reversed.\n\nExample: `reverse('python')` returns `nohtyp`.",
+  "starter_code": "def reverse(text):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "strings",
+    "string-immutability"
+  ],
+  "visible_tests": [
+    {
+      "input": "python",
+      "expected": "nohtyp"
+    },
+    {
+      "input": "abc",
+      "expected": "cba"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": "",
+      "expected": ""
+    },
+    {
+      "input": "a",
+      "expected": "a"
+    },
+    {
+      "input": "Hello, World",
+      "expected": "dlroW ,olleH"
+    },
+    {
+      "input": "racecar",
+      "expected": "racecar"
+    }
+  ],
+  "hints": [
+    "Slicing with a step of -1 walks backwards."
+  ],
+  "solution_code": "def reverse(text):\n    return text[::-1]\n"
+}

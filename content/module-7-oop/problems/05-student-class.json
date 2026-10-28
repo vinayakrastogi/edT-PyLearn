@@ -1,0 +1,39 @@
+{
+  "id": "05-student-class",
+  "title": "Student Class",
+  "type": "driver",
+  "difficulty": "medium",
+  "description": "Create `Student(name)` with `add_mark(mark)` and a read-only property `average` (0 when there are no marks). Give a property `grade`: `'A'` for average 80+, `'B'` for 60-79, `'C'` otherwise.",
+  "starter_code": "class Student:\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "classes",
+    "properties",
+    "instance-methods"
+  ],
+  "visible_tests": [
+    {
+      "driver": "s = Student('Asha')\ns.add_mark(90)\ns.add_mark(70)\nprint(s.average, s.grade)",
+      "expected": "80.0 A"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "driver": "print(Student('X').average, Student('X').grade)",
+      "expected": "0 C"
+    },
+    {
+      "driver": "s = Student('R')\ns.add_mark(60)\nprint(s.grade)",
+      "expected": "B"
+    },
+    {
+      "driver": "s = Student('P')\ns.add_mark(59)\nprint(s.grade)",
+      "expected": "C"
+    },
+    {
+      "driver": "s = Student('Q')\ns.add_mark(100)\ns.add_mark(80)\nprint(s.average)",
+      "expected": "90.0"
+    }
+  ],
+  "hints": [],
+  "solution_code": "class Student:\n    def __init__(self, name):\n        self.name = name\n        self._marks = []\n\n    def add_mark(self, mark):\n        self._marks.append(mark)\n\n    @property\n    def average(self):\n        return sum(self._marks) / len(self._marks) if self._marks else 0\n\n    @property\n    def grade(self):\n        avg = self.average\n        if avg >= 80:\n            return 'A'\n        elif avg >= 60:\n            return 'B'\n        return 'C'\n"
+}

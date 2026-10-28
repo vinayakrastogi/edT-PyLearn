@@ -1,0 +1,38 @@
+{
+  "id": "07-weather-summary",
+  "title": "Weather Summary",
+  "type": "function",
+  "difficulty": "hard",
+  "description": "Write `summary(text)` where `text` is JSON from a weather API: `{\"name\": \"Delhi\", \"main\": {\"temp\": 301.15}}` (temperature in **Kelvin**). Return `'Delhi: 28.0 C'` (Celsius, rounded to 1 decimal). If the JSON has no `main` key, return `'No data'`.",
+  "starter_code": "import json\n\ndef summary(text):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "json-basics",
+    "api-errors"
+  ],
+  "visible_tests": [
+    {
+      "input": "{\"name\": \"Delhi\", \"main\": {\"temp\": 301.15}}",
+      "expected": "Delhi: 28.0 C"
+    },
+    {
+      "input": "{\"message\": \"city not found\"}",
+      "expected": "No data"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": "{\"name\": \"Oslo\", \"main\": {\"temp\": 273.15}}",
+      "expected": "Oslo: 0.0 C"
+    },
+    {
+      "input": "{\"name\": \"Chennai\", \"main\": {\"temp\": 306.65}}",
+      "expected": "Chennai: 33.5 C"
+    },
+    {
+      "input": "{}",
+      "expected": "No data"
+    }
+  ],
+  "hints": [],
+  "solution_code": "import json\n\ndef summary(text):\n    data = json.loads(text)\n    if 'main' not in data:\n        return 'No data'\n    celsius = round(data['main']['temp'] - 273.15, 1)\n    return f\"{data['name']}: {celsius} C\"\n"
+}

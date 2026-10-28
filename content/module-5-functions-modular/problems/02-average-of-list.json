@@ -1,0 +1,73 @@
+{
+  "id": "02-average-of-list",
+  "title": "List Average",
+  "type": "function",
+  "difficulty": "easy",
+  "description": "Write `average(numbers)` returning the average of a list. Return `0` for an empty list.",
+  "starter_code": "def average(numbers):\n    # Write your code here\n    pass\n",
+  "concepts": [
+    "functions",
+    "return-statement"
+  ],
+  "visible_tests": [
+    {
+      "input": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "expected": "3.0"
+    },
+    {
+      "input": [
+        [
+          10,
+          20
+        ]
+      ],
+      "expected": "15.0"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "input": [
+        []
+      ],
+      "expected": "0"
+    },
+    {
+      "input": [
+        [
+          7
+        ]
+      ],
+      "expected": "7.0"
+    },
+    {
+      "input": [
+        [
+          1,
+          2
+        ]
+      ],
+      "expected": "1.5"
+    },
+    {
+      "input": [
+        [
+          -4,
+          4
+        ]
+      ],
+      "expected": "0.0"
+    }
+  ],
+  "hints": [
+    "Check for an empty list first (early return)."
+  ],
+  "solution_code": "def average(numbers):\n    if not numbers:\n        return 0\n    return sum(numbers) / len(numbers)\n"
+}
