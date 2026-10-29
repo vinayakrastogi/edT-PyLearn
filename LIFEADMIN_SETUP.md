@@ -155,8 +155,8 @@ Interactive contracts: `http://localhost:8000/docs` and
 `http://localhost:8001/docs`. Postman setup is a separate next step.
 # Hosted demonstration
 
-LifeAdmin's interface is https://lifeadmin-vinayakrastogi.onrender.com and its independent
-API is https://lifeadmin-api-vinayakrastogi.onrender.com. The deployed edT backend uses
+LifeAdmin's interface is https://lifeadmin-aditya.onrender.com and its independent
+API is https://lifeadmin-api-aditya.onrender.com. The deployed edT backend uses
 that API over HTTPS with the shared integration key. Each app has its own Neon database.
 Set both `LIFEADMIN_API_URL` and `LIFEADMIN_DOCKER_API_URL` to the hosted API for local
 edT use; allow 75 seconds for a cold start. The ngrok instructions below remain an
