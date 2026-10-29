@@ -1,5 +1,6 @@
 import json
 from types import SimpleNamespace
+from unittest.mock import AsyncMock
 from uuid import uuid4
 
 import httpx
@@ -106,3 +107,60 @@ def test_auth_cookie_can_be_used_on_lan_hosts():
     assert "domain=" not in cookie
     assert "httponly" in cookie
     assert "samesite=lax" in cookie
+
+
+def test_starting_service_retries_the_identical_note_request(client, monkeypatch):
+    requests = []
+    note_id = str(uuid4())
+    pause = AsyncMock()
+    monkeypatch.setattr(lifeadmin, "sleep", pause)
+
+    def remote(request):
+        requests.append(request)
+        if len(requests) <= 2:
+            return httpx.Response(502, text="Host starting")
+        data = json.loads(request.content)
+        return httpx.Response(201, json={"id": note_id, "created_at": "2026-10-29T05:00:00+00:00", **data})
+
+    mock_http(monkeypatch, remote)
+    response = client.post(PATH, json={"content": "Keep this draft", "request_id": str(uuid4())})
+    assert response.status_code == 201
+    assert response.json()["id"] == note_id
+    assert len(requests) == 3
+    assert len({request.content for request in requests}) == 1
+    assert pause.await_count == 2
+
+
+@pytest.mark.parametrize("status", [502, 503, 504])
+def test_gateway_outage_has_bounded_retries_and_a_useful_message(client, monkeypatch, status):
+    calls = []
+    monkeypatch.setattr(lifeadmin, "sleep", AsyncMock())
+
+    def remote(request):
+        calls.append(request)
+        return httpx.Response(status, text="private hosting diagnostics")
+
+    mock_http(monkeypatch, remote)
+    response = client.get(PATH)
+    assert response.status_code == 503
+    assert "starting or temporarily unavailable" in response.json()["detail"]
+    assert "private hosting diagnostics" not in response.text
+    assert len(calls) == 7
+
+
+def test_configuration_503_is_not_retried(client, monkeypatch):
+    pause = AsyncMock()
+    monkeypatch.setattr(lifeadmin, "sleep", pause)
+    mock_http(monkeypatch, lambda request: httpx.Response(503, json={"detail": "private configuration"}))
+    response = client.get(PATH)
+    assert response.status_code == 503
+    assert "API key" in response.json()["detail"]
+    pause.assert_not_awaited()
+
+
+def test_startup_retries_share_the_overall_deadline(client, monkeypatch):
+    monkeypatch.setattr(settings, "LIFEADMIN_TIMEOUT_SECONDS", 0.02)
+    mock_http(monkeypatch, lambda request: httpx.Response(502, text="Host starting"))
+    response = client.get(PATH)
+    assert response.status_code == 504
+    assert "Retry with the same note" in response.json()["detail"]

@@ -1,4 +1,6 @@
 """HTTP-only adapter: no LifeAdmin imports, files or database access."""
+from asyncio import sleep, timeout
+import logging
 from uuid import UUID
 
 import httpx
@@ -8,12 +10,25 @@ from pydantic import TypeAdapter, ValidationError
 from app.core.config import settings
 from app.schemas.notes import LessonNote
 
+logger = logging.getLogger(__name__)
+
+# Render's free API may return gateway errors while it wakes. These waits and
+# every HTTP attempt share LIFEADMIN_TIMEOUT_SECONDS as one overall deadline.
+_RETRY_DELAYS = (0, 2, 4, 8, 12, 16, 16)
+
+
+def _temporary_gateway(response: httpx.Response) -> bool:
+    if response.status_code in (502, 504):
+        return True
+    # A JSON 503 is LifeAdmin's configuration error, not a hosting startup page.
+    return response.status_code == 503 and "json" not in response.headers.get("content-type", "").lower()
+
 
 async def request_lifeadmin(method: str, path: str, *, params=None, data=None):
     if not settings.LIFEADMIN_API_KEY:
         raise HTTPException(503, "Lesson notes are not configured. Set LIFEADMIN_API_URL and LIFEADMIN_API_KEY on the server.")
     try:
-        async with httpx.AsyncClient(
+        async with timeout(settings.LIFEADMIN_TIMEOUT_SECONDS), httpx.AsyncClient(
             base_url=settings.LIFEADMIN_API_URL.rstrip("/"),
             timeout=settings.LIFEADMIN_TIMEOUT_SECONDS,
             headers={
@@ -23,11 +38,21 @@ async def request_lifeadmin(method: str, path: str, *, params=None, data=None):
             follow_redirects=False,
             trust_env=False,
         ) as client:
-            response = await client.request(method, path, params=params, json=data)
-    except httpx.TimeoutException:
+            for attempt, delay in enumerate(_RETRY_DELAYS, start=1):
+                if delay:
+                    await sleep(delay)
+                # Keep the original POST request_id: LifeAdmin deduplicates a
+                # save even if it committed before a gateway lost the response.
+                response = await client.request(method, path, params=params, json=data)
+                if not _temporary_gateway(response):
+                    break
+                logger.warning("LifeAdmin gateway status %s on attempt %s", response.status_code, attempt)
+    except (httpx.TimeoutException, TimeoutError):
         raise HTTPException(504, "LifeAdmin took too long to respond. Retry with the same note.") from None
     except httpx.RequestError:
         raise HTTPException(503, "Cannot reach LifeAdmin. Check that its API is running and the server address is correct.") from None
+    if _temporary_gateway(response):
+        raise HTTPException(503, "LifeAdmin is starting or temporarily unavailable. Try saving again shortly.")
     if response.status_code == 404:
         raise HTTPException(404, "Note not found.")
     if response.status_code == 409:
